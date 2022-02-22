@@ -105,8 +105,103 @@
 
 	We are now back from a 23 minute break
 
+	Now we are learning about insert and update as well.
+
+	Create another class called InsertDemo
+
+	//driver
+	//connection
+
+	Instead of writing the driver and connection in each class we will use a method and call the method
+	in .utility package
+	DBConnection
+	public static Connection getConnection() {
+		Connection con = null;
+		try{
+			Class.forName("org.postgresql.Driver");
+			con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+
+	now we write
+	Connection con = DBConnection.getConnection();
+
+	I had this thought earlier but it feels like Mohammad is giving us superpowers.
+	And it's a really nice feeling.
+
+	use case:
+	how can a customer change password without downloading java?
+	we should be able to change the password and other details without changing our code.
+	Externalize the properties in a file.
+
+	properties file
+
+	go to a drive and create notepad file
+	username=postgres
+	password=root
+	driver=org.postgresql.Driver
+	url=jdbc:postgresql://localhost:5432/postgres
+
+	saves as "revaturedb.properties"
+
+	then we read it from eclipse
+	try {
+		FileReader rdr = new FileReader("revaturedb.properties");
+		Properties properties = new Properties();
+		properties.load(rdr);
+		String driver = properties.getProperty("driver");
+		String url = properties.getProperty("url");
+		String username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+
+		Class.forName(driver);
+		con = DriverManager.getConnection(url, username, password);
+
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException) {
+		e.printStackTrace();
+	}
+
+	Mohammad just show us how to create a properties file so that we can have username, password, driver, and url
+	in external file for easy changes.
+
+	So this is awesome and basically answers the question for password security when adding database projects
+	to github. to always hide the file that includes passwords or sensitive data.
+	I remember googling this while living in Mexico and feeling like I was just copying and pastying until I
+	could get something to work. It's so nice to be introduced to this from a place of understanding.
+
+	go to product-app-alstrom app
+
+	run it and try 6.
+
+	open pom.xml and add postgres dependency
+
+	create package- com.training.pms.utility
+	copy DBConnection.java and paste into this project's utility package
+
+	copy revaturedb.properties and paste into this project
+
+	got to DAOImpl and add at top-
+	Connection connection = DBConnection.getConnection();
 
 
+	------------------------------------------------
+
+	copy and paste Statement and ResultSet stuff
+	Statement stat = null;
+
+	create case 6:
+
+
+	Mohammad says we will be ready to go for creating skeleton for P zero, but now we have lunch.
+	After an associates problem is resolved.
+	Actually we will do after lunch. See you then.
 
 
 </p>
