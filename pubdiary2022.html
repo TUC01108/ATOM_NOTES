@@ -25,6 +25,69 @@
 	It feels like we are already a bit behind covering material and yesterday we lost 4.5 hours to QC then we did lunch.
 	By the time we came back we had 1.5 hours to learn.
 	Anyways that's enough ranting. I'll update as it progresses.
+	This is literally the same Orientation that we already sat through....
+	A little frustrating but let me see if there's anything I can learn from watching again.
+	Some good tips:
+	Watch how trainer debugs problems that happen.
+	Write pseuodcode.
+	Record yourself preparing for QC and watch the recording.
+
+	<br/>
+	Finished with the 2nd go at QC. It was actually nice to rehear some of the points again.
+	I think if my batch mates are open to the suggestions they reiterated it would benefit all of us.
+	Most of the answers I hear and I give sound like the average or poor answers and the goal is to get a job
+	at the end of this. So I have a LOT of room to improve and will continue to make the effort to do so.
+	<br/>
+	Now we are in class with Mohammad.
+
+	We are leaving the QC behind us and Mohammad will do 1:1 with each of us to communicate feedback.
+	Now we are back into JDBC and preparing for everything we need to know for P0.
+
+	Step 1:
+	Load the appropriate driver
+
+	Step 2:
+	Create the connection
+		url
+		username
+		password
+
+	//java.sql package
+	Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
+	//System.out.println("Connected");
+	add SQLException throws eception
+
+	PRETTY SWEET WE ARE CONNECTED!
+
+	Step 3:
+	Statement stat = con.createStatement();
+
+	Step 4:
+	ResultSet res = stat.executeQuery("select * from employees");
+
+	// takes the cursor to the next row
+	// and returns false if no record is there
+	while(res.next())
+	{
+
+	System.out.println(res.getString(1)+ "   ");
+	System.out.println(res.getString(2)+ "   ");
+	System.out.print(res.getInt("salary")+ "   ");
+	System.out.println(res.getString("email"));
+	}
+
+	// closing the resultset, statement and connection
+	res.close();
+	stat.close();
+	con.close();
+
+
+
+
+
+
+
+
 </p>
 <h3>Afternoon:</h3>
 <p>
