@@ -207,6 +207,147 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+	I'm back and ready to keep learning.
+
+	in DAOImpl
+	copy and paste Statement state and ResultSet and while loop with res.next() into this project
+	put entire thing inside one try catch block
+
+	now you have to call the method in ProductApp.java
+
+	case 6:
+	productDAO.printAllProducts();
+
+	Now we are able to print all products in this previous made product-app-alstrom project.
+	It's very cool how this happens and things clicking together for Java and SQL through JDBC and postgres.
+
+	hands on exercise:
+	DBEAVER
+	insert into product values (3,'Aroma',199,99);
+	insert into product values (4,'Mouse',12,6);
+
+	select * from product where productName like 'Mouse';
+
+	try to search for a product by name and return
+
+	Enter the product name : _____
+	Here are the details for : _____
+
+	copy and paste code from printAllProducts to searchByProductName
+
+	change to stat.executeQuery("select * from product where productName like '"+productName+"'");
+
+	create case 5:
+	System.out.println("Please enter product name to search :");
+	productName = scanner.next();
+	productDAO.searchByProductName(productName);
+
+	--------------------------------------------------------------
+	now we are able to search by name in a database.....sweet.
+
+	got it working in my bank app too. just need to add the bank tables in database
+
+	enter the price (lower) : 3000
+	enter the price (upper) : 5000
+
+	SQL - "select * from product where price between" +lower+" and "+ upper
+
+	prepared statements-
+
+	**** IMPORTANT QC AND INTERVIEW QUESTION @ 2:51am
+	difference between Statement and PreparedStatement Interfaces
+			Statement interface is used for executing static SQL statements.
+
+			PreparedStatement gives us the flexibility of specifying paramenters with the ? symbol.
+
+			if you have static SQL use statement
+			if you have parameters then you use PreparedStatement
+
+	replace Statement stat with PreparedStatement stat
+
+	stat = connection.prepareStatement("select * from product where productName like ? ");
+	stat.setString(l, productName);
+	ResultSet res = stat.executeQuery();
+
+	--------------------------------------------------------------
+	talking about the DAO
+	**** DAO - data access objects
+
+	add to ProductDAO.java interface
+	public void searchProductByPrice(int lowerprice, int upperprice);
+
+	copy code from searchProductByName
+
+	private final SQL_QUERY
+	stat = con.prepareStatement("select * from product where price between ? and ?");
+	stat.setInt(1,lowerprice);
+	stat.setInt(2,upperprice);
+
+	add case 7: to search by price (lower/upper)
+
+	case 7:
+		System.out.println("Please enter product price (lower) :");
+		int lowerprice = scanner.nextInt();
+		System.out.println("Please enter product price (upper) :");
+		int upperprice = scanner.nextInt();
+		productDAO.searchProductByPrice(lowerprice,upperprice);
+		break;
+	------------------------------------------
+
+	now for inserting into postgres fom maven
+
+	we already wrote in ProductApp
+
+	ProductDAOImpl.java
+	statement = con.prepareStatement("insert into product values(?,?,?,?)");
+
+	statement.setInt(1, product.getProductId());
+	statement.setString(2, product.getProductName());
+	statement.setInt(3, product.getQuantityOnHand());
+	statement.setInt(4, product.getPrice());
+
+	int rows = statement.executeUpdate();
+
+	System.out.println(rows+" inserted successfully")
+
+	surround in try catch block
+
+	so dope Mohammad just showed us how to insert from Eclipse
+
+	We are in full connected mode!!!
+
+	Now we are checking update as well.
+
+	It's already written in ProductApp.java
+
+	Go to Impl
+
+	copy and paste from add product to update product
+
+	connection.prepareStatement("update product set productName = ?, quantityonhand = ?, price = ? where productId = ?");
+
+	statement.setString(1, product.getProductName());
+	statement.setInt(2, product.getQuantityOnHand());
+	statement.setInt(3, product.getPrice());
+	statement.setInt(4, product.getProductId());
+
+	int rows = statement.executeUpdate();
+
+	System.out.println(rows+" updated successfully")
+
+	write in postgres first to check you are getting it right.
+	copy and paste replace amounts with ?s.
+
+	done for the day. Very happy with what we learned and feel ready to complete huge chunks of P zero.
+
+
+
+
+
+
+
+
+
 </p>
 <h3>Evening:</h3>
 <p>
