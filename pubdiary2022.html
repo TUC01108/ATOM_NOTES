@@ -55,7 +55,7 @@
 	//java.sql package
 	Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
 	//System.out.println("Connected");
-	add SQLException throws eception
+	add SQLException throws exception
 
 	PRETTY SWEET WE ARE CONNECTED!
 
@@ -81,8 +81,29 @@
 	stat.close();
 	con.close();
 
+	//make sure you have imports for SQL
 
+	//Do we have anyway by which we can retrieve the column information
+	ResultSetMetaData rsmd = res.getMetaData();
+	int columnCount = rsmd.getColumnCount();
 
+	// printing the column names
+	for (int i = 1; i<=columnCount; i++){
+		System.out.print(rsmd.getColumnName(i)+"    ");
+	}
+	System.out.println();
+
+	// printing all the values of the table
+	for (int i =1; i <= columnCount; i++) {
+		System.out.print(res.getString(i) + "    ");
+	}
+	System.out.println();
+
+	^^^^^^^^^^^^^ that is SWEEEEEEET
+
+	22:32p he says DEFINITION QC Answer for metadata
+
+	We are now back from a 23 minute break
 
 
 
