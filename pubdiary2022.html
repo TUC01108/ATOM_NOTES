@@ -22,7 +22,160 @@
 	So I successfully add the add account function to my app, but that was for a test users table.
 	Now I have to switch it over to the respective Employees and Customers tables depending on which they are.
 	Class is starting now.
-	
+
+	Need to have clearer things to study after each day and load it into the learning-app.
+	Like yesterday I took notes all day but dont have clear idea on what would be asked on QCs that needs to change.
+
+	**** JDBC terms and core concepts are important
+	DAO - Data access Object
+	Interfaces of JDBC
+	****
+
+	Design Pattern
+		Reusable solutions to common software development problems
+		We use the DAO design pattern in our banking app to seperate the problem domain from the persistence mechanism.
+		Uses interfaces to define an abstraction
+
+	We are taking some time to read about DAO Design Pattern here <a href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">2/21</a>
+	From my understanding it seperates the methods into an interface from the concrete class that accesses the database.
+	Which allows you to switch out that concrete class for a different database if needed or whatever way you are accessing the data.
+
+	Now we will create the delete function in project.
+	Actually he wants to talk about statement and prepared statement
+	**** QC Question! ^
+
+	Now to delete
+	copy and paste the update code in ProductDAOImpl
+	"delete from product where productId =?")
+	statement.setInt(1, productId);
+
+	(rows + " deleted successfully")
+
+	then ProductApp
+	case 2:
+		productId = scanner.nextInt();
+		productDAO.deleteProduct(productId);
+		break;
+
+	If you try to delete a product that isn't there you should handle that.
+	If you try to update a product that isnt there you should handle at the moment entered.
+	^
+	create a method if product exists in
+	ProductDAO.java
+	public boolean isProductExists(int productId);
+
+	copy code from searchProductByName to isProductExists
+
+	public boolean isProductExists(int productId) {
+		boolean productExists = false;
+		PreparedStatement stat;
+		try{
+			stat = con.prepareStatement("select * from product where productId = ? ");
+			stat.setInt(1, productId);
+
+			ResultSet res = stat.executeQuery();
+			productExists = res.next();
+		}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return productExists;
+	}
+
+	now we will use JUnit testing to see if method works as we hope.
+
+	write test case-
+
+	right click on DAOImpl create new>Test Case
+	configure for 1.8
+
+	he's going really fast through this so someone will ask him to do it again-
+
+	ProductDAO productDAO;
+	@Afterall
+
+	@BeforeEach
+	void setUp() throws Exception {
+		productDAO = new ProductDAOImpl();
+	}
+	@Test
+	@DisplayName("Testing product exists-1")
+	void testIsProductExists() {
+		int productID=2;
+		boolean actual = productDAO.isProductExists(productId);
+		assertTrue(actual);
+
+	@Test
+	@DisplayName("Testing product exists-2")
+	void testIsProductExists2() {
+		int productID=2827;
+		boolean actual = productDAO.isProductExists(productId);
+		assertFalse(actual);
+	}
+
+	@Test
+	@DisplayName("Testing product exists-3")
+	void testIsProductExists4() {
+		int productID=20827;
+		boolean actual = productDAO.isProductExists(productId);
+		assertFalse(actual);
+	}
+
+	That was tough to keep up with but I got through and can replicate for my own test cases in the bank app.
+	Adding that now and will do delete if there's extra time.
+
+	we cant test a method that is void. (i think)
+	so we are changing our methods to return something.
+	public boolean addProduct
+	public boolean updateProduct
+	public Product searchByProductId
+	public List<;Product> searchByProductName
+	public List<;Product> searchProductByPrice
+	public List<;Product> getProducts();
+	(without semi colons above)
+	public boolean isProductExists
+
+	change for each in ProductDAOImpl
+	initialize row=0
+	take away initialization at int rows = statement.executeUpdate();
+
+	if(rows==0)
+		return false;
+	else
+		return true;
+
+	he is adding them to codeshare for us- <a href"https://codeshare.io/tufail">here</a>
+
+	he is changing the searchByProductName code
+
+	List<;Product> products = new ArrayList<;Product>();
+	PreparedStatement stat'
+	try{
+			stat = connection.prepareStatement("select * from product where productName like ? ")
+			stat.setString(1, productName);
+
+	ResultSet res = stat.executeQuery();
+	while(res.next()) {
+		Product product = new Product();
+		product.setProductId(res.getInt(1));
+		product.setProductName(res.getString(2));
+		product.setQuantityOnHand(res.getInt(3));
+		product.setPrice(res.getInt(4));
+		products.add(product);
+	}
+} catch (SQLException e) {
+	e.printStackTrace();
+}
+	return products
+
+now we change printAllProducts to
+public void getProducts() {
+
+}
+
+change getProducts and searchProductsByPrice
+
+going to 17 minute break and back at 9:35a
 
 
 </p>
