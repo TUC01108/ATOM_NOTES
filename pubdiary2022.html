@@ -177,6 +177,69 @@ change getProducts and searchProductsByPrice
 
 going to 17 minute break and back at 9:35a
 
+back from break and mohammad is flying.
+
+I'm caught up now he is adding test cases for all methods-
+
+@TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
+
+	ProductDAO productDAO
+	int productId;
+	Product product;
+
+	@BeforeEach
+	void setUp() throws Exception {
+		productDAO = new ProductDAOImpl();
+		productId = 9999;
+		product = new Product();
+	}
+
+	@Test
+	@Order(value = 1)
+	void testAddProduct() {
+		Product product = new Product(productId, "Dummy", 10, 100);
+		assertTrue(productDAO.addProduct(product));
+	}
+
+	@Test
+	@Order(value = 2)
+	void testSearchByProductId() {
+		Product foundProduct = productDAO.searchByProductId(productId);
+		product = new Product(productId, "Dummy", 10, 100);
+		assertEquals(foundProduct, product);
+	}
+
+	@Test
+	@Order(value = 3)
+	void testUpdateProduct() {
+		Product updatedProduct = new Product(productId, "NewDummy", 199, 90);
+		productDAO.updateProduct(updatedProduct);
+		assertTrue(productDAO.updateProduct(updatedProduct));
+	}
+
+	@Test
+	@Order(value = 4)
+	void testGetProducts() {
+		List<;Product> products = productDAO.getProducts();
+		assertNotEquals(0, products.size());
+	}
+
+	@Test
+	@Order(value = 5)
+	void testDeleteProduct() {
+		assertTrue(productDAO.deleteProduct(productId));
+	}
+
+	go to DAOImpl
+
+	searchProductById
+
+	He is adding test code and Impl code to codeshare now.
+
+	finish updating tests we went through together and finish the final 3 that we didn't.
+
+
+
 
 </p>
 <h3>Afternoon:</h3>
