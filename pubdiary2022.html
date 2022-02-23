@@ -244,6 +244,108 @@ I'm caught up now he is adding test cases for all methods-
 </p>
 <h3>Afternoon:</h3>
 <p>
+
+	Back from lunch
+	All functions working properly and all tests.
+
+	Now we got to ProductApp.java and make sure all working there.
+
+	case 1:
+	if(productDAO.isProductExists(productId)) {
+		System.out.printlin("Product with product id : "+productId+" already exists, please try with another product id");
+		continue;
+	}
+
+	result = productDAO.addProduct(product);
+	if(result) {
+		System.out.println("Congratulations, your product....")
+	} else {
+		"Sorry your product cannot be saved"
+	}
+
+	case 2:
+	if(productDAO.isProductExists(productId)) {
+		productDAO.deleteProduct(productId);
+		"product deleted successfully";
+	} else {
+		"product with product id : "+productId+" does not exist, hence it cannot be deleted."
+	}
+
+	case 3:
+	if(!productDAO.isProductExists(productId)) {
+		"product does not exist so could not be updated";
+		continue;
+	}
+	--------------------------------------------------------------
+	declare at top of ProductApp
+	List<;Product> products =
+
+	for case 5:
+	products = productDaO.searchByProductName(productName);
+	printProductDetails(products);
+
+	case 6:
+	products = productDAO.getProducts();
+	printProductDetails(products);
+
+	case 7:
+
+	products = productDAO.searchProductByPrice(lower,upper);
+
+	printProductDetails(products);
+	break;
+
+	outside the while loop and start product app
+
+	public void printProductDetails(List<;Product> products)
+	{
+		Iterator<;Product> iterator = products.iterator();
+		while(iterator.hasNext()) {
+			Product temp = iterator.next();
+			System.out.println(temp);
+		}
+	}
+
+	need to fix search by name to say "___ does not exist" if item does not exist
+	if(products.size()==0) {
+		System.out.println("No products matching your criteria");
+		continue;
+	}
+
+
+	case 4:
+
+		copy code from delete code
+
+		if (productDAO.isProductExists(productId)) {
+			Product temp = productDAO.searchByProductId(productId);
+			System.out.println(temp);
+		}
+
+		So I think this project is basically fully functional.
+
+		All the menu items work, all the methods work, a few test cases. Need to finish this.
+		But overall it was great building from scratch with Mohammad.
+		He says log4j is optional for p zero but I really want to have it working.
+		My plan is to have the full project done on Saturday. Code locked by Sunday morning.
+		And then practice presenting it on Sunday, Monday, and Tuesday.
+
+		Mohammad is dropping knowledge on the project for login and validate. rewatch recording at 2:50am his time.
+		1:25p my time.
+
+		while(true) {
+			1. add user
+			2. login
+			"please enter your choice"
+			choice = scanner.nextInt();
+
+			switch
+		}
+
+		On a 20 minute break now. Mohammad just went into super hyper drive with what he shared.
+		Everything super useful for our projects. I don't feel worried about anything now. Just have to put in
+		the time.
+
 </p>
 <h3>Evening:</h3>
 <p>
