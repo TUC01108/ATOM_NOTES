@@ -30,9 +30,145 @@
 	on register.
 	Things are working out.
 
-	REminder to finish the coding quiz before tomorrow evening. On revaturepro.
+	**** Reminder to finish the coding quiz before tomorrow evening. On revaturepro.
 
 	And class begins!
+
+	jdbc- callable statements
+	css
+
+	CallableStatement
+		used to call stored procedure
+
+	Procedure is like a function but can return multiple values
+
+	select * from product;
+
+	CREATE OR REPLACE FUNCTION totalRecords()
+	RETURNS integer AS $total$
+	declare
+		total integer;
+	BEGIN
+		SELECT count(*) into total FROM product;
+		RETURN total;
+	END;
+	$total$ LANGUAGE plpgsql;
+
+	--call function
+	select totalRecords();
+
+	------------Procedure
+
+	create or replace procedure transfer(
+		sender int,
+		receiver int,
+		amount dec
+	)
+	language plpgsql
+	as $$
+	begin
+		--subtract from sender
+		update accounts
+		set balance - balance - amount
+		where id = sender;
+
+		== adding to receiver
+		update accounts
+		set balance = balance + amount
+		where id = receiver;
+
+		commit;
+	end;$$
+
+	---call procedure
+	call transfer(1,2,2000);
+
+	select * from accounts;
+
+	Mohammad showed us how to create procedure in postgres
+	Now we are learning how to call it in jdbc
+
+	create class in jdbc_demos
+	CallingProcedureFromJava.java
+
+		main
+			Scanner scanner = new Scanner(System.in);
+
+			System.out.println("Enter the account number to debit the amount :");
+			int sender = scanner.nextInt();
+
+			System.out.println("Enter the account number to credit the amount :");
+			int reciever = scanner.nextInt();
+
+			System.out.println("Enter the ammount to be transfered :");
+			int amount = scanner.nextInt();
+
+			Connection connection = DBConnection.getConnection();
+			CallableStatement stat = connection.prepareCall("call transfer(?,?,?)")
+			stat.setInt(1,sender);
+			stat.setInt(2,reciever);
+			stat.setInt(3,amount);
+
+			stat.execute();
+
+			System.out.println("Transfer done/completed");
+
+****	WHAT IS THE USE OF CALLABLE STATEMENT?
+				is an interface by which we can make a call to a procedure from our jdbc
+
+		This is really useful too.
+
+		now we are on to html, css, and javascript
+
+		HTML hyper text markup language
+		used for creating webpages
+			markup language because it uses tags
+		Mohammad is a memory Doctor
+
+		the html page we created is just a page
+
+		what is CSS and what is javascript?
+
+		selector is element to be styled
+
+		So far so good. I sort of hope we never have to dive to far into CSS, but
+		I'm comfortable with the basics. Design just never feels that interesting to me.
+		More into how things work and functionality. Let's see if I agree with that
+		in 10 years.
+
+		internal css
+
+		external CSS
+
+		create new file > name styles.css
+		(but can be anything.css)
+
+		copy and paste from internal to this file.
+		write in individual .html files-
+		<;link type="text/css" rel="stylesheet" href="styles.css">
+
+		just added background image to all pages on website.
+
+		SQL and java are so much more interesting to me. how can I make this more interesting?
+		Like making a database work is fascinating but making it pretty for a user
+		isn't so thrilling.
+
+		DOM is document object model
+
+		inline css
+
+	**** QC What is difference between Inline and Block Elements
+			Inline is when it renders within the line itself
+				span
+			Block elements create a new line
+				div, p, br,
+
+		onto a 20 minute break now.
+
+
+
+
+
 
 
 
