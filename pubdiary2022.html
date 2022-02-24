@@ -22,50 +22,61 @@
 	So I successfully add the add account function to my app, but that was for a test users table.
 	Now I have to switch it over to the respective Employees and Customers tables depending on which they are.
 	Class is starting now.
-
+	<br/>
+	<br/>
 	Need to have clearer things to study after each day and load it into the learning-app.
 	Like yesterday I took notes all day but dont have clear idea on what would be asked on QCs that needs to change.
-
+	<br/>
+	<br/>
 	**** JDBC terms and core concepts are important
 	DAO - Data access Object
 	Interfaces of JDBC
 	****
-
+	<br/>
+	<br/>
 	Design Pattern
 		Reusable solutions to common software development problems
 		We use the DAO design pattern in our banking app to seperate the problem domain from the persistence mechanism.
 		Uses interfaces to define an abstraction
-
+	<br/>
+	<br/>
 	We are taking some time to read about DAO Design Pattern here <a href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">2/21</a>
 	From my understanding it seperates the methods into an interface from the concrete class that accesses the database.
 	Which allows you to switch out that concrete class for a different database if needed or whatever way you are accessing the data.
-
+	<br/>
+	<br/>
 	Now we will create the delete function in project.
 	Actually he wants to talk about statement and prepared statement
 	**** QC Question! ^
-
+	<br/>
+	<br/>
 	Now to delete
 	copy and paste the update code in ProductDAOImpl
 	"delete from product where productId =?")
 	statement.setInt(1, productId);
-
+	<br/>
+	<br/>
 	(rows + " deleted successfully")
-
+	<br/>
+	<br/>
 	then ProductApp
 	case 2:
 		productId = scanner.nextInt();
 		productDAO.deleteProduct(productId);
 		break;
-
+	<br/>
+	<br/>
 	If you try to delete a product that isn't there you should handle that.
 	If you try to update a product that isnt there you should handle at the moment entered.
 	^
 	create a method if product exists in
 	ProductDAO.java
 	public boolean isProductExists(int productId);
-
+	<br/>
+	<br/>
 	copy code from searchProductByName to isProductExists
-
+	<br/>
+	<br/>
 	public boolean isProductExists(int productId) {
 		boolean productExists = false;
 		PreparedStatement stat;
@@ -81,19 +92,25 @@
 			}
 			return productExists;
 	}
-
+	<br/>
+	<br/>
 	now we will use JUnit testing to see if method works as we hope.
-
+	<br/>
+	<br/>
 	write test case-
-
+	<br/>
+	<br/>
 	right click on DAOImpl create new>Test Case
 	configure for 1.8
-
+	<br/>
+	<br/>
 	he's going really fast through this so someone will ask him to do it again-
-
+	<br/>
+	<br/>
 	ProductDAO productDAO;
 	@Afterall
-
+	<br/>
+	<br/>
 	@BeforeEach
 	void setUp() throws Exception {
 		productDAO = new ProductDAOImpl();
@@ -104,7 +121,8 @@
 		int productID=2;
 		boolean actual = productDAO.isProductExists(productId);
 		assertTrue(actual);
-
+	<br/>
+	<br/>
 	@Test
 	@DisplayName("Testing product exists-2")
 	void testIsProductExists2() {
@@ -112,7 +130,8 @@
 		boolean actual = productDAO.isProductExists(productId);
 		assertFalse(actual);
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@DisplayName("Testing product exists-3")
 	void testIsProductExists4() {
@@ -120,10 +139,12 @@
 		boolean actual = productDAO.isProductExists(productId);
 		assertFalse(actual);
 	}
-
+	<br/>
+	<br/>
 	That was tough to keep up with but I got through and can replicate for my own test cases in the bank app.
 	Adding that now and will do delete if there's extra time.
-
+	<br/>
+	<br/>
 	we cant test a method that is void. (i think)
 	so we are changing our methods to return something.
 	public boolean addProduct
@@ -134,26 +155,32 @@
 	public List<;Product> getProducts();
 	(without semi colons above)
 	public boolean isProductExists
-
+	<br/>
+	<br/>
 	change for each in ProductDAOImpl
 	initialize row=0
 	take away initialization at int rows = statement.executeUpdate();
-
+	<br/>
+	<br/>
 	if(rows==0)
 		return false;
 	else
 		return true;
-
+	<br/>
+	<br/>
 	he is adding them to codeshare for us- <a href"https://codeshare.io/tufail">here</a>
-
+	<br/>
+	<br/>
 	he is changing the searchByProductName code
-
+	<br/>
+	<br/>
 	List<;Product> products = new ArrayList<;Product>();
 	PreparedStatement stat'
 	try{
 			stat = connection.prepareStatement("select * from product where productName like ? ")
 			stat.setString(1, productName);
-
+	<br/>
+	<br/>
 	ResultSet res = stat.executeQuery();
 	while(res.next()) {
 		Product product = new Product();
@@ -167,40 +194,50 @@
 	e.printStackTrace();
 }
 	return products
-
+<br/>
+<br/>
 now we change printAllProducts to
 public void getProducts() {
 
 }
-
+<br/>
+<br/>
 change getProducts and searchProductsByPrice
-
+<br/>
+<br/>
 going to 17 minute break and back at 9:35a
-
+<br/>
+<br/>
 back from break and mohammad is flying.
-
+<br/>
+<br/>
 I'm caught up now he is adding test cases for all methods-
-
+<br/>
+<br/>
 @TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
-
+<br/>
+<br/>
 	ProductDAO productDAO
 	int productId;
 	Product product;
-
+<br/>
+<br/>
 	@BeforeEach
 	void setUp() throws Exception {
 		productDAO = new ProductDAOImpl();
 		productId = 9999;
 		product = new Product();
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@Order(value = 1)
 	void testAddProduct() {
 		Product product = new Product(productId, "Dummy", 10, 100);
 		assertTrue(productDAO.addProduct(product));
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@Order(value = 2)
 	void testSearchByProductId() {
@@ -208,7 +245,8 @@ I'm caught up now he is adding test cases for all methods-
 		product = new Product(productId, "Dummy", 10, 100);
 		assertEquals(foundProduct, product);
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@Order(value = 3)
 	void testUpdateProduct() {
@@ -216,28 +254,35 @@ I'm caught up now he is adding test cases for all methods-
 		productDAO.updateProduct(updatedProduct);
 		assertTrue(productDAO.updateProduct(updatedProduct));
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@Order(value = 4)
 	void testGetProducts() {
 		List<;Product> products = productDAO.getProducts();
 		assertNotEquals(0, products.size());
 	}
-
+	<br/>
+	<br/>
 	@Test
 	@Order(value = 5)
 	void testDeleteProduct() {
 		assertTrue(productDAO.deleteProduct(productId));
 	}
-
+	<br/>
+	<br/>
 	go to DAOImpl
-
+	<br/>
+	<br/>
 	searchProductById
-
+	<br/>
+	<br/>
 	He is adding test code and Impl code to codeshare now.
-
+	<br/>
+	<br/>
 	finish updating tests we went through together and finish the final 3 that we didn't.
-
+	<br/>
+	<br/>
 
 
 
@@ -247,22 +292,26 @@ I'm caught up now he is adding test cases for all methods-
 
 	Back from lunch
 	All functions working properly and all tests.
-
+	<br/>
+	<br/>
 	Now we got to ProductApp.java and make sure all working there.
-
+	<br/>
+	<br/>
 	case 1:
 	if(productDAO.isProductExists(productId)) {
 		System.out.printlin("Product with product id : "+productId+" already exists, please try with another product id");
 		continue;
 	}
-
+	<br/>
+	<br/>
 	result = productDAO.addProduct(product);
 	if(result) {
 		System.out.println("Congratulations, your product....")
 	} else {
 		"Sorry your product cannot be saved"
 	}
-
+	<br/>
+	<br/>
 	case 2:
 	if(productDAO.isProductExists(productId)) {
 		productDAO.deleteProduct(productId);
@@ -270,7 +319,8 @@ I'm caught up now he is adding test cases for all methods-
 	} else {
 		"product with product id : "+productId+" does not exist, hence it cannot be deleted."
 	}
-
+	<br/>
+	<br/>
 	case 3:
 	if(!productDAO.isProductExists(productId)) {
 		"product does not exist so could not be updated";
@@ -279,24 +329,31 @@ I'm caught up now he is adding test cases for all methods-
 	--------------------------------------------------------------
 	declare at top of ProductApp
 	List<;Product> products =
-
+	<br/>
+	<br/>
 	for case 5:
 	products = productDaO.searchByProductName(productName);
 	printProductDetails(products);
-
+	<br/>
+	<br/>
 	case 6:
 	products = productDAO.getProducts();
 	printProductDetails(products);
-
+	<br/>
+	<br/>
 	case 7:
-
+	<br/>
+	<br/>
 	products = productDAO.searchProductByPrice(lower,upper);
-
+	<br/>
+	<br/>
 	printProductDetails(products);
 	break;
-
+	<br/>
+	<br/>
 	outside the while loop and start product app
-
+	<br/>
+	<br/>
 	public void printProductDetails(List<;Product> products)
 	{
 		Iterator<;Product> iterator = products.iterator();
@@ -305,82 +362,107 @@ I'm caught up now he is adding test cases for all methods-
 			System.out.println(temp);
 		}
 	}
-
+	<br/>
+	<br/>
 	need to fix search by name to say "___ does not exist" if item does not exist
 	if(products.size()==0) {
 		System.out.println("No products matching your criteria");
 		continue;
 	}
-
+	<br/>
+	<br/>
 
 	case 4:
-
+	<br/>
+	<br/>
 		copy code from delete code
-
+		<br/>
+		<br/>
 		if (productDAO.isProductExists(productId)) {
 			Product temp = productDAO.searchByProductId(productId);
 			System.out.println(temp);
 		}
-
+		<br/>
+		<br/>
 		So I think this project is basically fully functional.
-
+		<br/>
+		<br/>
 		All the menu items work, all the methods work, a few test cases. Need to finish this.
 		But overall it was great building from scratch with Mohammad.
 		He says log4j is optional for p zero but I really want to have it working.
 		My plan is to have the full project done on Saturday. Code locked by Sunday morning.
 		And then practice presenting it on Sunday, Monday, and Tuesday.
-
+		<br/>
+		<br/>
 		Mohammad is dropping knowledge on the project for login and validate. rewatch recording at 2:50am his time.
 		1:25p my time.
-
+		<br/>
+		<br/>
 		while(true) {
 			1. add user
 			2. login
 			"please enter your choice"
 			choice = scanner.nextInt();
-
+			<br/>
+			<br/>
 			switch
 		}
-
+		<br/>
+		<br/>
 		On a 20 minute break now. Mohammad just went into super hyper drive with what he shared.
 		Everything super useful for our projects. I don't feel worried about anything now. Just have to put in
 		the time.
-
+		<br/>
+		<br/>
 		I'm jumping back in early to start taking more chunks out of this project.
-
+		<br/>
+		<br/>
 		I'm hungry for it.
-
+		<br/>
+		<br/>
 		So I got all the way through the Login build out to validating a user login. I will rewatch the video to follow that along.
 		Really nice of him to provide that to us. Will not take for granted.
 		Okay back into training. I'm so excited to do this on my own later. Future apologies to my wife and kids
 		but this is so dope.
-
+		<br/>
+		<br/>
 		sql and jdbc quiz- open for 2 days
-
+		<br/>
+		<br/>
 		hands on for right now:
-
+		<br/>
+		<br/>
 		if you choose 1:
 		please enter username:
 		please enter password:
-
+		<br/>
+		<br/>
 		congrats you are registered
-
+		<br/>
+		<br/>
 		then return to main menu
-
+		<br/>
+		<br/>
 		please enter username:
 		please enter password:
-
+		<br/>
+		<br/>
 		if correct-
 		welcome, joseph
-
+		<br/>
+		<br/>
 		product app menu
-
+		<br/>
+		<br/>
 		my login isnt working correctly I will have to debug later
-
+		<br/>
+		<br/>
 		He says to add a logout option to the menu once logged in.
-
+		<br/>
+		<br/>
 		We are done with class for the day. Have to work on P0 and finish the quiz and update learning app.
-
+		<br/>
+		<br/>
 		tomorrow is jdbc, html, css, javascript.
 
 
@@ -390,6 +472,20 @@ I'm caught up now he is adding test cases for all methods-
 </p>
 <h3>Evening:</h3>
 <p>
+	I'm back. I wasted some time adding br's to the previous entries. not worth the effort.
+	Maybe I can script something through the html?
+	Anyways, I'm going to add some of the stuff Mohammad graced us with earlier.
+	Going to go side by side from product-app-alstrom and get this working.
+
+	Okay got my register user working. It was a simple mistake. I forgot to put
+	login = new Login(userId, username, password);
+	before passing the data to sql.
+
+	My last thought before calling it a night is how to increment across all tables when i insert on 1.
+	Like adding a login should add the info to employee and make sure customer knows the next available as well.
+
+	Going to figure this out in the morning.
+
 </p>
 
 <h2>22/02/22</h2>
@@ -400,6 +496,7 @@ I'm caught up now he is adding test cases for all methods-
 	The core of Java and SQL and all other subjects we learn. Prioritize items to memorize based on what they are.
 	I've been doing a blind study method that isn't working good enough.
 	I added postgres dependency to pom.xml for learning-app and the Driver location to app.java.
+	<br/>
 	<br/>
 	We are about to start this QC orientation. I don't know why we are doing this instead of studying as
 	I feel I understand what QC's are for and how to improve at them, but will go in with open mind.
@@ -412,12 +509,13 @@ I'm caught up now he is adding test cases for all methods-
 	Watch how trainer debugs problems that happen.
 	Write pseuodcode.
 	Record yourself preparing for QC and watch the recording.
-
+	<br/>
 	<br/>
 	Finished with the 2nd go at QC. It was actually nice to rehear some of the points again.
 	I think if my batch mates are open to the suggestions they reiterated it would benefit all of us.
 	Most of the answers I hear and I give sound like the average or poor answers and the goal is to get a job
 	at the end of this. So I have a LOT of room to improve and will continue to make the effort to do so.
+	<br/>
 	<br/>
 	Now we are in class with Mohammad.
 
