@@ -13,426 +13,192 @@
 
 -->
 
-<h2>00/02/22</h2>
+<h2>25/02/22</h2>
 <h3>Evening:</h3>
-<p>
-</p>
+<p></p>
 <h3>Afternoon:</h3>
-<p>
-</p>
+<p></p>
 <h3>Morning:</h3>
-<p>
-	I'm not sure if it's better in this order, but working so far.
-	Have a late start today. Olava didn't sleep at all and kept us up.
-	I'll get going once class starts. No use getting 4 minutes of work in
-	and stopping down.
-
-	Class is starting now.
-</p>
+<p>I'm not sure if it's better in this order, but working so far.
+	Have a late start today. Olava didn't sleep at all and kept us up. I'll
+	get going once class starts. No use getting 4 minutes of work in and
+	stopping down. Class is starting now.</P>
+<p>**** QC Inline and block statements Id or class and other
+	selectors javascript client side validation. make webpages more
+	interactive. to generate html dynamically. We are setting up AWS
+	accounts now. This is what I've been waiting for. I was doing this on
+	my own when in Philly back in December. Now revisiting.</p>
+	
+	<p>I'm pulling this into eclipse and seeing if it makes more sense rather than
+	having two IDEs.... but as I'm writing this I realized it wont work because it pushes
+	my Eclipse over the zoom video that I use to watch Tufail's screen as he teaches us.
+	So that was a quick no.
+	</p>
 
 <h2>24/02/22</h2>
 <h3>Evening:</h3>
-<p>
-</p>
+<p></p>
 <h3>Afternoon:</h3>
-	<p>
-	I'm back.
-	JavaScript-
+<p>
+	I'm back. JavaScript- What is a client side message? vs server side
 
-	What is a client side message?
-	vs server side
+	**** javascript is for: making webpages more interactive, client side
+	validations, etc. to generate html dynamically to handle html element
+	events create html file for javaScript
 
-	**** javascript is for:
-		making webpages more interactive, client side validations, etc.
-		to generate html dynamically
-		to handle html element events
+	<!--script type="text/javascript"-->
+	var name="Richard"
+	<!--for(i = 1; i <= 5; i++)-->
+	{
+	<!--document.write("<;h1>"+name)-->
+	}
+	<!--document.write("<;br/>");-->
+	grade=100 document.write(name + "your grade is "+grade);
+	<!--<;/script>-->
 
-		create html file for javaScript
-
-		<!--script type="text/javascript"-->
-		var name="Richard"
-		<!--for(i = 1; i <= 5; i++)-->
-		{
-		<!--document.write("<;h1>"+name)-->
-		}
-		<!--document.write("<;br/>");-->
-		grade=100
-		document.write(name + "your grade is "+grade);
-		<!--<;/script>-->
-
-	right click and inspect to check for errors
-
-	official name is - ECMAScript
-
-	back from taking a minute with Y.
-
-	Now we are working on Pzero
-
-	Will real-time update.
-
-	Going to leave it here for now as I want to be with yordana for a few moments.
-	Great day of learning.
-
-	Best to remember I need to fix the withdrawal function.
-
-	Something to do with the userid not sending through properly.
+	right click and inspect to check for errors official name is -
+	ECMAScript back from taking a minute with Y. Now we are working on
+	Pzero Will real-time update. Going to leave it here for now as I want
+	to be with yordana for a few moments. Great day of learning. Best to
+	remember I need to fix the withdrawal function. Something to do with
+	the userid not sending through properly.
 
 </p>
 <h3>Morning:</h3>
-<p>
-	Going to try with flipping the times of day. Think it makes more sense.
-	Good morning btw. 5:19a
+<p>Going to try with flipping the times of day. Think it makes more
+	sense. Good morning btw. 5:19a Been working straight through to 6:27.
+	Going to take a break for a moment. Got my login and customer tables
+	working together so they update at same time on register. Things are
+	working out. **** Reminder to finish the coding quiz before tomorrow
+	evening. On revaturepro. And class begins! jdbc- callable statements
+	css CallableStatement used to call stored procedure Procedure is like a
+	function but can return multiple values select * from product; CREATE
+	OR REPLACE FUNCTION totalRecords() RETURNS integer AS $total$ declare
+	total integer; BEGIN SELECT count(*) into total FROM product; RETURN
+	total; END; $total$ LANGUAGE plpgsql; --call function select
+	totalRecords(); ------------Procedure create or replace procedure
+	transfer( sender int, receiver int, amount dec ) language plpgsql as $$
+	begin --subtract from sender update accounts set balance - balance -
+	amount where id = sender; == adding to receiver update accounts set
+	balance = balance + amount where id = receiver; commit; end;$$ ---call
+	procedure call transfer(1,2,2000); select * from accounts; Mohammad
+	showed us how to create procedure in postgres Now we are learning how
+	to call it in jdbc create class in jdbc_demos
+	CallingProcedureFromJava.java main Scanner scanner = new
+	Scanner(System.in); System.out.println("Enter the account number to
+	debit the amount :"); int sender = scanner.nextInt();
 
-	Been working straight through to 6:27. Going to take a break for a moment.
-	Got my login and customer tables working together so they update at same time
-	on register.
-	Things are working out.
+	System.out.println("Enter the account number to credit the amount :");
+	int reciever = scanner.nextInt(); System.out.println("Enter the ammount
+	to be transfered :"); int amount = scanner.nextInt(); Connection
+	connection = DBConnection.getConnection(); CallableStatement stat =
+	connection.prepareCall("call transfer(?,?,?)") stat.setInt(1,sender);
+	stat.setInt(2,reciever); stat.setInt(3,amount); stat.execute();
 
-	**** Reminder to finish the coding quiz before tomorrow evening. On revaturepro.
-
-	And class begins!
-
-	jdbc- callable statements
-	css
-
-	CallableStatement
-		used to call stored procedure
-
-	Procedure is like a function but can return multiple values
-
-	select * from product;
-
-	CREATE OR REPLACE FUNCTION totalRecords()
-	RETURNS integer AS $total$
-	declare
-		total integer;
-	BEGIN
-		SELECT count(*) into total FROM product;
-		RETURN total;
-	END;
-	$total$ LANGUAGE plpgsql;
-
-	--call function
-	select totalRecords();
-
-	------------Procedure
-
-	create or replace procedure transfer(
-		sender int,
-		receiver int,
-		amount dec
-	)
-	language plpgsql
-	as $$
-	begin
-		--subtract from sender
-		update accounts
-		set balance - balance - amount
-		where id = sender;
-
-		== adding to receiver
-		update accounts
-		set balance = balance + amount
-		where id = receiver;
-
-		commit;
-	end;$$
-
-	---call procedure
-	call transfer(1,2,2000);
-
-	select * from accounts;
-
-	Mohammad showed us how to create procedure in postgres
-	Now we are learning how to call it in jdbc
-
-	create class in jdbc_demos
-	CallingProcedureFromJava.java
-
-		main
-			Scanner scanner = new Scanner(System.in);
-
-			System.out.println("Enter the account number to debit the amount :");
-			int sender = scanner.nextInt();
-
-			System.out.println("Enter the account number to credit the amount :");
-			int reciever = scanner.nextInt();
-
-			System.out.println("Enter the ammount to be transfered :");
-			int amount = scanner.nextInt();
-
-			Connection connection = DBConnection.getConnection();
-			CallableStatement stat = connection.prepareCall("call transfer(?,?,?)")
-			stat.setInt(1,sender);
-			stat.setInt(2,reciever);
-			stat.setInt(3,amount);
-
-			stat.execute();
-
-			System.out.println("Transfer done/completed");
-
-****	WHAT IS THE USE OF CALLABLE STATEMENT?
-				is an interface by which we can make a call to a procedure from our jdbc
-
-		This is really useful too.
-
-		now we are on to html, css, and javascript
-
-		HTML hyper text markup language
-		used for creating webpages
-			markup language because it uses tags
-		Mohammad is a memory Doctor
-
-		the html page we created is just a page
-
-		what is CSS and what is javascript?
-
-		selector is element to be styled
-
-		So far so good. I sort of hope we never have to dive to far into CSS, but
-		I'm comfortable with the basics. Design just never feels that interesting to me.
-		More into how things work and functionality. Let's see if I agree with that
-		in 10 years.
-
-		internal css
-
-		external CSS
-
-		create new file > name styles.css
-		(but can be anything.css)
-
-		copy and paste from internal to this file.
-		write in individual .html files-
-		<;link type="text/css" rel="stylesheet" href="styles.css">
-
-		just added background image to all pages on website.
-
-		SQL and java are so much more interesting to me. how can I make this more interesting?
-		Like making a database work is fascinating but making it pretty for a user
-		isn't so thrilling.
-
-		DOM is document object model
-
-		inline css
-
-	**** QC What is difference between Inline and Block Elements
-			Inline is when it renders within the line itself
-				span
-			Block elements create a new line
-				div, p, br,
-
-		onto a 20 minute break now.
-
-		We are back 9:37a
-
-		Cascading Style Sheets
-			for styling HTML documents
-			composed of:
-				selectors
-					HTML element like h3, h1, p
-				declarations
-					comprised of a property and a value surround by curly braces
-		css properties
-			border
-			padding
-			margin
-			display
-			position
-			color
-			text-align
-
-		now we are creating classes in css
-		written in style element with . before like .mycolor {}
-
-		I just need to know how this will apply to our potential job to make the
-		connection in my mind
-
-		now we have a usecase: // doesnt seem like we are on this yet
-
-		id attribute
-			to specify style
-			p#p1{
-				color: fuchsia;
-			}
-
-		classes are to be used exclusively with dot notation
-
-		css selectors
-			element
-			id
-			class
-			universal
-			attribute
-
-**** QC question- What are different types of css selectors
-			element
-			id
-			class
-			universal
-			attribute
-			grouping
-			child
-
-		Now on to lunch for an hour.
-
-</p>
+	System.out.println("Transfer done/completed"); **** WHAT IS THE USE OF
+	CALLABLE STATEMENT? is an interface by which we can make a call to a
+	procedure from our jdbc This is really useful too. now we are on to
+	html, css, and javascript HTML hyper text markup language used for
+	creating webpages markup language because it uses tags Mohammad is a
+	memory Doctor the html page we created is just a page what is CSS and
+	what is javascript? selector is element to be styled So far so good. I
+	sort of hope we never have to dive to far into CSS, but I'm comfortable
+	with the basics. Design just never feels that interesting to me. More
+	into how things work and functionality. Let's see if I agree with that
+	in 10 years. internal css external CSS create new file > name
+	styles.css (but can be anything.css) copy and paste from internal to
+	this file. write in individual .html files- <;link type="text/css"
+	rel="stylesheet" href="styles.css"> just added background image to all
+	pages on website. SQL and java are so much more interesting to me. how
+	can I make this more interesting? Like making a database work is
+	fascinating but making it pretty for a user isn't so thrilling. DOM is
+	document object model inline css **** QC What is difference between
+	Inline and Block Elements Inline is when it renders within the line
+	itself span Block elements create a new line div, p, br, onto a 20
+	minute break now. We are back 9:37a Cascading Style Sheets for styling
+	HTML documents composed of: selectors HTML element like h3, h1, p
+	declarations comprised of a property and a value surround by curly
+	braces css properties border padding margin display position color
+	text-align now we are creating classes in css written in style element
+	with . before like .mycolor {} I just need to know how this will apply
+	to our potential job to make the connection in my mind now we have a
+	usecase: // doesnt seem like we are on this yet id attribute to specify
+	style p#p1{ color: fuchsia; } classes are to be used exclusively with
+	dot notation css selectors element id class universal attribute **** QC
+	question- What are different types of css selectors element id class
+	universal attribute grouping child Now on to lunch for an hour.</p>
 
 <h2>23/02/22</h2>
 <h3>Morning:</h3>
-<p>5:47am and I'm ready to go. Last night I changed the menu option for banking app to reflect what Mohammad has.
-	It doesn't make sense to provide options for withdrawl and deposit / transfer before someone has logged in.
-	I've now switched over the variable accountName to username to match what I need for loggin in on BankDAO and BankDAOImpl.
-	Now I'm modifying AddAccount method and checking the status of table with printAllAccount method.
-	So I successfully add the add account function to my app, but that was for a test users table.
-	Now I have to switch it over to the respective Employees and Customers tables depending on which they are.
-	Class is starting now.
-	<br/>
-	<br/>
-	Need to have clearer things to study after each day and load it into the learning-app.
-	Like yesterday I took notes all day but dont have clear idea on what would be asked on QCs that needs to change.
-	<br/>
-	<br/>
-	**** JDBC terms and core concepts are important
-	DAO - Data access Object
-	Interfaces of JDBC
-	****
-	<br/>
-	<br/>
-	Design Pattern
-		Reusable solutions to common software development problems
-		We use the DAO design pattern in our banking app to seperate the problem domain from the persistence mechanism.
-		Uses interfaces to define an abstraction
-	<br/>
-	<br/>
-	We are taking some time to read about DAO Design Pattern here <a href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">2/21</a>
-	From my understanding it seperates the methods into an interface from the concrete class that accesses the database.
-	Which allows you to switch out that concrete class for a different database if needed or whatever way you are accessing the data.
-	<br/>
-	<br/>
-	Now we will create the delete function in project.
-	Actually he wants to talk about statement and prepared statement
-	**** QC Question! ^
-	<br/>
-	<br/>
-	Now to delete
-	copy and paste the update code in ProductDAOImpl
-	"delete from product where productId =?")
-	statement.setInt(1, productId);
-	<br/>
-	<br/>
-	(rows + " deleted successfully")
-	<br/>
-	<br/>
-	then ProductApp
-	case 2:
-		productId = scanner.nextInt();
-		productDAO.deleteProduct(productId);
-		break;
-	<br/>
-	<br/>
-	If you try to delete a product that isn't there you should handle that.
-	If you try to update a product that isnt there you should handle at the moment entered.
-	^
-	create a method if product exists in
-	ProductDAO.java
-	public boolean isProductExists(int productId);
-	<br/>
-	<br/>
-	copy code from searchProductByName to isProductExists
-	<br/>
-	<br/>
-	public boolean isProductExists(int productId) {
-		boolean productExists = false;
-		PreparedStatement stat;
-		try{
-			stat = con.prepareStatement("select * from product where productId = ? ");
-			stat.setInt(1, productId);
-
-			ResultSet res = stat.executeQuery();
-			productExists = res.next();
-		}
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return productExists;
-	}
-	<br/>
-	<br/>
-	now we will use JUnit testing to see if method works as we hope.
-	<br/>
-	<br/>
-	write test case-
-	<br/>
-	<br/>
-	right click on DAOImpl create new>Test Case
-	configure for 1.8
-	<br/>
-	<br/>
-	he's going really fast through this so someone will ask him to do it again-
-	<br/>
-	<br/>
-	ProductDAO productDAO;
-	@Afterall
-	<br/>
-	<br/>
-	@BeforeEach
-	void setUp() throws Exception {
-		productDAO = new ProductDAOImpl();
-	}
-	@Test
-	@DisplayName("Testing product exists-1")
-	void testIsProductExists() {
-		int productID=2;
-		boolean actual = productDAO.isProductExists(productId);
-		assertTrue(actual);
-	<br/>
-	<br/>
-	@Test
-	@DisplayName("Testing product exists-2")
-	void testIsProductExists2() {
-		int productID=2827;
-		boolean actual = productDAO.isProductExists(productId);
-		assertFalse(actual);
-	}
-	<br/>
-	<br/>
-	@Test
-	@DisplayName("Testing product exists-3")
-	void testIsProductExists4() {
-		int productID=20827;
-		boolean actual = productDAO.isProductExists(productId);
-		assertFalse(actual);
-	}
-	<br/>
-	<br/>
-	That was tough to keep up with but I got through and can replicate for my own test cases in the bank app.
-	Adding that now and will do delete if there's extra time.
-	<br/>
-	<br/>
-	we cant test a method that is void. (i think)
-	so we are changing our methods to return something.
-	public boolean addProduct
-	public boolean updateProduct
-	public Product searchByProductId
-	public List<;Product> searchByProductName
-	public List<;Product> searchProductByPrice
-	public List<;Product> getProducts();
-	(without semi colons above)
-	public boolean isProductExists
-	<br/>
-	<br/>
-	change for each in ProductDAOImpl
-	initialize row=0
-	take away initialization at int rows = statement.executeUpdate();
-	<br/>
-	<br/>
-	if(rows==0)
-		return false;
-	else
-		return true;
-	<br/>
-	<br/>
-	he is adding them to codeshare for us- <a href"https://codeshare.io/tufail">here</a>
+<p>
+	5:47am and I'm ready to go. Last night I changed the menu option for
+	banking app to reflect what Mohammad has. It doesn't make sense to
+	provide options for withdrawl and deposit / transfer before someone has
+	logged in. I've now switched over the variable accountName to username
+	to match what I need for loggin in on BankDAO and BankDAOImpl. Now I'm
+	modifying AddAccount method and checking the status of table with
+	printAllAccount method. So I successfully add the add account function
+	to my app, but that was for a test users table. Now I have to switch it
+	over to the respective Employees and Customers tables depending on
+	which they are. Class is starting now. <br /> <br /> Need to have
+	clearer things to study after each day and load it into the
+	learning-app. Like yesterday I took notes all day but dont have clear
+	idea on what would be asked on QCs that needs to change. <br /> <br />
+	**** JDBC terms and core concepts are important DAO - Data access
+	Object Interfaces of JDBC **** <br /> <br /> Design Pattern Reusable
+	solutions to common software development problems We use the DAO design
+	pattern in our banking app to seperate the problem domain from the
+	persistence mechanism. Uses interfaces to define an abstraction <br />
+	<br /> We are taking some time to read about DAO Design Pattern here <a
+		href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">2/21</a>
+	From my understanding it seperates the methods into an interface from
+	the concrete class that accesses the database. Which allows you to
+	switch out that concrete class for a different database if needed or
+	whatever way you are accessing the data. <br /> <br /> Now we will
+	create the delete function in project. Actually he wants to talk about
+	statement and prepared statement **** QC Question! ^ <br /> <br /> Now
+	to delete copy and paste the update code in ProductDAOImpl "delete from
+	product where productId =?") statement.setInt(1, productId); <br /> <br />
+	(rows + " deleted successfully") <br /> <br /> then ProductApp case 2:
+	productId = scanner.nextInt(); productDAO.deleteProduct(productId);
+	break; <br /> <br /> If you try to delete a product that isn't there
+	you should handle that. If you try to update a product that isnt there
+	you should handle at the moment entered. ^ create a method if product
+	exists in ProductDAO.java public boolean isProductExists(int
+	productId); <br /> <br /> copy code from searchProductByName to
+	isProductExists <br /> <br /> public boolean isProductExists(int
+	productId) { boolean productExists = false; PreparedStatement stat;
+	try{ stat = con.prepareStatement("select * from product where productId
+	= ? "); stat.setInt(1, productId); ResultSet res = stat.executeQuery();
+	productExists = res.next(); } catch (SQLException e) {
+	e.printStackTrace(); } return productExists; } <br /> <br /> now we
+	will use JUnit testing to see if method works as we hope. <br /> <br />
+	write test case- <br /> <br /> right click on DAOImpl create new>Test
+	Case configure for 1.8 <br /> <br /> he's going really fast through
+	this so someone will ask him to do it again- <br /> <br /> ProductDAO
+	productDAO; @Afterall <br /> <br /> @BeforeEach void setUp() throws
+	Exception { productDAO = new ProductDAOImpl(); } @Test
+	@DisplayName("Testing product exists-1") void testIsProductExists() {
+	int productID=2; boolean actual =
+	productDAO.isProductExists(productId); assertTrue(actual); <br /> <br />
+	@Test @DisplayName("Testing product exists-2") void
+	testIsProductExists2() { int productID=2827; boolean actual =
+	productDAO.isProductExists(productId); assertFalse(actual); } <br /> <br />
+	@Test @DisplayName("Testing product exists-3") void
+	testIsProductExists4() { int productID=20827; boolean actual =
+	productDAO.isProductExists(productId); assertFalse(actual); } <br /> <br />
+	That was tough to keep up with but I got through and can replicate for
+	my own test cases in the bank app. Adding that now and will do delete
+	if there's extra time. <br /> <br /> we cant test a method that is
+	void. (i think) so we are changing our methods to return something.
+	public boolean addProduct public boolean updateProduct public Product
+	searchByProductId public List<;Product> searchByProductName public
+	List<;Product> searchProductByPrice public List<;Product>
+	getProducts(); (without semi colons above) public boolean
+	isProductExists <br /> <br /> change for each in ProductDAOImpl
+	initialize row=0 take away initialization at int rows =
+	statement.executeUpdate(); <br /> <br /> if(rows==0) return false; else
+	return true; <br /> <br /> he is adding them to codeshare for us- <ahref"https://codeshare.io/tufail">here</a>
 	<br/>
 	<br/>
 	he is changing the searchByProductName code
@@ -554,180 +320,68 @@ I'm caught up now he is adding test cases for all methods-
 <h3>Afternoon:</h3>
 <p>
 
-	Back from lunch
-	All functions working properly and all tests.
-	<br/>
-	<br/>
-	Now we got to ProductApp.java and make sure all working there.
-	<br/>
-	<br/>
-	case 1:
+	Back from lunch All functions working properly and all tests. <br /> <br />
+	Now we got to ProductApp.java and make sure all working there. <br /> <br />
+	case 1: if(productDAO.isProductExists(productId)) {
+	System.out.printlin("Product with product id : "+productId+" already
+	exists, please try with another product id"); continue; } <br /> <br />
+	result = productDAO.addProduct(product); if(result) {
+	System.out.println("Congratulations, your product....") } else { "Sorry
+	your product cannot be saved" } <br /> <br /> case 2:
 	if(productDAO.isProductExists(productId)) {
-		System.out.printlin("Product with product id : "+productId+" already exists, please try with another product id");
-		continue;
-	}
-	<br/>
-	<br/>
-	result = productDAO.addProduct(product);
-	if(result) {
-		System.out.println("Congratulations, your product....")
-	} else {
-		"Sorry your product cannot be saved"
-	}
-	<br/>
-	<br/>
-	case 2:
-	if(productDAO.isProductExists(productId)) {
-		productDAO.deleteProduct(productId);
-		"product deleted successfully";
-	} else {
-		"product with product id : "+productId+" does not exist, hence it cannot be deleted."
-	}
-	<br/>
-	<br/>
-	case 3:
-	if(!productDAO.isProductExists(productId)) {
-		"product does not exist so could not be updated";
-		continue;
-	}
-	--------------------------------------------------------------
-	declare at top of ProductApp
-	List<;Product> products =
-	<br/>
-	<br/>
-	for case 5:
-	products = productDaO.searchByProductName(productName);
-	printProductDetails(products);
-	<br/>
-	<br/>
-	case 6:
-	products = productDAO.getProducts();
-	printProductDetails(products);
-	<br/>
-	<br/>
-	case 7:
-	<br/>
-	<br/>
-	products = productDAO.searchProductByPrice(lower,upper);
-	<br/>
-	<br/>
-	printProductDetails(products);
-	break;
-	<br/>
-	<br/>
-	outside the while loop and start product app
-	<br/>
-	<br/>
-	public void printProductDetails(List<;Product> products)
-	{
-		Iterator<;Product> iterator = products.iterator();
-		while(iterator.hasNext()) {
-			Product temp = iterator.next();
-			System.out.println(temp);
-		}
-	}
-	<br/>
-	<br/>
-	need to fix search by name to say "___ does not exist" if item does not exist
-	if(products.size()==0) {
-		System.out.println("No products matching your criteria");
-		continue;
-	}
-	<br/>
-	<br/>
-
-	case 4:
-	<br/>
-	<br/>
-		copy code from delete code
-		<br/>
-		<br/>
-		if (productDAO.isProductExists(productId)) {
-			Product temp = productDAO.searchByProductId(productId);
-			System.out.println(temp);
-		}
-		<br/>
-		<br/>
-		So I think this project is basically fully functional.
-		<br/>
-		<br/>
-		All the menu items work, all the methods work, a few test cases. Need to finish this.
-		But overall it was great building from scratch with Mohammad.
-		He says log4j is optional for p zero but I really want to have it working.
-		My plan is to have the full project done on Saturday. Code locked by Sunday morning.
-		And then practice presenting it on Sunday, Monday, and Tuesday.
-		<br/>
-		<br/>
-		Mohammad is dropping knowledge on the project for login and validate. rewatch recording at 2:50am his time.
-		1:25p my time.
-		<br/>
-		<br/>
-		while(true) {
-			1. add user
-			2. login
-			"please enter your choice"
-			choice = scanner.nextInt();
-			<br/>
-			<br/>
-			switch
-		}
-		<br/>
-		<br/>
-		On a 20 minute break now. Mohammad just went into super hyper drive with what he shared.
-		Everything super useful for our projects. I don't feel worried about anything now. Just have to put in
-		the time.
-		<br/>
-		<br/>
-		I'm jumping back in early to start taking more chunks out of this project.
-		<br/>
-		<br/>
-		I'm hungry for it.
-		<br/>
-		<br/>
-		So I got all the way through the Login build out to validating a user login. I will rewatch the video to follow that along.
-		Really nice of him to provide that to us. Will not take for granted.
-		Okay back into training. I'm so excited to do this on my own later. Future apologies to my wife and kids
-		but this is so dope.
-		<br/>
-		<br/>
-		sql and jdbc quiz- open for 2 days
-		<br/>
-		<br/>
-		hands on for right now:
-		<br/>
-		<br/>
-		if you choose 1:
-		please enter username:
-		please enter password:
-		<br/>
-		<br/>
-		congrats you are registered
-		<br/>
-		<br/>
-		then return to main menu
-		<br/>
-		<br/>
-		please enter username:
-		please enter password:
-		<br/>
-		<br/>
-		if correct-
-		welcome, joseph
-		<br/>
-		<br/>
-		product app menu
-		<br/>
-		<br/>
-		my login isnt working correctly I will have to debug later
-		<br/>
-		<br/>
-		He says to add a logout option to the menu once logged in.
-		<br/>
-		<br/>
-		We are done with class for the day. Have to work on P0 and finish the quiz and update learning app.
-		<br/>
-		<br/>
-		tomorrow is jdbc, html, css, javascript.
+	productDAO.deleteProduct(productId); "product deleted successfully"; }
+	else { "product with product id : "+productId+" does not exist, hence
+	it cannot be deleted." } <br /> <br /> case 3:
+	if(!productDAO.isProductExists(productId)) { "product does not exist so
+	could not be updated"; continue; }
+	-------------------------------------------------------------- declare
+	at top of ProductApp List<;Product> products = <br /> <br /> for case
+	5: products = productDaO.searchByProductName(productName);
+	printProductDetails(products); <br /> <br /> case 6: products =
+	productDAO.getProducts(); printProductDetails(products); <br /> <br />
+	case 7: <br /> <br /> products =
+	productDAO.searchProductByPrice(lower,upper); <br /> <br />
+	printProductDetails(products); break; <br /> <br /> outside the while
+	loop and start product app <br /> <br /> public void
+	printProductDetails(List<;Product> products) { Iterator<;Product>
+	iterator = products.iterator(); while(iterator.hasNext()) { Product
+	temp = iterator.next(); System.out.println(temp); } } <br /> <br />
+	need to fix search by name to say "___ does not exist" if item does not
+	exist if(products.size()==0) { System.out.println("No products matching
+	your criteria"); continue; } <br /> <br /> case 4: <br /> <br /> copy
+	code from delete code <br /> <br /> if
+	(productDAO.isProductExists(productId)) { Product temp =
+	productDAO.searchByProductId(productId); System.out.println(temp); } <br />
+	<br /> So I think this project is basically fully functional. <br /> <br />
+	All the menu items work, all the methods work, a few test cases. Need
+	to finish this. But overall it was great building from scratch with
+	Mohammad. He says log4j is optional for p zero but I really want to
+	have it working. My plan is to have the full project done on Saturday.
+	Code locked by Sunday morning. And then practice presenting it on
+	Sunday, Monday, and Tuesday. <br /> <br /> Mohammad is dropping
+	knowledge on the project for login and validate. rewatch recording at
+	2:50am his time. 1:25p my time. <br /> <br /> while(true) { 1. add user
+	2. login "please enter your choice" choice = scanner.nextInt(); <br />
+	<br /> switch } <br /> <br /> On a 20 minute break now. Mohammad just
+	went into super hyper drive with what he shared. Everything super
+	useful for our projects. I don't feel worried about anything now. Just
+	have to put in the time. <br /> <br /> I'm jumping back in early to
+	start taking more chunks out of this project. <br /> <br /> I'm hungry
+	for it. <br /> <br /> So I got all the way through the Login build out
+	to validating a user login. I will rewatch the video to follow that
+	along. Really nice of him to provide that to us. Will not take for
+	granted. Okay back into training. I'm so excited to do this on my own
+	later. Future apologies to my wife and kids but this is so dope. <br />
+	<br /> sql and jdbc quiz- open for 2 days <br /> <br /> hands on for
+	right now: <br /> <br /> if you choose 1: please enter username: please
+	enter password: <br /> <br /> congrats you are registered <br /> <br />
+	then return to main menu <br /> <br /> please enter username: please
+	enter password: <br /> <br /> if correct- welcome, joseph <br /> <br />
+	product app menu <br /> <br /> my login isnt working correctly I will
+	have to debug later <br /> <br /> He says to add a logout option to the
+	menu once logged in. <br /> <br /> We are done with class for the day.
+	Have to work on P0 and finish the quiz and update learning app. <br />
+	<br /> tomorrow is jdbc, html, css, javascript.
 
 
 
@@ -735,478 +389,279 @@ I'm caught up now he is adding test cases for all methods-
 
 </p>
 <h3>Evening:</h3>
-<p>
-	I'm back. I wasted some time adding br's to the previous entries. not worth the effort.
-	Maybe I can script something through the html?
-	Anyways, I'm going to add some of the stuff Mohammad graced us with earlier.
-	Going to go side by side from product-app-alstrom and get this working.
-
-	Okay got my register user working. It was a simple mistake. I forgot to put
-	login = new Login(userId, username, password);
-	before passing the data to sql.
-
-	My last thought before calling it a night is how to increment across all tables when i insert on 1.
-	Like adding a login should add the info to employee and make sure customer knows the next available as well.
-
-	Going to figure this out in the morning.
-
-</p>
+<p>I'm back. I wasted some time adding br's to the previous entries.
+	not worth the effort. Maybe I can script something through the html?
+	Anyways, I'm going to add some of the stuff Mohammad graced us with
+	earlier. Going to go side by side from product-app-alstrom and get this
+	working. Okay got my register user working. It was a simple mistake. I
+	forgot to put login = new Login(userId, username, password); before
+	passing the data to sql. My last thought before calling it a night is
+	how to increment across all tables when i insert on 1. Like adding a
+	login should add the info to employee and make sure customer knows the
+	next available as well. Going to figure this out in the morning.</p>
 
 <h2>22/02/22</h2>
 <h3>Morning:</h3>
 <p>
-	5:50am-
-	I see more clearly how to study and learn. Starting now. I'll go back and add the basics to my app.
-	The core of Java and SQL and all other subjects we learn. Prioritize items to memorize based on what they are.
-	I've been doing a blind study method that isn't working good enough.
-	I added postgres dependency to pom.xml for learning-app and the Driver location to app.java.
-	<br/>
-	<br/>
-	We are about to start this QC orientation. I don't know why we are doing this instead of studying as
-	I feel I understand what QC's are for and how to improve at them, but will go in with open mind.
-	It feels like we are already a bit behind covering material and yesterday we lost 4.5 hours to QC then we did lunch.
-	By the time we came back we had 1.5 hours to learn.
-	Anyways that's enough ranting. I'll update as it progresses.
-	This is literally the same Orientation that we already sat through....
-	A little frustrating but let me see if there's anything I can learn from watching again.
-	Some good tips:
-	Watch how trainer debugs problems that happen.
-	Write pseuodcode.
-	Record yourself preparing for QC and watch the recording.
-	<br/>
-	<br/>
-	Finished with the 2nd go at QC. It was actually nice to rehear some of the points again.
-	I think if my batch mates are open to the suggestions they reiterated it would benefit all of us.
-	Most of the answers I hear and I give sound like the average or poor answers and the goal is to get a job
-	at the end of this. So I have a LOT of room to improve and will continue to make the effort to do so.
-	<br/>
-	<br/>
-	Now we are in class with Mohammad.
+	5:50am- I see more clearly how to study and learn. Starting now. I'll
+	go back and add the basics to my app. The core of Java and SQL and all
+	other subjects we learn. Prioritize items to memorize based on what
+	they are. I've been doing a blind study method that isn't working good
+	enough. I added postgres dependency to pom.xml for learning-app and the
+	Driver location to app.java. <br /> <br /> We are about to start this
+	QC orientation. I don't know why we are doing this instead of studying
+	as I feel I understand what QC's are for and how to improve at them,
+	but will go in with open mind. It feels like we are already a bit
+	behind covering material and yesterday we lost 4.5 hours to QC then we
+	did lunch. By the time we came back we had 1.5 hours to learn. Anyways
+	that's enough ranting. I'll update as it progresses. This is literally
+	the same Orientation that we already sat through.... A little
+	frustrating but let me see if there's anything I can learn from
+	watching again. Some good tips: Watch how trainer debugs problems that
+	happen. Write pseuodcode. Record yourself preparing for QC and watch
+	the recording. <br /> <br /> Finished with the 2nd go at QC. It was
+	actually nice to rehear some of the points again. I think if my batch
+	mates are open to the suggestions they reiterated it would benefit all
+	of us. Most of the answers I hear and I give sound like the average or
+	poor answers and the goal is to get a job at the end of this. So I have
+	a LOT of room to improve and will continue to make the effort to do so.
+	<br /> <br /> Now we are in class with Mohammad. We are leaving the QC
+	behind us and Mohammad will do 1:1 with each of us to communicate
+	feedback. Now we are back into JDBC and preparing for everything we
+	need to know for P0. Step 1: Load the appropriate driver Step 2: Create
+	the connection url username password //java.sql package Connection con
+	=
+	DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+	"postgres", "admin"); //System.out.println("Connected"); add
+	SQLException throws exception PRETTY SWEET WE ARE CONNECTED! Step 3:
+	Statement stat = con.createStatement(); Step 4: ResultSet res =
+	stat.executeQuery("select * from employees"); // takes the cursor to
+	the next row // and returns false if no record is there
+	while(res.next()) { System.out.println(res.getString(1)+ " ");
+	System.out.println(res.getString(2)+ " ");
+	System.out.print(res.getInt("salary")+ " ");
+	System.out.println(res.getString("email")); } // closing the resultset,
+	statement and connection res.close(); stat.close(); con.close(); //make
+	sure you have imports for SQL //Do we have anyway by which we can
+	retrieve the column information ResultSetMetaData rsmd =
+	res.getMetaData(); int columnCount = rsmd.getColumnCount(); // printing
+	the column names for (int i = 1; i<=columnCount; i++){
+	System.out.print(rsmd.getColumnName(i)+" "); } System.out.println(); //
+	printing all the values of the table for (int i =1; i <= columnCount;
+	i++) { System.out.print(res.getString(i) + " "); }
+	System.out.println(); ^^^^^^^^^^^^^ that is SWEEEEEEET 22:32p he says
+	DEFINITION QC Answer for metadata We are now back from a 23 minute
+	break Now we are learning about insert and update as well. Create
+	another class called InsertDemo //driver //connection Instead of
+	writing the driver and connection in each class we will use a method
+	and call the method in .utility package DBConnection public static
+	Connection getConnection() { Connection con = null; try{
+	Class.forName("org.postgresql.Driver"); con =
+	DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+	"postgres", "admin"); } catch (ClassNotFoundException e) {
+	e.printStackTrace(); } catch (SQLException e) { e.printStackTrace(); }
+	return con; } now we write Connection con =
+	DBConnection.getConnection(); I had this thought earlier but it feels
+	like Mohammad is giving us superpowers. And it's a really nice feeling.
 
-	We are leaving the QC behind us and Mohammad will do 1:1 with each of us to communicate feedback.
-	Now we are back into JDBC and preparing for everything we need to know for P0.
-
-	Step 1:
-	Load the appropriate driver
-
-	Step 2:
-	Create the connection
-		url
-		username
-		password
-
-	//java.sql package
-	Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
-	//System.out.println("Connected");
-	add SQLException throws exception
-
-	PRETTY SWEET WE ARE CONNECTED!
-
-	Step 3:
-	Statement stat = con.createStatement();
-
-	Step 4:
-	ResultSet res = stat.executeQuery("select * from employees");
-
-	// takes the cursor to the next row
-	// and returns false if no record is there
-	while(res.next())
-	{
-
-	System.out.println(res.getString(1)+ "   ");
-	System.out.println(res.getString(2)+ "   ");
-	System.out.print(res.getInt("salary")+ "   ");
-	System.out.println(res.getString("email"));
-	}
-
-	// closing the resultset, statement and connection
-	res.close();
-	stat.close();
-	con.close();
-
-	//make sure you have imports for SQL
-
-	//Do we have anyway by which we can retrieve the column information
-	ResultSetMetaData rsmd = res.getMetaData();
-	int columnCount = rsmd.getColumnCount();
-
-	// printing the column names
-	for (int i = 1; i<=columnCount; i++){
-		System.out.print(rsmd.getColumnName(i)+"    ");
-	}
-	System.out.println();
-
-	// printing all the values of the table
-	for (int i =1; i <= columnCount; i++) {
-		System.out.print(res.getString(i) + "    ");
-	}
-	System.out.println();
-
-	^^^^^^^^^^^^^ that is SWEEEEEEET
-
-	22:32p he says DEFINITION QC Answer for metadata
-
-	We are now back from a 23 minute break
-
-	Now we are learning about insert and update as well.
-
-	Create another class called InsertDemo
-
-	//driver
-	//connection
-
-	Instead of writing the driver and connection in each class we will use a method and call the method
-	in .utility package
-	DBConnection
-	public static Connection getConnection() {
-		Connection con = null;
-		try{
-			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return con;
-	}
-
-	now we write
-	Connection con = DBConnection.getConnection();
-
-	I had this thought earlier but it feels like Mohammad is giving us superpowers.
-	And it's a really nice feeling.
-
-	use case:
-	how can a customer change password without downloading java?
-	we should be able to change the password and other details without changing our code.
-	Externalize the properties in a file.
-
-	properties file
-
-	go to a drive and create notepad file
-	username=postgres
-	password=root
-	driver=org.postgresql.Driver
-	url=jdbc:postgresql://localhost:5432/postgres
-
-	saves as "revaturedb.properties"
-
-	then we read it from eclipse
-	try {
-		FileReader rdr = new FileReader("revaturedb.properties");
-		Properties properties = new Properties();
-		properties.load(rdr);
-		String driver = properties.getProperty("driver");
-		String url = properties.getProperty("url");
-		String username = properties.getProperty("username");
-		String password = properties.getProperty("password");
-
-		Class.forName(driver);
-		con = DriverManager.getConnection(url, username, password);
-
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (SQLException) {
-		e.printStackTrace();
-	}
-
-	Mohammad just show us how to create a properties file so that we can have username, password, driver, and url
-	in external file for easy changes.
-
-	So this is awesome and basically answers the question for password security when adding database projects
-	to github. to always hide the file that includes passwords or sensitive data.
-	I remember googling this while living in Mexico and feeling like I was just copying and pastying until I
-	could get something to work. It's so nice to be introduced to this from a place of understanding.
-
-	go to product-app-alstrom app
-
-	run it and try 6.
-
-	open pom.xml and add postgres dependency
-
-	create package- com.training.pms.utility
-	copy DBConnection.java and paste into this project's utility package
-
-	copy revaturedb.properties and paste into this project
-
-	got to DAOImpl and add at top-
-	Connection connection = DBConnection.getConnection();
+	use case: how can a customer change password without downloading java?
+	we should be able to change the password and other details without
+	changing our code. Externalize the properties in a file. properties
+	file go to a drive and create notepad file username=postgres
+	password=root driver=org.postgresql.Driver
+	url=jdbc:postgresql://localhost:5432/postgres saves as
+	"revaturedb.properties" then we read it from eclipse try { FileReader
+	rdr = new FileReader("revaturedb.properties"); Properties properties =
+	new Properties(); properties.load(rdr); String driver =
+	properties.getProperty("driver"); String url =
+	properties.getProperty("url"); String username =
+	properties.getProperty("username"); String password =
+	properties.getProperty("password"); Class.forName(driver); con =
+	DriverManager.getConnection(url, username, password); } catch
+	(FileNotFoundException e) { e.printStackTrace(); } catch (SQLException)
+	{ e.printStackTrace(); } Mohammad just show us how to create a
+	properties file so that we can have username, password, driver, and url
+	in external file for easy changes. So this is awesome and basically
+	answers the question for password security when adding database
+	projects to github. to always hide the file that includes passwords or
+	sensitive data. I remember googling this while living in Mexico and
+	feeling like I was just copying and pastying until I could get
+	something to work. It's so nice to be introduced to this from a place
+	of understanding. go to product-app-alstrom app run it and try 6. open
+	pom.xml and add postgres dependency create package-
+	com.training.pms.utility copy DBConnection.java and paste into this
+	project's utility package copy revaturedb.properties and paste into
+	this project got to DAOImpl and add at top- Connection connection =
+	DBConnection.getConnection();
 
 
-	------------------------------------------------
-
-	copy and paste Statement and ResultSet stuff
-	Statement stat = null;
-
-	create case 6:
+	------------------------------------------------ copy and paste
+	Statement and ResultSet stuff Statement stat = null; create case 6:
 
 
-	Mohammad says we will be ready to go for creating skeleton for P zero, but now we have lunch.
-	After an associates problem is resolved.
+	Mohammad says we will be ready to go for creating skeleton for P zero,
+	but now we have lunch. After an associates problem is resolved.
 	Actually we will do after lunch. See you then.
 
 
 </p>
 <h3>Afternoon:</h3>
-<p>
-	I'm back and ready to keep learning.
-
-	in DAOImpl
-	copy and paste Statement state and ResultSet and while loop with res.next() into this project
-	put entire thing inside one try catch block
-
-	now you have to call the method in ProductApp.java
-
-	case 6:
-	productDAO.printAllProducts();
-
-	Now we are able to print all products in this previous made product-app-alstrom project.
-	It's very cool how this happens and things clicking together for Java and SQL through JDBC and postgres.
-
-	hands on exercise:
-	DBEAVER
-	insert into product values (3,'Aroma',199,99);
-	insert into product values (4,'Mouse',12,6);
-
-	select * from product where productName like 'Mouse';
-
-	try to search for a product by name and return
-
-	Enter the product name : _____
-	Here are the details for : _____
-
-	copy and paste code from printAllProducts to searchByProductName
-
-	change to stat.executeQuery("select * from product where productName like '"+productName+"'");
-
-	create case 5:
+<p>I'm back and ready to keep learning. in DAOImpl copy and paste
+	Statement state and ResultSet and while loop with res.next() into this
+	project put entire thing inside one try catch block now you have to
+	call the method in ProductApp.java case 6:
+	productDAO.printAllProducts(); Now we are able to print all products in
+	this previous made product-app-alstrom project. It's very cool how this
+	happens and things clicking together for Java and SQL through JDBC and
+	postgres. hands on exercise: DBEAVER insert into product values
+	(3,'Aroma',199,99); insert into product values (4,'Mouse',12,6); select
+	* from product where productName like 'Mouse'; try to search for a
+	product by name and return Enter the product name : _____ Here are the
+	details for : _____ copy and paste code from printAllProducts to
+	searchByProductName change to stat.executeQuery("select * from product
+	where productName like '"+productName+"'"); create case 5:
 	System.out.println("Please enter product name to search :");
 	productName = scanner.next();
 	productDAO.searchByProductName(productName);
 
-	--------------------------------------------------------------
-	now we are able to search by name in a database.....sweet.
+	-------------------------------------------------------------- now we
+	are able to search by name in a database.....sweet. got it working in
+	my bank app too. just need to add the bank tables in database enter the
+	price (lower) : 3000 enter the price (upper) : 5000 SQL - "select *
+	from product where price between" +lower+" and "+ upper prepared
+	statements- **** IMPORTANT QC AND INTERVIEW QUESTION @ 2:51am
+	difference between Statement and PreparedStatement Interfaces Statement
+	interface is used for executing static SQL statements.
 
-	got it working in my bank app too. just need to add the bank tables in database
+	PreparedStatement gives us the flexibility of specifying paramenters
+	with the ? symbol. if you have static SQL use statement if you have
+	parameters then you use PreparedStatement replace Statement stat with
+	PreparedStatement stat stat = connection.prepareStatement("select *
+	from product where productName like ? "); stat.setString(l,
+	productName); ResultSet res = stat.executeQuery();
 
-	enter the price (lower) : 3000
-	enter the price (upper) : 5000
+	-------------------------------------------------------------- talking
+	about the DAO **** DAO - data access objects add to ProductDAO.java
+	interface public void searchProductByPrice(int lowerprice, int
+	upperprice); copy code from searchProductByName private final SQL_QUERY
+	stat = con.prepareStatement("select * from product where price between
+	? and ?"); stat.setInt(1,lowerprice); stat.setInt(2,upperprice); add
+	case 7: to search by price (lower/upper) case 7:
+	System.out.println("Please enter product price (lower) :"); int
+	lowerprice = scanner.nextInt(); System.out.println("Please enter
+	product price (upper) :"); int upperprice = scanner.nextInt();
+	productDAO.searchProductByPrice(lowerprice,upperprice); break;
+	------------------------------------------ now for inserting into
+	postgres fom maven we already wrote in ProductApp ProductDAOImpl.java
+	statement = con.prepareStatement("insert into product
+	values(?,?,?,?)"); statement.setInt(1, product.getProductId());
+	statement.setString(2, product.getProductName()); statement.setInt(3,
+	product.getQuantityOnHand()); statement.setInt(4, product.getPrice());
 
-	SQL - "select * from product where price between" +lower+" and "+ upper
+	int rows = statement.executeUpdate(); System.out.println(rows+"
+	inserted successfully") surround in try catch block so dope Mohammad
+	just showed us how to insert from Eclipse We are in full connected
+	mode!!! Now we are checking update as well. It's already written in
+	ProductApp.java Go to Impl copy and paste from add product to update
+	product connection.prepareStatement("update product set productName =
+	?, quantityonhand = ?, price = ? where productId = ?");
 
-	prepared statements-
-
-	**** IMPORTANT QC AND INTERVIEW QUESTION @ 2:51am
-	difference between Statement and PreparedStatement Interfaces
-			Statement interface is used for executing static SQL statements.
-
-			PreparedStatement gives us the flexibility of specifying paramenters with the ? symbol.
-
-			if you have static SQL use statement
-			if you have parameters then you use PreparedStatement
-
-	replace Statement stat with PreparedStatement stat
-
-	stat = connection.prepareStatement("select * from product where productName like ? ");
-	stat.setString(l, productName);
-	ResultSet res = stat.executeQuery();
-
-	--------------------------------------------------------------
-	talking about the DAO
-	**** DAO - data access objects
-
-	add to ProductDAO.java interface
-	public void searchProductByPrice(int lowerprice, int upperprice);
-
-	copy code from searchProductByName
-
-	private final SQL_QUERY
-	stat = con.prepareStatement("select * from product where price between ? and ?");
-	stat.setInt(1,lowerprice);
-	stat.setInt(2,upperprice);
-
-	add case 7: to search by price (lower/upper)
-
-	case 7:
-		System.out.println("Please enter product price (lower) :");
-		int lowerprice = scanner.nextInt();
-		System.out.println("Please enter product price (upper) :");
-		int upperprice = scanner.nextInt();
-		productDAO.searchProductByPrice(lowerprice,upperprice);
-		break;
-	------------------------------------------
-
-	now for inserting into postgres fom maven
-
-	we already wrote in ProductApp
-
-	ProductDAOImpl.java
-	statement = con.prepareStatement("insert into product values(?,?,?,?)");
-
-	statement.setInt(1, product.getProductId());
-	statement.setString(2, product.getProductName());
-	statement.setInt(3, product.getQuantityOnHand());
-	statement.setInt(4, product.getPrice());
-
-	int rows = statement.executeUpdate();
-
-	System.out.println(rows+" inserted successfully")
-
-	surround in try catch block
-
-	so dope Mohammad just showed us how to insert from Eclipse
-
-	We are in full connected mode!!!
-
-	Now we are checking update as well.
-
-	It's already written in ProductApp.java
-
-	Go to Impl
-
-	copy and paste from add product to update product
-
-	connection.prepareStatement("update product set productName = ?, quantityonhand = ?, price = ? where productId = ?");
-
-	statement.setString(1, product.getProductName());
-	statement.setInt(2, product.getQuantityOnHand());
-	statement.setInt(3, product.getPrice());
-	statement.setInt(4, product.getProductId());
-
-	int rows = statement.executeUpdate();
-
-	System.out.println(rows+" updated successfully")
-
-	write in postgres first to check you are getting it right.
-	copy and paste replace amounts with ?s.
-
-	done for the day. Very happy with what we learned and feel ready to complete huge chunks of P zero.
-
-</p>
+	statement.setString(1, product.getProductName()); statement.setInt(2,
+	product.getQuantityOnHand()); statement.setInt(3, product.getPrice());
+	statement.setInt(4, product.getProductId()); int rows =
+	statement.executeUpdate(); System.out.println(rows+" updated
+	successfully") write in postgres first to check you are getting it
+	right. copy and paste replace amounts with ?s. done for the day. Very
+	happy with what we learned and feel ready to complete huge chunks of P
+	zero.</p>
 <h3>Evening:</h3>
-<p>
-	And here we are in the evening. 4:54pm.
-	Going to make the updates to bank app that we learned in our product app during class today and create table.
-	I added the table and will see how it connects in the morning.
-
-</p>
+<p>And here we are in the evening. 4:54pm. Going to make the updates
+	to bank app that we learned in our product app during class today and
+	create table. I added the table and will see how it connects in the
+	morning.</p>
 
 <h2>21/02/22</h2>
 <h3>Morning:</h3>
 <p>
-	Starting QC now! Wish me luck.
-	<br/>
-	Think I did well but definitely got the answer wrong a bit.
-	My questions were what is Maven?
-	Where does Maven get dependencies from?
-	What are scalar and aggregate functions in SQL?
+	Starting QC now! Wish me luck. <br /> Think I did well but definitely
+	got the answer wrong a bit. My questions were what is Maven? Where does
+	Maven get dependencies from? What are scalar and aggregate functions in
+	SQL? The correct answer is Scalar functions perform an operation on
+	values returned from a query. Such as UCASE(), LCASE(), LENGTH(),
+	ROUND(). Aggregate functions calculate on a set of values and return a
+	single value. Some examples are: AVG(), COUNT(), MIN(), MAX(), SUM().
 
-	The correct answer is Scalar functions perform an operation on values returned from a query.
-	Such as UCASE(), LCASE(), LENGTH(), ROUND().
-	Aggregate functions calculate on a set of values and return a single value.
-	Some examples are: AVG(), COUNT(), MIN(), MAX(), SUM().
-
-	Here are some questions for other people:
-	What is difference between WHERE and HAVING?
-	What is POM.xml used for?
-	What are some SQL datatypes?
-	Define method overloading and method overriding?
-	What is a wrapper class?
-	What is SQL and why is it important for us as developers?
-	What is a schema?
-
-	(name removed) does a good job of creating a story when answering.
-	Something to use when knowing the answer.
-	What is a transaction?
-	What properties must a transaction follow?
-	What are generics?
-	Write an example of generics.
-	Can you tell me the difference between a List and a Set?
-	What is a map in Java?
-	Difference between ALTER and UPDATE commands?
-	What is a JOIN?
-
-	<br/>
-	<br/>
-	THE ART OF THE ANSWER:
-	Answer with correct answer AND give GREAT example personal to my RECENT experience.
-	The correct answer alone does not prove I know the answer.
-
-	DONT: Say I think, UMM, I believe, that's my best guess, I'm not sure, I don't know.
-	Even if you don't know, no one cares. Respond like you know and you have a chance of being right.
-	Humility does not matter in an interview they are making an investment on you and your ability.
-
-	<br/>
-	I'm going to do better on the next QC or project presentation. I know how to do better.
-	<br/>
-	It's been taking a while for this QC. Started at 7am my time and now it's 11:31.
-	Not sure if that's a bad sign, but I hope my fellow classmates are safe and our teacher too.
-	The topics we've went over take a lot of repition and hands on experience.
-	Let's see what happens but the anticipation is killing me.
+	Here are some questions for other people: What is difference between
+	WHERE and HAVING? What is POM.xml used for? What are some SQL
+	datatypes? Define method overloading and method overriding? What is a
+	wrapper class? What is SQL and why is it important for us as
+	developers? What is a schema? (name removed) does a good job of
+	creating a story when answering. Something to use when knowing the
+	answer. What is a transaction? What properties must a transaction
+	follow? What are generics? Write an example of generics. Can you tell
+	me the difference between a List and a Set? What is a map in Java?
+	Difference between ALTER and UPDATE commands? What is a JOIN? <br /> <br />
+	THE ART OF THE ANSWER: Answer with correct answer AND give GREAT
+	example personal to my RECENT experience. The correct answer alone does
+	not prove I know the answer. DONT: Say I think, UMM, I believe, that's
+	my best guess, I'm not sure, I don't know. Even if you don't know, no
+	one cares. Respond like you know and you have a chance of being right.
+	Humility does not matter in an interview they are making an investment
+	on you and your ability. <br /> I'm going to do better on the next QC
+	or project presentation. I know how to do better. <br /> It's been
+	taking a while for this QC. Started at 7am my time and now it's 11:31.
+	Not sure if that's a bad sign, but I hope my fellow classmates are safe
+	and our teacher too. The topics we've went over take a lot of repition
+	and hands on experience. Let's see what happens but the anticipation is
+	killing me.
 
 </p>
 <h3>Afternoon:</h3>
 <p>
-	We are going to start the day after QC with a coding challenge.
-	Coding challenge was pretty easy.
-
-	Now we are learning JDBC so we have it for building out projects.
-	Java Database Connectivity
-	Connects Java to SQL/Database
-	GUI and CUI to DB
-
-	to have the proper drivers for postgres to talk with JAVA you to-
-	Class.forName("org.postgresql.Driver");
-
-	throw an exception for it
-
-	Very cool that all we have to do is add the dependency code to the pom.xml file and poof.
-	It's connected. Next I assume we go to DBeaver and connect from there.
-	This stuff is dope.
-	<a href="https://mvnrepository.com/artifact/org.postgresql/postgresql/42.3.3">JDBC Driver</a>
-	and some documentation fun-
-	<a href="https://jdbc.postgresql.org/documentation/80/connect.html">JDBC Docs</a>
-
-	also I am trying to fit in the HTC (how to code) course in the
-	free time that doesn't exist. I know it creates good practices.
-	<a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home">HTC Simple Data</a>
-
-	Overloading is process by which we have same method name and different parameters.
-
-	What is difference between abstract class and interface?
-
-	Maven gets dependencies from.
-
-	What is driver?
-	What is types of driver?
-
-	Going to take a breather after this class and get back in later on to update my learning app.
-
-	I think I mainly feel there are so many individual things to memorize for QCs that I don't get a strong handle on what is asked.
-	As Mohammad said.. instead of trying to memorize things word for word I'm going to take the most
-	important points and know them in and out entirely. The core fundamentals.
-	When he brought up the question about differencies between abstract class and interface
-	it leaves me somewhat unsure... like I could answer the memorized answer when it was asked
-	3 weeks ago, but now I just know an interface allows for multiple inheritance and
-	abstract classes must have their methods implemented by child classes.. is that right?
-	After looking <a href="https://www.javatpoint.com/difference-between-abstract-class-and-interface">here</a> I think the correct answer is-
-	Abstract class can have abstract and non-abstract methods.
-	Interface can only have abstract methods.
+	We are going to start the day after QC with a coding challenge. Coding
+	challenge was pretty easy. Now we are learning JDBC so we have it for
+	building out projects. Java Database Connectivity Connects Java to
+	SQL/Database GUI and CUI to DB to have the proper drivers for postgres
+	to talk with JAVA you to- Class.forName("org.postgresql.Driver"); throw
+	an exception for it Very cool that all we have to do is add the
+	dependency code to the pom.xml file and poof. It's connected. Next I
+	assume we go to DBeaver and connect from there. This stuff is dope. <a
+		href="https://mvnrepository.com/artifact/org.postgresql/postgresql/42.3.3">JDBC
+		Driver</a> and some documentation fun- <a
+		href="https://jdbc.postgresql.org/documentation/80/connect.html">JDBC
+		Docs</a> also I am trying to fit in the HTC (how to code) course in the
+	free time that doesn't exist. I know it creates good practices. <a
+		href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home">HTC
+		Simple Data</a> Overloading is process by which we have same method name
+	and different parameters. What is difference between abstract class and
+	interface? Maven gets dependencies from. What is driver? What is types
+	of driver? Going to take a breather after this class and get back in
+	later on to update my learning app. I think I mainly feel there are so
+	many individual things to memorize for QCs that I don't get a strong
+	handle on what is asked. As Mohammad said.. instead of trying to
+	memorize things word for word I'm going to take the most important
+	points and know them in and out entirely. The core fundamentals. When
+	he brought up the question about differencies between abstract class
+	and interface it leaves me somewhat unsure... like I could answer the
+	memorized answer when it was asked 3 weeks ago, but now I just know an
+	interface allows for multiple inheritance and abstract classes must
+	have their methods implemented by child classes.. is that right? After
+	looking <a
+		href="https://www.javatpoint.com/difference-between-abstract-class-and-interface">here</a>
+	I think the correct answer is- Abstract class can have abstract and
+	non-abstract methods. Interface can only have abstract methods.
 	Interface supports multiple inheritance and abstract classes do not.
-	Abstract class can implement an interface but interface cant implement an abstract class.
-	Interface can only extend another interface.
-	Maybe I do the definition with workable examples as I talked about before.
-
-	Okay that's enough! See you later.
+	Abstract class can implement an interface but interface cant implement
+	an abstract class. Interface can only extend another interface. Maybe I
+	do the definition with workable examples as I talked about before. Okay
+	that's enough! See you later.
 
 
 
 
 </p>
 <h3>Evening:</h3>
-<p>
-</p>
+<p></p>
 
 <div id="Diary">
 	<span class="name">Diary</span> section.
@@ -1215,201 +670,131 @@ I'm caught up now he is adding test cases for all methods-
 
 <h2>20/02/22</h2>
 <h3>Morning:</h3>
-<p>It's 5:35am on a Sunday and I need to memorize 100 ideas from the last week.
-	I need to break it into smaller fun chunks of information.
-	My imagination has to take over to make this work.
-	Let's see what I have available.
-</p>
+<p>It's 5:35am on a Sunday and I need to memorize 100 ideas from the
+	last week. I need to break it into smaller fun chunks of information.
+	My imagination has to take over to make this work. Let's see what I
+	have available.</p>
 <p>
-	I had this idea for a video game style learning adventure.
-	It would probably translate well to VR. Immersive walk through experience.
-	Like you enter your memory area a place special to you. A place you know.
-	And then the game develops ideas based on what you need to learn and in the
-	best way for you to learn. Some ideas are people and groups of people with
-	personalities, some ideas are buildings or homes, some are objects,
-	some are billboards, some are a videogame within a videogame, it's endless.
-	Where is your infinite well of knowledge and how can it be made visual?
-	I'm a visual learner so it's a necessity for me.
-	Track where it is in your brain based on your interactions.
-	Instead of feeling like you are being quizzed it's like walking up to someone
-	and trying to remember their name. A different type of pressure.
-	Can I start now? How best to do so? Just to start I suppose.
-	It starts in eclipse.
-
-	I've built out the learning project similar to our banking app example.
-	I want it to feel and work great, but I don't know how to think about doing it.
-	And I worry that just by starting I'm going to make mistakes that would save me headaches in the future.
-	I think at this stage of my learning this is inevitable and I just have to continue.
-	So anyways I've made a App class that creats a LearnApp object to call the startLearnApp method.
-	This keeps App.java as basic as possible and opens from my custom class of LearnApp.java.
-	I then created a Learn.java class that I will use as my model.
-	<br/> Honestly doing this is freightening.
-	<br/>
-	The amount of mistakes I can make is infinite, but this is better than index cards in my mind.
-	So it's worth testing.
-	Looking at the BankDAO.java class I can add methods to this app in a LearnDAO.java for:
-	public void addMemoryItem(Learn item);
-	public void updateMemoryItem(Learn item);
-	public void deleteMemoryItem(int memoryId);
-	public void searchByMemoryId(int memoryId);
-	public void searchByMemoryName(String memoryName);
-	public void printAllMemoryItems();
-	<br/> but I'm going to save this for later. I just want to fill this with information that I need now.
-	I ended up just building out LearnDAO.java and LearnDAOImpl.java because it was too easy not to.
-	Now I am faced with buildng a new object for each memory area or doing it all in LearnApp.java...
-	My gut tells me to do a new class for each area. Let me try that and see how it goes.
-	<br/>
-	I'm back at the desk after family woke up.
-	Debating on attending an OSSU cohort that meets in 4 minutes. I dont want to take on anything that
-	distracts me, but maybe it could be fresh? Idk. Couldnt hurt to try 1 and see how it goes.
-	I've tried before in the past but didn't feel it pulling me along like I needed.
-	<br/>
-	Just went on a long Maven run with creating a learning-app project and injesting all the data
-	into it. I now have a project I can build dynamically week after week.
-	I kind of suprised myself a bit with this one and am happy with the outcome.
-	I can add it to github so I can study from my other computer as well.
+	I had this idea for a video game style learning adventure. It would
+	probably translate well to VR. Immersive walk through experience. Like
+	you enter your memory area a place special to you. A place you know.
+	And then the game develops ideas based on what you need to learn and in
+	the best way for you to learn. Some ideas are people and groups of
+	people with personalities, some ideas are buildings or homes, some are
+	objects, some are billboards, some are a videogame within a videogame,
+	it's endless. Where is your infinite well of knowledge and how can it
+	be made visual? I'm a visual learner so it's a necessity for me. Track
+	where it is in your brain based on your interactions. Instead of
+	feeling like you are being quizzed it's like walking up to someone and
+	trying to remember their name. A different type of pressure. Can I
+	start now? How best to do so? Just to start I suppose. It starts in
+	eclipse. I've built out the learning project similar to our banking app
+	example. I want it to feel and work great, but I don't know how to
+	think about doing it. And I worry that just by starting I'm going to
+	make mistakes that would save me headaches in the future. I think at
+	this stage of my learning this is inevitable and I just have to
+	continue. So anyways I've made a App class that creats a LearnApp
+	object to call the startLearnApp method. This keeps App.java as basic
+	as possible and opens from my custom class of LearnApp.java. I then
+	created a Learn.java class that I will use as my model. <br /> Honestly
+	doing this is freightening. <br /> The amount of mistakes I can make is
+	infinite, but this is better than index cards in my mind. So it's worth
+	testing. Looking at the BankDAO.java class I can add methods to this
+	app in a LearnDAO.java for: public void addMemoryItem(Learn item);
+	public void updateMemoryItem(Learn item); public void
+	deleteMemoryItem(int memoryId); public void searchByMemoryId(int
+	memoryId); public void searchByMemoryName(String memoryName); public
+	void printAllMemoryItems(); <br /> but I'm going to save this for
+	later. I just want to fill this with information that I need now. I
+	ended up just building out LearnDAO.java and LearnDAOImpl.java because
+	it was too easy not to. Now I am faced with buildng a new object for
+	each memory area or doing it all in LearnApp.java... My gut tells me to
+	do a new class for each area. Let me try that and see how it goes. <br />
+	I'm back at the desk after family woke up. Debating on attending an
+	OSSU cohort that meets in 4 minutes. I dont want to take on anything
+	that distracts me, but maybe it could be fresh? Idk. Couldnt hurt to
+	try 1 and see how it goes. I've tried before in the past but didn't
+	feel it pulling me along like I needed. <br /> Just went on a long
+	Maven run with creating a learning-app project and injesting all the
+	data into it. I now have a project I can build dynamically week after
+	week. I kind of suprised myself a bit with this one and am happy with
+	the outcome. I can add it to github so I can study from my other
+	computer as well.
 
 
 
 
-	</p>
+</p>
 <h3>Afternoon:</h3>
-<p>
-</p>
+<p></p>
 <h3>Evening:</h3>
-<p>
-</p>
+<p></p>
 
 
 <h2>18/02/22</h2>
 <h3>Morning:</h3>
-<p> Downloaded atom on this windows so I can diary my thoughts a bit better.
-	I've been trying to keep notes but theyve been a bit bare. Let's see if this helps.
-	Most of what we are learning right now is to build our bank app.
-	Which is project 0 in this training course.
-	We are using SQL Shell for postgresql alongside with DBeaver to show how
-	running multiple threads can cause a lock up.
-	We just looked at savepoints between updates and inserts so that we can
-	rollback to specific points. This is new for me.
-	<br/>
-	<br/>
-	To study:
-	4 levels of isolation we can select for RDBMS-
-	<br/>
-	Serializable
-	<br/>
-	Repeatable Reads
-	<br/>
-	Read Committed
-	<br/>
-	Read Uncommitted
-	<br/>
-	<br/>
-	Now we are done talking about transactions.
-	On to DDL: Truncate, create, alter, drop.
-	Now we are learning about creating a table and inserting items.
-	It's cool because we are able to check in the SQL Shell as we do so.
-	We just used primary key, unique, and check to create constraints for the
-	items we are adding to table.
-	The DBeaver was doing some weird things when trying to create and drop
-	tables with the Auto-Commit disabled for Manual Committ (Read Committed).
-	This is something to be aware of when building out tables for Bank project.
-	On to our first 20 minute break. Good day so far.
-	Having music on in the background makes a huge difference for me.
-	I've disabled spell check and trying to remove the autocomplete without making it
-	a hassle to write inside here.
-	Back to listening to Mohammad.
-	Now we are learning about auto incrementing for primary key into table.
-	Using serial, sequence.
-	Sequence is nice because you can modify the start and increment amount.
-	<br/>
-	Feeling pretty good about this table stuff.
-	I'm having some fun with it by using my Philadelphia friend's names.
-	I need to do that more often to get comfortable.
-	Now we are on to Normalization-
+<p>
+	Downloaded atom on this windows so I can diary my thoughts a bit
+	better. I've been trying to keep notes but theyve been a bit bare.
+	Let's see if this helps. Most of what we are learning right now is to
+	build our bank app. Which is project 0 in this training course. We are
+	using SQL Shell for postgresql alongside with DBeaver to show how
+	running multiple threads can cause a lock up. We just looked at
+	savepoints between updates and inserts so that we can rollback to
+	specific points. This is new for me. <br /> <br /> To study: 4 levels
+	of isolation we can select for RDBMS- <br /> Serializable <br />
+	Repeatable Reads <br /> Read Committed <br /> Read Uncommitted <br /> <br />
+	Now we are done talking about transactions. On to DDL: Truncate,
+	create, alter, drop. Now we are learning about creating a table and
+	inserting items. It's cool because we are able to check in the SQL
+	Shell as we do so. We just used primary key, unique, and check to
+	create constraints for the items we are adding to table. The DBeaver
+	was doing some weird things when trying to create and drop tables with
+	the Auto-Commit disabled for Manual Committ (Read Committed). This is
+	something to be aware of when building out tables for Bank project. On
+	to our first 20 minute break. Good day so far. Having music on in the
+	background makes a huge difference for me. I've disabled spell check
+	and trying to remove the autocomplete without making it a hassle to
+	write inside here. Back to listening to Mohammad. Now we are learning
+	about auto incrementing for primary key into table. Using serial,
+	sequence. Sequence is nice because you can modify the start and
+	increment amount. <br /> Feeling pretty good about this table stuff.
+	I'm having some fun with it by using my Philadelphia friend's names. I
+	need to do that more often to get comfortable. Now we are on to
+	Normalization- Helps us to break the table into different parts We are
+	moving to foreign keys because he cant find document pertaining to
+	normalization. When the primary key of one table is available in
+	another as a non primary key column-> foreign key. Foreign key is very
+	easy to understand. Sort of like a door from one table to another. I
+	feel like we get way too much time to do the examples. We could do
+	twice as many. Why not give us the proposed example as well as an
+	advanced example for those of us moving a bit faster? I find myself
+	either trying to find examples online or my mind wandering a bit at
+	leaset 25% of the class. on delete cascade is used for a child table to
+	delete all referenced instances when using delete from students where
+	studentId = 211; ^my specific example. Next QC is on Monday from 10am -
+	12pm EST. Week 2: Maven Git Wrapper Classes Abstract Interfaces
+	StringBuilder String Buffer Overloading CollectionAPI Unit Testing
+	JUnit Week 3: Postgres 2/16 all but normalization 2/17 no JDBC nothing
+	on 2/18 referential integrity constraints data types TCL <br />
+	Mohammad updated the curriculum found here: <a
+		href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">HERE</a>
+	<br /> After break we will cover rest of topics and prepare for QC. SQL
+	Quiz questions QC questions Mohammad will share with us. <br /> <br />
+	Possible QC QuestionS: What is referential integrity? <br /> <br />
+	ALTER TABLE statements to add, drop, Alter makes changes to table
+	structure Update makes changes to values/data On to Set Operators Union
 
-	Helps us to break the table into different parts
+	Union All Intersect returns the same items from each table Except/Minus
+	returns distinct rows selected by 1st query not present in 2nd query.
 
-	We are moving to foreign keys because he cant find document pertaining to normalization.
-	When the primary key of one table is available in another as a non primary key column-> foreign key.
-	Foreign key is very easy to understand. Sort of like a door from one table
-	to another.
-
-	I feel like we get way too much time to do the examples. We could do twice as many.
-	Why not give us the proposed example as well as an advanced example for those
-	of us moving a bit faster? I find myself either trying to find examples
-	online or my mind wandering a bit at leaset 25% of the class.
-
-	on delete cascade is used for a child table to delete all referenced
-	instances when using delete from students where studentId = 211;
-	^my specific example.
-
-	Next QC is on Monday from 10am - 12pm EST.
-
-	Week 2:
-	Maven
-	Git
-	Wrapper Classes
-	Abstract
-	Interfaces
-	StringBuilder String Buffer
-	Overloading
-
-	CollectionAPI
-	Unit Testing
-	JUnit
-
-	Week 3:
-	Postgres
-	2/16 all but normalization
-	2/17 no JDBC
-	nothing on 2/18
-	referential integrity
-	constraints
-	data types
-	TCL
-	<br/>
-	Mohammad updated the curriculum found here: <a href="https://app.revature.com/curriculum/12767/batch/1211/viewCalendar">HERE</a>
-	<br/>
-	After break we will cover rest of topics and prepare for QC.
-
-	SQL Quiz questions
-
-	QC questions Mohammad will share with us.
-	<br/>
-	<br/>
-	Possible QC QuestionS:
-
-	What is referential integrity?
-
-	<br/>
-	<br/>
-	ALTER TABLE statements to add, drop,
-
-	Alter makes changes to table structure
-	Update makes changes to values/data
-
-	On to Set Operators
-
-	Union
-
-	Union All
-
-	Intersect returns the same items from each table
-
-	Except/Minus returns distinct rows selected by 1st query not present in 2nd query.
-
-	Have all the QC resources from Mohammad saved to -> C:\Users\Winterfam\Desktop\Revature\QC_PREPARE\QC_Week2_Week3
-
-	Im using GIT on here to push to my github repo. I like the public nature
-	of what I am doing being open to anyone, anytime.
-
-	Back from another 20 minute break that I spent at my computer.
-	<br/>
-	Back to normalization-
-		to reduce data redundancy and improve data integrity.
-		and we are done for the day. I'll be back to prepare notes / index cards
-		for the QC
+	Have all the QC resources from Mohammad saved to ->
+	C:\Users\Winterfam\Desktop\Revature\QC_PREPARE\QC_Week2_Week3 Im using
+	GIT on here to push to my github repo. I like the public nature of what
+	I am doing being open to anyone, anytime. Back from another 20 minute
+	break that I spent at my computer. <br /> Back to normalization- to
+	reduce data redundancy and improve data integrity. and we are done for
+	the day. I'll be back to prepare notes / index cards for the QC
 
 
 
@@ -1418,32 +803,30 @@ I'm caught up now he is adding test cases for all methods-
 
 </p>
 <h3>Afternoon:</h3>
-<p>
-</p>
+<p></p>
 <h3>Evening:</h3>
-<p>
-</p>
+<p></p>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 <div id="Rules">
 	<p>
 	<h2>Rules</h2>
 	<ol>
-		<li> Print upon completion of every 7 days</li>
-		<li> Find ways to improve clarity and reduce wasteful living</li>
-		<li> Always remember to do what helps the most people, as that will provide a
-			proportional amount of success</li>
+		<li>Print upon completion of every 7 days</li>
+		<li>Find ways to improve clarity and reduce wasteful living</li>
+		<li>Always remember to do what helps the most people, as that
+			will provide a proportional amount of success</li>
 	</ol>
 	</p>
 </div>
