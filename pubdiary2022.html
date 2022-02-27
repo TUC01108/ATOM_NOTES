@@ -43,6 +43,46 @@
 	 Cleaned up the DAOs. Getting better idea of how each actually works.
 	 A lot of grabbing from the product app actually creates more confusion when you are trying to debug.
 	 But it definitely helped to guide me along. Okay back to fixing those transfer to account issues.
+	 Fixed!
+	 
+	 Okay what next??
+	 
+	 I might switch things around a bit. From reading this again I'm thinking that once a user signs
+	 into the customer menu they should have an option for applying for an account.
+	 Which means that they would apply and then have to wait for an employee to approve.
+	 
+	 This means that I must remove the unique constraint to the username in customers table.
+	 
+	 It also means the apply for account will send values to a Staging area until APPROVED by employee.
+	 Which will then move it to the official customers table.
+	 
+	 So with creating multiple accounts for users we need to differentiate the rows by userid for same username
+	 then we can populate for employee by username.
+	 And when making transfer or withdraw or deposit we have to use the userid.
+	 Think this makes sense.
+	 
+	 Okay so the apply table worked for sending an account application in.
+	 Now I need to go through an an employee and have the system tell me if there are any pending applications.
+	 If yes then I can accept or delete them.
+	 
+	 Finished the view balance requirement real quick.
+	 To make it work for other accounts under same username I will have to show other userid's that match username.
+	 I'm a bit worried now that other people can register with the same username... but I don't think its possible.
+	 As long as I make the create account process protect from this then I don't have to worry about
+	 protecting at the database level.
+	 Just checked... looks safe unless someone really wanted to attack this.
+	 
+	 Now to do the employee side of accepting an account application.
+	 
+	 So I AM READY FOR A BREAK.
+	 
+	 Basically got the approve or reject function working just have to add the final detail to the employeeDAOImpl
+	 so that I write out for it to approve or deny... which sounds like I did nothing . but not true.
+	 
+	 Things are moving fast!
+	 
+	 
+	 
 	 
 	</p>
 	<p>
