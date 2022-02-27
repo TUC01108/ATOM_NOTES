@@ -43,6 +43,46 @@ But thats more of a nice to have then need to have.
 Now lets do some work.
 What needs to be fixed? Going to push to git now. Just because.
 
+Okay Im running in circles here but learning at the same time.
+I realized I need to return the object from the method to have the database values stored in object.
+But now Im wondering if the boolean was more important... feels stupid to ask because I can handle
+easily to determine in the BankApp.java if the object was returned with nulls... but that's not the 
+point of a validate method. So how to have a validate method ONLY validate and run a get values from
+database method that runs after its confirmed as valid... not sure if this is best but I'm going with it.
+
+
+Now I'm really moving. Just moved the getting values from database into object functionality into a
+method from the customerDAO rather than the LoginDAO. More of preference than anything but Im
+understanding this more and more as I go along.
+So it works!
+I am now able to login, register, transfer funds, deposit to another specific account, withdraw, 
+adding deposit to account now.
+
+I'm feeling 10,000% better than when I started an hour ago. The app is really working.
+I need to add conditions all over the place. But the skeleton is holding itself up.
+I'm not 100% sure on the tables just yet.
+I think the login table will be strictly for gathering all users who can log in's username and password.
+Maybe the customer_id and employee_id if it makes sense, but that's not clear to me.
+If it has the username and password then that will be enough for now.
+Then the customer table has userid, firstname, username, password, balance, accounttype.
+Not even sure if accounttype really matters to be stored.
+The employee table could be the same... does it need a balance? Maybe the same without a balance and accounttype
+as that is more obvious... well it's obvious for both but I can use that value for further validation
+possibly.
+
+So I'm am flying through this. Crazy how many tangles you have to clean up as you figure one thing out.
+I have the create customer and create employee working well. Once a customer or employee is successfully
+registered they are inside the database.
+
+Okay it's piecing together more and more. I see that I am building out the employee side of this.
+I'll also need the table to log all transactions so an employee can view when they want to.
+
+OK i am ready to leave it there. Tomorrow I do more:
+I need to move the withdrawFromAccount and transferFromAccount over to the CustomerDAO.
+Create the Employee functionality.
+Create the transactions table.
+WOOOOOOO!
+
 
 </p>
 <p>
