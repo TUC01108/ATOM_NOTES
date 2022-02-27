@@ -95,6 +95,17 @@
 	
 	I have no idea. Im restarting eclipse.
 	
+	So restarting it and deleting the test class fixed it. Maybe it overloaded with requests to SQL
+	and needed to clear itself out.. who knows.
+	
+	So I needed to add the con = DBConnection.getConnection(); to each transaction method because I had
+	left the connection open previously but must have run out of whatever the limit was.
+	
+	something to add to list. The transaction goes through no matter what even if recipient doesnt exist.
+	
+	Okay taking a break. Got a lot done so far.
+	
+	
 	
 	
 	</p>
