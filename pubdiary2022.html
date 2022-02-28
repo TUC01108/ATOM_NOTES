@@ -78,6 +78,94 @@
 	<p>
 	
 	Class is starting now.
+	Tufail is showing us how to get the updated balances from a debit and credit transfer in dbeaver.
+	transferAmountAndGetBalance(?,?,?,?,?)
+	stat.execute()
+	</p>
+	<p>
+	Now we are going over the specifications again.
+	Tufail says one account per customer
+	change congrats your account opened to
+	congrats your account got opened and is pending approval.
+	wont be able to sign in just yet. change login table to happening with approveApply method
+	login will check the login table first for username and password and then the apply table.
+	</p>
+	<p>
+	menu for approve/deny
+	</p>
+	<p>
+	1.view all pending approval
+	list of pending approvals
+	press the number to aprove or deny
+	Y/N (Y to approve and N to deny)
+	Y
+	_____ account successfully opened
+	N
+	______ account not approved.
+	
+	Tufail wants a status column
+	default is N
+	change to Y when approved by employee
+	</p>
+	<p>
+	--------------------------------------------
+	</p>
+	<p>
+	Trying to think of what the benefits vs negatives are of having that column with N or Y vs diff table.
+	Benefit of apply table is that I can print easily.... is this true?
+	Negative is that I have to do 2 seperate queries for checking if they arent in the customers table.
+	Going to repost from above what I still have to do-
+	</p>
+	<p>
+	1) As an employee I am alerted how many new account applications there are.
+	AND then I can approve or deny each one.
+	</p>
+	<p>
+	2) As employee I can view all account froms a customer.
+	</p>
+	<p>
+	3) Change the view balance option to let user select which account of theirs to view.
+	</p>
+	<p>
+	4) Chance the make withdraw or deposit to let user select which account of theirs to use
+	</p>
+	<p>
+	5) REFUSE withdrawing or depositing a negative amount.
+	
+	I'm going to go with Tufail's idea and drop the extra table.
+	
+	So I've changed create user and login to reflect the updated customers table.
+	Now to update the approval process.
+	
+	So now the approve and reject functions are working on a basic level.
+	Have to fix so that the employee doesn't accidentally delete a different user than one he intends to.
+	but that can come later.
+	
+	So now I am done with 1) shown above.
+	AND 2)
+	and 3)
+	and 4)
+	
+	think it's just # 5 from the above options.. I need to re evaluate with these new changes and see
+	what I broke in the update process.
+	
+	Looks like everything is working so far. I'll write a few JUnit tests to be sure.
+	Then I'll see what this Log4j is all about. Feel like its going to be super simple read and write to file
+	on local system.
+	
+	maybe i need to add functionality to customer account to ACCEPT a transaction from another account
+	but based on tufails go over of the details I don't think this is required.
+	
+	I took a look at log4j, think I can get it up and running with a tutorial or two and 3-4 hours.
+	
+	Let's hold off on log4j for a bit. It's to be done when everything else is locked.
+	What is next?
+	
+	refuse the negative amount withdraw or deposit.
+	
+	Okay that is fixed now too.... I'm just moving through this faster than I thought I would.
+	
+	
 	
 	
 	</p>
