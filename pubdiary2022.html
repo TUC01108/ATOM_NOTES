@@ -36,6 +36,73 @@
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
+	We are back. Working with cucumber in selenium tests.
+	---------------------
+	QC on Tuesday. This one I am doing perfect on.
+	1pm PT
+	****
+	Javascript
+	Selenium
+	Cucumber
+	Gherkin
+	WebDriver Setup
+	POM
+	PageFactoy
+	HTML
+	CSS
+	****
+	---------------------
+	What is POM (Project Object Model)-
+	Design pattern to create object repository
+	A class is create for each page to identify..
+	the web elements of that page and also can contain action.
+	Seperates tets objects and test scripts.
+	For reusability and readability.
+	
+	create class LoginPAge inside package com.training.pages
+	in selenium-cucumber
+	
+	WebDriver driver;
+	By txt_username = By.id("name");
+	By txt_password = By.id("password");
+	By btn_login = By.id("login");
+	By btn_logout = By.id("logout");
+	
+	create default constructor-
+	public LoginPage(WebDriver driver)
+		{
+		this.driver = driver;
+		}
+	
+	public void enterUsername(String username) {
+		driver.findElement(txt_username).sendKeys(username);
+	}
+	public void enterPassword(String password) {
+		driver.findElement(txt_password).sendKeys(password);
+	}
+	public void clickLogin() {
+		driver.findElement(btn_login).click();
+	}
+	public boolean checkLogoutDisplayed() {
+		driver.findElement(btn_logout)isDisplayed();
+	}
+	public boolean checkLoginDisplayed() {
+		driver.findElement(btn_login)isDisplayed();
+	}
+	
+	PAGE OBJECT MODEL
+	available in Maven
+	
+	PageFactory
+	-A simple and easier implementation of POM in selenium
+	Selenium inbuilt POM
+	@FindBy
+	
+	initElements
+	
+	Now we are on to tags after a 20 minute break.
+	
+	
 	
 	</p>
 	<p>
