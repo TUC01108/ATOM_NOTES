@@ -48,8 +48,110 @@
 	time starting next sunday. My least favorite time of year
 	by FAR. If I could get rid of that construct I would.
 	Only motivation to get into politics.
+	
+	1:1 with Mohammad. He will ask us questions in prep for QC.
+	For this week:
+	DevOps
+	AWS-
+	RDS
+	Bucket
+	Logging
+	Lambdas
+	Next week- Angular
+	
+	We will cover servlets and JSP.
+	servlet-
+		server side code
+		request and response
+			create compile and deploy
+			tomcat- deploys
+	example- maven project that uses servlets to print hello world
+	file new>maven project>webapp>com.training - servlets-demo
+	build path>configure build path 1.8
+	buiild path>configure build path
+	
+	Had to create a new server by
+	right click in servers>new server
+	and then changing build path and running on new server.
+	
+	how to create a servlet-
+	(server side program)
+	right click>new>other>servlet
+	java packages- com.training.controller
+	class name- WelcomeController
+	next
+	add- /welcome url mappings
+	next
+	no changes
+	Finish
+	
+	change doGet()
+	<!-- 
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		 
+		out.println("<html>");
+		out.println<body bgcolor=pink>");
+		out.println("<h1>Hello and welcome to my website</h1>");
+		out.println("</body></html>");
+	-->
 	</p>
 	<p>
+	That's really cool. Running code through servlets.
+	This reminds me of something with Django.
+	
+	I'm trying to think of ways this is useful.
+	While learning it's hard to absorb concepts and connect them
+	with their use cases. Like idk how this is different than
+	writing the javascript in html.... but maybe just having the
+	power of java on a webpage is the whole point?
+	webapp is where all html files are. do not create in WEB-INF.
+	
+	Why create a servlet vs html
+	html is static
+	
+	looking at login.html file
+	
+	copy login.html and styles.css and paste into webapp
+	
+	add link to login to index.jsp
+	
+	copy signUp.html and paste into webapp
+	
+	apply the css in the head of index.jsp
+	
+	copy revlogo.png into webapp
+	
+	how to store password from login form
+	
+	action="SignInController"
+	right click>new>servlet
+	com.training.controller
+	SignInController
+	
+	SignInController.java
+	change doGet
+	<!--  
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		String uname = request.getParameter("username");
+		String pwd = request.getParameter("password");
+		
+		out.println("<html>");
+		out.println<body bgcolor=pink>");
+		out.println("Username :"+uname);
+		out.println("Your password is :")+pwd);
+		out.println("</body></html>");
+	
+		-->
+	restart the server to get updated changes
+	right click and click clean
+	right click server> add and remove
+	
+	Back from 20 minutes break.
+	</p>
+	<p>
+	
 	
 	</p>
 	<p>
