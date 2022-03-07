@@ -38,6 +38,113 @@
 	<h3>Afternoon:</h3>
 	<p>
 	Back!
+	Now we are seeing how to use the values passing through.
+	
+	DBEAVER
+	create table:
+	userid - serial
+	validateUser - boolean
+	
+	we are covering login and logout
+	
+	create table user (
+		userId serial,
+		username varchar(20),
+		password varchar(20),
+		gender varchar(10),
+		notifications varchar(20),
+		qualification varchar(20)
+	)
+	
+	2:00pm on recording
+	
+	create a model class that matches the table created
+	right click>new class>com.training.ers.model
+	User
+		private int userId;
+		private String username;
+		private String password;
+		private String gender;
+		private String notifications;
+		private String qualification;
+	
+	generate default constructor, constructor with fields,
+	getters and setters, hashcode and equals, toString
+	
+	in SignUpController.java servlet
+	
+	String finalNotification = "";
+	for(String temp:notification) {
+		finalNotification += temp +":";
+	}
+	User user = new User(-1, username, password, gender, 
+	finalNotification, qualification);
+	
+	out.println("You are registered successfully and your password
+	is : "+password);
+	
+	moved the String finalNotification; to the instance level.
+	</p>
+	<p>
+	---------
+	So we now can do array returns as values from user input.
+	We are about to enter into Database.
+	
+	go to banking app loginDAO
+	copy utility and dao packages
+	paste into P1
+	copy and paste mydb.properties from previous project
+	paste into project
+	copy and paste dependencies
+	postgresql
+	
+	refactor name com.training.ers.dao
+	only need LoginDAO and LoginDAOImpl
+	
+	change LoginDAO
+		register(User user)
+	Change LoginDAOImpl
+		register(User user)
+		
+	-------
+	tufail going to go through everything again so repeating above
+	1) database
+	2) dao
+	
+	go to SignUpController
+	// below saves in database
+	
+	LoginDAO loginDAO = new LoginDAOImpl();
+	loginDAO.register(user);
+	
+	add link after successfully registered for login page
+	a href="login.html" Login
+	
+	When at SignInController-
+	LoginDAO loginDAO = new LoginDAOImpl();
+	
+	boolean result = loginDAO.validate(username, password);
+	
+	if(result) {
+		Welcome +username
+	} else {
+		your username/password is incorrect , please login again.
+		add hyperlink to the login text
+	}
+	
+	SUCCESSFULLY got a login and signup working for new project
+	with Tufail's help. This is huge step for the project.
+	Thank you to him for taking time to show as figuring out on
+	own would have eaten up a lot of time.
+	So cool.
+	We have servlets running Java code on webpage using HTML,
+	JavaScript, JDBC, postgreSQL, and SQL all together in sync.
+	This is smooth
+	</p>
+	<p>
+	Back from a 20 minute break.
+	
+	
 	</p>
 	<p>
 	
