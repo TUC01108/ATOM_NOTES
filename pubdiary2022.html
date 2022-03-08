@@ -45,6 +45,128 @@
 	<p>
 	Good morning!
 	
+	Use the password validation from login and add to signUp.html
+	
+	agenda: finish ers
+	then on to topics for the week
+	
+	Make auto proceed to homepage
+	
+	use case: view all information about all users
+	
+	in welcome.html-
+	view all users link
+	
+	in loginDAO-
+	<!-- List<User> getUsers();  -->
+	create a function in Imple that gets all the Users
+	copy and paste from product projects
+		User user = new User();
+		user.setUserId(res.getInt(1));
+		user.setUsername(res.getString(2));
+		user.setPassword(res.getString(3));
+		user.setGender(res.getString(4));
+		user.setNotification(res.getString(5));
+		user.setQualification(res.getString(6));
+		
+		
+		
+	
+	add JUNIT dependency - jupiter
+		
+		
+		
+		
+		
+	JSP- Java Server Pages (Server Side Code)
+	
+	implicit object using %% (scriptlet)
+		out
+		request
+	
+	right click on project>New>JSP File
+	
+	demo.jsp
+	<!-- 
+	<% for(int i=1;i<=5;i++) {
+	%>
+	<h1>Mohammad Tufail</h1>
+	<% } %>
+	
+	<%! int num1; 
+		String guestName="Richard";
+	%>
+	
+		<%
+		int num2;
+		for (int i = 1; i <= 5; i++) {
+		%>
+		<h1>Mohammad Tufail</h1>
+		<%
+		}
+		%>
+		
+		<h1>Hello</h1>
+		<% out.println(num1+num2); %>
+		<% out.println("Welcome : "+guestName; %><br/>
+		<%= "Welcome"+guestName %>
+	
+	% Scriptlet
+	%! delcaration
+	%=  expression - print
+	
+	
+	<%!
+	String guestName; %>
+		<%
+		guestName = request.getParameter("gname");
+		int num2=0;
+		for (int i =1; i <= 5; i++) {
+		%>
+		<h1><%=guestName%></h1>
+		<%
+		}
+		%>
+		<% out.println("Welcome : "+guestName); %><br/>
+		<%= "Welcome :"+guestName %>
+	
+	
+	
+	 -->
+	Create a calculator app
+	
+	accept 2 numbers
+	Operation : (use select for dropdown)
+	add, subtract, multiply, divide
+	submit 
+	goes to calculate.jsp with correct value
+	--------
+	back to welcome.html
+	
+	create a link to go to JSP
+	href="displayUserDetails.jsp" View All Users
+	
+	create new jsp as above
+	add stylesheet
+	<!--  
+	<% 
+	LoginDAO loginDAO = new LoginDAO();
+	List<User> users = loginDAO.getUsers();
+	Iterator<User> iterator = users.iterator();
+	%>
+	<h1>List of all the users</h1>
+	<table border="2" cellspacing="10" cellpadding="10">
+	<th>User Id</th><th>Username</th><th>Password</th><th>Gender</th><th>Notification</th><th>Qualification</th>
+	
+	<%
+	while(iterator.hasNext()) {
+		
+		User user = iterator.next();
+		out.println(user);
+	}
+	%>
+	-->
+	time for 20 minute break
 	</p>
 	<p>
 	
