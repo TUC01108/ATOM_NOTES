@@ -36,7 +36,60 @@
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
+	Back from lunch break.
 	
+	Use case : View information about specific user-
+	Enter username : 
+	search all users based on name.
+	
+	HTTP is a state less protocol
+	
+	in LoginController-
+	HttpSession session = request.getSession();
+	session.setAttribute("username", uname);
+	
+	if(result)
+		session.setAttribute("message", "Valid User");
+	else
+		session.setAttribute("message", "Invalid User");
+		
+	in displayUserDetails.jsp
+		<!--  <% String username = (String)session.getAttribute("username"); %>
+		<h2>You are logged in as : <%= username %> and the 
+		message is : <%= session.getAttribute("message") %></h2> -->
+		
+	in welcome.jsp
+		String username = (String)session.getAttribute("username");
+	
+	<!-- <h1><a href="searchUser.jsp">Search Users</a>
+		
+	 -->
+	 
+	 Create new searchUser.jsp
+	 copy and paste form into searchUser.jsp
+	 
+	 add to LoginDAO
+	 	<!-- public List(<User> getUserByUsername(String Username)
+		 LogingDAOImpl
+		 	update code for search by username
+		 	
+		 -->
+		 create searchUserResults.jsp
+		 	copy from displayUserDetails to searchUserResults.jsp
+		 add
+		 String searchname = request.getParameter("searchname");
+		 List<User>loginDAO.getUserByUsername(searchname);
+		 
+		 update:
+		 LoginDAO
+		 LoginDAOImpl
+		 welcome.jsp
+		 	add searchUser link
+		 searchUserResults.jsp
+	</p>
+	<p>
+	Back from the 20 minute "break"
+		 
 	</p>
 	<p>
 	
