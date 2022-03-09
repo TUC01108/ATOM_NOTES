@@ -1,85 +1,116 @@
-<!--  
+<!--
  Copy and paste this for each new day and update date/activities (update month)
 	<h2>00/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ########################################### -->
+	 <h2>09/03/22</h2>
+ 	<h3>Evening:</h3>
+ 	<p>
+
+ 	</p>
+ 	<p>
+
+ 	</p>
+ 	<h3>Afternoon:</h3>
+ 	<p>
+
+ 	</p>
+ 	<p>
+
+ 	</p>
+ 	<h3>Morning:</h3>
+ 	<p>
+ 	After trying in eclipse I think I'll continue with my notes in atom.
+	Not being able to control the detached window where it's always in front of my other code
+	boxes and minimizing for when I have to share screen is something Im not sure Im okay
+	with.
+
+	
+ 	</p>
+ 	<p>
+
+ 	</p>
+ 	<p>
+
+ 	</p>
+ 	 ###########################################
 	 <h2>08/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	Back from lunch break.
-	
+
 	Use case : View information about specific user-
-	Enter username : 
+	Enter username :
 	search all users based on name.
-	
+
 	HTTP is a state less protocol
-	
+
 	in LoginController-
 	HttpSession session = request.getSession();
 	session.setAttribute("username", uname);
-	
+
 	if(result)
 		session.setAttribute("message", "Valid User");
 	else
 		session.setAttribute("message", "Invalid User");
-		
+
 	in displayUserDetails.jsp
 		<!--  <% String username = (String)session.getAttribute("username"); %>
-		<h2>You are logged in as : <%= username %> and the 
+		<h2>You are logged in as : <%= username %> and the
 		message is : <%= session.getAttribute("message") %></h2> -->
-		
+
 	in welcome.jsp
 		String username = (String)session.getAttribute("username");
-	
+
 	<!-- <h1><a href="searchUser.jsp">Search Users</a>
-		
+
 	 -->
-	 
+
 	 Create new searchUser.jsp
 	 copy and paste form into searchUser.jsp
-	 
+
 	 add to LoginDAO
 	 	<!-- public List(<User> getUserByUsername(String Username)
 		 LogingDAOImpl
 		 	update code for search by username
-		 	
+
 		 -->
 		 create searchUserResults.jsp
 		 	copy from displayUserDetails to searchUserResults.jsp
 		 add
 		 String searchname = request.getParameter("searchname");
 		 List<User>loginDAO.getUserByUsername(searchname);
-		 
+
 		 update:
 		 LoginDAO
 		 LoginDAOImpl
@@ -89,25 +120,25 @@
 	</p>
 	<p>
 	Back from the 20 minute "break"
-		
+
 	We need selenium tests inside our P1.
-	
+
 	copy and paste the selenium, bonigarcia dependency
 	into ERS project.
 	create new class
 	ERSTest
 	copy and past the EdgeTest.java code
-	<!-- 
+	<!--
 	@Test
 	@DisplayName("Testing login functionality of ERS")
 	public void testERSLoginFunctionality(){
 	driver.get("http://localhost:8080/Winter-ERS-project1/login.html");
-	
+
 	copy xpaths as needed
 	username
 	password
 	click signin button
-	
+
 	figure out how to check if it got through login succssfully
 	if needed go to login.html and give button id="btnSubmit"
 	}
@@ -116,31 +147,31 @@
 	 add dependencies
 	 2)
 	 add ERSTest junit test
-	 
+
 	 **** Keep it mind what dependencies are needed for what. ****
-	 
+
 	 done for now. will try and log in later.
-	 
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Good morning!
-	
+
 	Use the password validation from login and add to signUp.html
-	
+
 	agenda: finish ers
 	then on to topics for the week
-	
+
 	Make auto proceed to homepage
-	
+
 	use case: view all information about all users
-	
+
 	in welcome.html-
 	view all users link
-	
+
 	in loginDAO-
 	<!-- List<User> getUsers();  -->
 	create a function in Imple that gets all the Users
@@ -152,35 +183,35 @@
 		user.setGender(res.getString(4));
 		user.setNotification(res.getString(5));
 		user.setQualification(res.getString(6));
-		
-		
-		
-	
+
+
+
+
 	add JUNIT dependency - jupiter
-		
-		
-		
-		
-		
+
+
+
+
+
 	JSP- Java Server Pages (Server Side Code)
-	
+
 	implicit object using %% (scriptlet)
 		out
 		request
-	
+
 	right click on project>New>JSP File
-	
+
 	demo.jsp
-	<!-- 
+	<!--
 	<% for(int i=1;i<=5;i++) {
 	%>
 	<h1>Mohammad Tufail</h1>
 	<% } %>
-	
-	<%! int num1; 
+
+	<%! int num1;
 		String guestName="Richard";
 	%>
-	
+
 		<%
 		int num2;
 		for (int i = 1; i <= 5; i++) {
@@ -189,17 +220,17 @@
 		<%
 		}
 		%>
-		
+
 		<h1>Hello</h1>
 		<% out.println(num1+num2); %>
 		<% out.println("Welcome : "+guestName; %><br/>
 		<%= "Welcome"+guestName %>
-	
+
 	% Scriptlet
 	%! delcaration
 	%=  expression - print
-	
-	
+
+
 	<%!
 	String guestName; %>
 		<%
@@ -213,27 +244,27 @@
 		%>
 		<% out.println("Welcome : "+guestName); %><br/>
 		<%= "Welcome :"+guestName %>
-	
-	
-	
+
+
+
 	 -->
 	Create a calculator app
-	
+
 	accept 2 numbers
 	Operation : (use select for dropdown)
 	add, subtract, multiply, divide
-	submit 
+	submit
 	goes to calculate.jsp with correct value
 	--------
 	back to welcome.html
-	
+
 	create a link to go to JSP
 	href="displayUserDetails.jsp" View All Users
-	
+
 	create new jsp as above
 	add stylesheet
-	<!--  
-	<% 
+	<!--
+	<%
 	LoginDAO loginDAO = new LoginDAO();
 	List<User> users = loginDAO.getUsers();
 	Iterator<User> iterator = users.iterator();
@@ -241,10 +272,10 @@
 	<h1>List of all the users</h1>
 	<table border="2" cellspacing="10" cellpadding="10">
 	<th>User Id</th><th>Username</th><th>Password</th><th>Gender</th><th>Notification</th><th>Qualification</th>
-	
+
 	<%
 	while(iterator.hasNext()) {
-		
+
 		User user = iterator.next();
 		out.println(user);
 	}
@@ -261,19 +292,19 @@
 	RequestDispatcher
 	seems very useful when building webpages using JSPs and Java.
 	Think on this a bit.
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
 	 <h2>07/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	I'm back for a minute to see if there's anything to sort out 
+	I'm back for a minute to see if there's anything to sort out
 	with the project. I'm upstairs so a bit limited but can still
 	make some progress.
-	
+
 	I'm in a position where I can really plan this out effectively.
 	Like we have a LoginDAO interface for everything related to
 	login. For now that is register and validate/login.
@@ -283,29 +314,29 @@
 	I'll chew on that. It's nice to pass through the user object
 	instead of all the variables like I did before.
 	Cleaner this way.
-	
+
 	And O wakes up.
 	</p>
 	<p>
 	Back again. 7:52p.
-	
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	Back!
 	Now we are seeing how to use the values passing through.
-	
+
 	DBEAVER
 	create table:
 	userid - serial
 	validateUser - boolean
-	
+
 	we are covering login and logout
-	
+
 	create table user (
 		userId serial,
 		username varchar(20),
@@ -314,9 +345,9 @@
 		notifications varchar(20),
 		qualification varchar(20)
 	)
-	
+
 	2:00pm on recording
-	
+
 	create a model class that matches the table created
 	right click>new class>com.training.ers.model
 	User
@@ -326,29 +357,29 @@
 		private String gender;
 		private String notifications;
 		private String qualification;
-	
+
 	generate default constructor, constructor with fields,
 	getters and setters, hashcode and equals, toString
-	
+
 	in SignUpController.java servlet
-	
+
 	String finalNotification = "";
 	for(String temp:notification) {
 		finalNotification += temp +":";
 	}
-	User user = new User(-1, username, password, gender, 
+	User user = new User(-1, username, password, gender,
 	finalNotification, qualification);
-	
+
 	out.println("You are registered successfully and your password
 	is : "+password);
-	
+
 	moved the String finalNotification; to the instance level.
 	</p>
 	<p>
 	---------
 	So we now can do array returns as values from user input.
 	We are about to enter into Database.
-	
+
 	go to banking app loginDAO
 	copy utility and dao packages
 	paste into P1
@@ -356,41 +387,41 @@
 	paste into project
 	copy and paste dependencies
 	postgresql
-	
+
 	refactor name com.training.ers.dao
 	only need LoginDAO and LoginDAOImpl
-	
+
 	change LoginDAO
 		register(User user)
 	Change LoginDAOImpl
 		register(User user)
-		
+
 	-------
 	tufail going to go through everything again so repeating above
 	1) database
 	2) dao
-	
+
 	go to SignUpController
 	// below saves in database
-	
+
 	LoginDAO loginDAO = new LoginDAOImpl();
 	loginDAO.register(user);
-	
+
 	add link after successfully registered for login page
 	a href="login.html" Login
-	
+
 	When at SignInController-
 	LoginDAO loginDAO = new LoginDAOImpl();
-	
+
 	boolean result = loginDAO.validate(username, password);
-	
+
 	if(result) {
 		Welcome +username
 	} else {
 		your username/password is incorrect , please login again.
 		add hyperlink to the login text
 	}
-	
+
 	SUCCESSFULLY got a login and signup working for new project
 	with Tufail's help. This is huge step for the project.
 	Thank you to him for taking time to show as figuring out on
@@ -402,45 +433,45 @@
 	</p>
 	<p>
 	Back from a 20 minute break.
-	
+
 	got through some errors people had.
 	getting*
-	
+
 	now through. 2:38p
-	
+
 	will get a view example tomorrow.
-	
+
 	create new html files for menus
 	on signincontroller.java
 	add proceed to your home page
 	with a link to welcome.html
-	
+
 	table of reimbursement
-	
+
 	on welcome html page-
 	please submit reimbursement details :
 	FORM
-	name, type, amount, 
+	name, type, amount,
 	with submit input type
-	
+
 	go to DBEAVER
 	create table reimbursement (
-	
-	
+
+
 	)
-	
-	Tufail has informed us th QC is not happening tomorrow. But 
+
+	Tufail has informed us th QC is not happening tomorrow. But
 	I'm going to study this week and get fully ready between P1
 	creation.
-	
+
 	This helps a ton but nxt week going to be FULL.
-	
+
 	This is a job and an opportunity. Treat it as such, and you'll
 	get everything you can out of it.
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
@@ -448,7 +479,7 @@
 	time starting next sunday. My least favorite time of year
 	by FAR. If I could get rid of that construct I would.
 	Only motivation to get into politics.
-	
+
 	1:1 with Mohammad. He will ask us questions in prep for QC.
 	For this week:
 	DevOps
@@ -458,7 +489,7 @@
 	Logging
 	Lambdas
 	Next week- Angular
-	
+
 	We will cover servlets and JSP.
 	servlet-
 		server side code
@@ -469,11 +500,11 @@
 	file new>maven project>webapp>com.training - servlets-demo
 	build path>configure build path 1.8
 	buiild path>configure build path
-	
+
 	Had to create a new server by
 	right click in servers>new server
 	and then changing build path and running on new server.
-	
+
 	how to create a servlet-
 	(server side program)
 	right click>new>other>servlet
@@ -484,12 +515,12 @@
 	next
 	no changes
 	Finish
-	
+
 	change doGet()
-	<!-- 
+	<!--
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		 
+
 		out.println("<html>");
 		out.println<body bgcolor=pink>");
 		out.println("<h1>Hello and welcome to my website</h1>");
@@ -499,118 +530,118 @@
 	<p>
 	That's really cool. Running code through servlets.
 	This reminds me of something with Django.
-	
+
 	I'm trying to think of ways this is useful.
 	While learning it's hard to absorb concepts and connect them
 	with their use cases. Like idk how this is different than
 	writing the javascript in html.... but maybe just having the
 	power of java on a webpage is the whole point?
 	webapp is where all html files are. do not create in WEB-INF.
-	
+
 	Why create a servlet vs html
 	html is static
-	
+
 	looking at login.html file
-	
+
 	copy login.html and styles.css and paste into webapp
-	
+
 	add link to login to index.jsp
-	
+
 	copy signUp.html and paste into webapp
-	
+
 	apply the css in the head of index.jsp
-	
+
 	copy revlogo.png into webapp
-	
+
 	how to store password from login form
-	
+
 	action="SignInController"
 	right click>new>servlet
 	com.training.controller
 	SignInController
-	
+
 	SignInController.java
 	change doGet
-	<!--  
+	<!--
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		String uname = request.getParameter("username");
 		String pwd = request.getParameter("password");
-		
+
 		out.println("<html>");
 		out.println<body bgcolor=pink>");
 		out.println("Username :"+uname);
 		out.println("Your password is :")+pwd);
 		out.println("</body></html>");
-	
+
 		-->
 	restart the server to get updated changes
 	right click and click clean
 	right click server> add and remove
-	
+
 	Back from 20 minutes break.
 	</p>
 	<p>
 	Now to use this for P1 project purposes
-	
+
 	winter-ers-project
 	watch at 23:15 in recording Tufail time
-	
+
 	kickstart for P1-
 	provide name, password, gender on login
-	
+
 	Write welcome to my ERS with Login and Signup links
 	login takes you to login page
 	which takes you to ""welcome, name"
-	
+
 	signup takes you to page that shows all details entered
 	SignUpController
-	
+
 	Pretty happy I figured that out with setting up login and
 	signup with servlets for the project 1 on first go.
 	So we are getting the information from the user input,
 	which means we can store in an object or do anything with it.
 	This is helpful.
-	
+
 	method="get" calls doGet() in servlet
 	anything in doGet() will be dislayed in url
-	
+
 	method="post" calls doPost()
-	
+
 	post goes into body portion without appending in URL.
-	
+
 	changed both my login and signup to post instead of GET
-	
+
 	Going on lunch break, back at 12:15p
-		
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
 	 <h2>06/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Back and slept in today. Go to sleep at 9:15p to get
 	back on track.
-	
+
 	I'm planning out my P1 even though we have our QC on Tuesday.
-	I give this another 30 minutes and then move on to QC 
+	I give this another 30 minutes and then move on to QC
 	studying.
 	I have an example setup on excalidraw to give visual
 	of the structure of my program. ERS
@@ -618,72 +649,72 @@
 	I am also drawing by hand to see how similar and different
 	it will be from P0. I can avoid some mistakes I ran into
 	with that project.
-	
+
 	So the functionality of this project is very similar to the
 	project we just did. Really the only difference I am seeing
 	is the connectivity to the webpage so finding how Java and
 	Postgresql receive and send data to javascript or
 	however that is done. Also the optional requirements will
-	really make it stand out so worth going through them in 
-	beginning before coding to see how they could change the 
+	really make it stand out so worth going through them in
+	beginning before coding to see how they could change the
 	structure or we could pivot minorly to allow their room
 	for implementation without slowing anything down too much.
 	I don't want to bite off more than I can chew, but I also
-	know how it feels to "finish" early. Feel like there's 
-	nothing else to do WHEN clearly there was lots more to do 
+	know how it feels to "finish" early. Feel like there's
+	nothing else to do WHEN clearly there was lots more to do
 	and I just couldnt see it. Dont do that again.
-	
+
 	Just found some quizlet study decks that will be good.
 	I deleted some topics off of it that we havent
 	got to yet, but sharing with batch mates now.
 	https://quizlet.com/_b73tp3?x=1qqt&i=477pnb
-	
+
 	Going up to say good morning to the family.
-	
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
 	 <h2>05/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Back with a late start this morning. Prep for QC week 6.
 	I will do perfect on this one.
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
 	 <h2>04/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
@@ -709,22 +740,22 @@
 	the web elements of that page and also can contain action.
 	Seperates tets objects and test scripts.
 	For reusability and readability.
-	
+
 	create class LoginPAge inside package com.training.pages
 	in selenium-cucumber
-	
+
 	WebDriver driver;
 	By txt_username = By.id("name");
 	By txt_password = By.id("password");
 	By btn_login = By.id("login");
 	By btn_logout = By.id("logout");
-	
+
 	create default constructor-
 	public LoginPage(WebDriver driver)
 		{
 		this.driver = driver;
 		}
-	
+
 	public void enterUsername(String username) {
 		driver.findElement(txt_username).sendKeys(username);
 	}
@@ -740,133 +771,133 @@
 	public boolean checkLoginDisplayed() {
 		driver.findElement(btn_login)isDisplayed();
 	}
-	
+
 	PAGE OBJECT MODEL
 	available in Maven
-	
+
 	PageFactory
 	-A simple and easier implementation of POM in selenium
 	Selenium inbuilt POM
 	@FindBy
-	
+
 	initElements
-	
+
 	Now we are on to tags after a 20 minute break.
 	</p>
 	<p>
-	They can be custom like 
+	They can be custom like
 	@googletest
 	@testproject
 	@logintest
-	
+
 	in the TestRunner.java file you add a ,
 	after the @cucumberOptions plugin {}
 	and add the @ symbol for tests you want to run.
-	
+
 	My computer is overheating and zoom isnt responding going
 	to restart eclipse first then zoom if needed.
-	
+
 	This concludes selenium and cucumber for now.
-	
+
 	done class. will be on later.
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Starting now!
-	
+
 	Back into cucumber
-	
+
 	Got my cucumber test running for the saucedemo.
 	Something about this is very cool.
-	
+
 	Back from a 20 minutes break.
-	
+
 	</p>
 	<p>
 	So we are learning a lot of testing. This could be
 	what I will be doing for foreseeable future.
 	Find lasting ways to learn and remember
 	everything important.
-	
+
 	Hot to generate test reports in different formats.
 	Don't just try to understand for right now.
 	How to quickly navigate to these answers when
 	I need them.
-	
+
 	Some things I will learn by brute force repition.
 	Some things are more specific to situations.
 	File resources as such. Scenario based.
-	
+
 	I guess this training is sort of like a fire-hose
 	of information and just trying my best to figure
 	out on the fly what is going to be the most
-	important things we are experiencing, but the 
+	important things we are experiencing, but the
 	biggest part is just surviving and trusting their
 	system to mold me into the full stack software
 	developer they aim for me to become. I did not
 	start this process because I knew how to do that
 	myself.. it was the complete opposite.
-	I've tried and know I give up that control and 
+	I've tried and know I give up that control and
 	put in 100% of my effort where this company deems
 	it best to do so.
-	
+
 	Reports generated as HTML, JSON, and XML
-	
+
 	Parameterized or data driven testing-
 	use "Scenario Outline:" in .feature file
 	adding diamond brackets around parameters
-	
+
 	Going on lunch now.
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
-	 
+
 	<h2>03/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	We all finished presentations. Mine went to shit but next one I am getting 1000%.
-	
+
 	Talking about p1 now.
 	This one is UI based application.
-	
+
 	Expense Reimbursement System
-	
+
 	We will go through project that replicates the requirements.
-	
+
 	1st go through requirements
-	
+
 	plan the design visually
-	
+
 	Java, SQL, HTML, JS, CSS, Selenium, Cucumber, Junit, Log4j
 	----------------------------
 	finishing with selenium and cucumber
-	
+
 	locators-
 	xpath, name, id
-	
+
 	Cucumber w/ Selenium- behavior driven testing
 	Gherkin language (simple english-like language)
-	
+
 	create a maven project
 	click next
 	quickstart
 	next
 	artifact id: selenium-cucumber
-	
+
 	go to pom.xml
 	add cucumber dependency
 	right click on project > new > source folder
@@ -876,110 +907,110 @@
 	right click>new>File
 	name as demo1.feature
 	install cucumber from marketplace.
-	
-	
+
+
 	</p>
 	<p>
 	click new>File>login.feature
 	Feature: to test login functionality
 	Scenario: check login is successful with valid credentials
-	
+
 	  Given browser is open
 	  And user is on login page
 	  When user enters username and password
 	  And user clicks on login button
 	  Then user is navigated to home page
-	
+
 	right click>pretty format
-	
-	That's it for the day. On to tomorrow. Can't wait to get 
+
+	That's it for the day. On to tomorrow. Can't wait to get
 	started with this project. Going to make it amazing.
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Presentation day for p0. A bit nervous but going to go well.
-	
+
 	automation with cucumber and selenium
 	gherkin
 	//
-	
+
 	saucedemo.com
-	
-	We are continuing on with our selenium discussion as if we dont 
+
+	We are continuing on with our selenium discussion as if we dont
 	have the major presentation shortly. I wonder if this
 	is part of the training process to replicate a work environment
 	or just what needs to happen. Just glad I am somewhat
 	ready
-	
+
 	I'm ready. Let's do great.
 	</p>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	 ###########################################
-	
+
 	<h2>02/03/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	bACK FROM LUNCH
-	
+
 	with all caps on!
-	
+
 	Locators in selenium
-	
+
 	open google
 	type in rayban sunglasses
 	and click (press enter)
-	
+
 	Selenium is open source web browser test automation
-	
+
 	have full project on github
 	README.md file
 		all the things your projet uses
-		
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Starting for today.
 	Here is link for portfolio orientation at 7:30a today- https://revature.zoom.us/j/9920469892
-	
+
 	We are learning AJAX today.
 	AJAX-
 	Asynchronous JavaScript and XML
-	
+
 	JSON
 	XML
 	Postman
 	REST Api
-	
+
 	Ajax is for refreshing a portion of page without reloading whole page.
-	
+
 	XMLHttpRequest() is a javaScript object for performing ajax.
-	
+
 	var a = new XMLHttpRequest();
 	function display() {
-	
+
 	}
-	
+
 	PORTFOLIO PREPARE_______________________________________________
-	
+
 	technical resume
 	generated through Revpro
 	click portfolio option
@@ -1007,50 +1038,50 @@
 	complete roles / responsibilities with 8 bullet points
 	complete the README.md for each project properly
 	in order of 3 then 2 then 1
-	
+
 	phase-1 phase-2 then approved
-	
+
 	start bullet points with active past tense verb
-	
+
 	phase 1 is end of week 6
 	phase 2 end of week 8
-	
+
 	Now we are running a tomcat server through eclipse to get around CORS in web browser.
-	
+
 	now for a 20 minute break.
 	Tufail spent the last 1.5 hours helping us get our servers running proper.
 	Not sure its all fixed yet. mine works though.
-	
-	
-	
-	
-	
+
+
+
+
+
 	</p>
 	<p>
 	Promises-
 	handle asynchronous operations in JavaScript
 	built in javasfript object
-	
+
 	we are TESTING BATCH
-	
+
 	selenium
 	gherkin
 	cucumber
-	
+
 	Selenium
 	is open source web browser test automation
-	
+
 	use case: test google search functionality
-	
+
 	which browser you want to test on-
 	webdriver
-	
+
 	going on lunch now!
-	
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<!-- ########################################### -->
 	<h2>01/03/22</h2>
@@ -1061,53 +1092,53 @@
 	Then I fixed up my form with an associates help.
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	Back from lunch.
-	
+
 	DOM Manipulation
-	
+
 	We will add option for souse on signup
-	
+
 	After qualification add tr and td
 	"Enter spouse details" name="SpouseName" id="spouseName"
 	add button value="Married"
-	
+
 	onClick="addDynamicControls()">
-	
+
 	function addDynamicControls() {
-	
+
 	var newInput = document
 	}
-	
+
 	He is changing the html through javascript.
-	
+
 	Steps:
 	add div id ="myDiv1"
 	create function addInput() {
 	var mainDiv = document.getElementById('myDiv1');
-	
+
 	var newTextBox = document.createElement('input');
 	newTextBox.type = 'text';
 	newTextBox.setAttribute('id', 'username');
 	marriedButton.innerText = "Spouse name : "
 	mainDiv.append(newTextBox)
 	}
-	
+
 	add span to married button so we can access inside function.
-	
+
 	add a new tr that creates a new input button
-	
-	
+
+
 	-----------------------
 	var elmt = document.querySelector('div');
-	
+
 	replaceChild()
-	
+
 	appendChild()
-	
+
 	**** QC. So DOM Manipulation as a whole needs to be explored.
 	all the methods involved.
 	createElement()
@@ -1115,7 +1146,7 @@
 	removeChild()
 	appendChild()
 	insertBefore()
-	there is no insertAfter so you can use insertBefore and then- 
+	there is no insertAfter so you can use insertBefore and then-
 	.nextSibling to replicate
 	.textContent
 	.innerHTML
@@ -1124,19 +1155,19 @@
 	setAttribute()
 	removeAttribute()
 	hasAttribute()
-	
+
 	Event listeners-
-	
+
 	list all the options and know 3 really well
-	
+
 	20 minute break!
-	
+
 	hands on time.
-	
+
 	name should not be empty
 	please select the gender
 	please select the comment
-	
+
 	User Name 	:
 	Spouse Name :
 	Gender 		: 	Male
@@ -1147,38 +1178,38 @@
 	Name :Tufail
 	Your Gener is :Male (or Female)
 	Your comment is :Like (or Don't Like)
-	
+
 	Project must have proper ReadMe.md
-	
+
 	we are done for the day. need to finish a few things then ready to present.
-	
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	Happy March! May it be the best month yet.
 	Class is starting now.
-	
+
 	JavaScript-
 	remove required="true" from the login form
-	
+
 	create new>html>success.html
 	write thanks for logging in, the website is still under construction.
 	copy and paste stylesheet
-	
+
 	EVENTS
 	onblur
 	onclick
 	onfocus
 	onkeydown
 	onsubmit
-	
+
 	add a button below the submit button
 	named validate
-	function in script tags for 
+	function in script tags for
 	validate(){
 	var uname = document.getElementById("username").value;
 	var pwd = document.getElementById("password").value;
@@ -1188,76 +1219,76 @@
 	alert("Please enter password")
 	} else {
 		alert("Welcome :" + uname);
-	
+
 	password length between 6-12
-	
+
 	onclick"validate"()
-	
+
 	if validations are not correct do not continue
 	that's why we shouldnt use onclick.. instead onsubmit.
-	
+
 	selecting elements from the DOM
-	
+
 	to do:
 	customize product form so that all are mandatory.
 	to success.html
 	whatever is empty. put the message next to.
 	quantity on hand and price can not be negative
-	
+
 	validation for signUp.html
-	
+
 	selecting elements by tags or selectors
-	
+
 	Events
-	
-	
+
+
 	Going on 20 min break
-	
+
 	</p>
 	<p>
 	Back from a break. He is showing us more events.
 	onfocus
 	onblur
-	
+
 	Ways to get form field values -
-	<!--  
-		<form name=“f1”>
-		<input type="text" name="name" id=“n1“> 
+	<!--
+		<form name=ï¿½f1ï¿½>
+		<input type="text" name="name" id=ï¿½n1ï¿½>
 		</form>
-		
+
 		Getting the value using elements array:
 		document.forms[0].elements["name"].value;
 		document.forms[0].elements[0].value;
-		document.forms[0].elements[“n1”].value;
+		document.forms[0].elements[ï¿½n1ï¿½].value;
 		Using form name and element name/id combination:
 		document.[forms[0]/f1].[login/n1].value
 	-->
-	
+
 	play around with different ways to retried values
 	document.ElementById
 	document.loginForm.____.value
 	document.forms[0].elements[0].value
-	
+
 	Tufail showing us enhanced for loop-
-	
+
 	var radio = new Array(3);
 	for(i=3;i<5;i++) {
 	radio[i] = document.forms[0].elements[i].checked
-	
+
 	Going on lunch now!
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<!-- ########################################### -->
 	<h2>28/02/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
@@ -1265,23 +1296,23 @@
 	What do I fix next?
 	Let's run some tests-
 	Getting my feet wet with this. Think I have the register test working... somewhat at least.
-	
+
 	Okay nevermind not working as needed. Having trouble testing the register as it actually registers
 	a user. And then when I try to bring over the delete user method from employeeDAOImpl it doesn't
 	work the way Id expect. I'm sure it's something easy I'm not seeing.
-	
+
 	Went down a rabbit hole with adding Tufail's procedure that supplies the updated balances for sender
 	and receiver from database. Got it working.
-	
+
 	The tests weren't so easy so that's what I'll smooth out between now and tomorrow morning.
-	
+
 	Training is done for the day. Feel good about it. could have been more productive but also got a lot of
 	little things done as I figured out what was needed.
-	
-	
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
@@ -1315,10 +1346,10 @@
 	Reject application is working great. Next will be the approve function.
 	Feel like Im getting a better and better grasp on all of this and how everything works together.
 	I get into moments of having no idea but get out of those moments faster and faster.
-	
+
 	</p>
 	<p>
-	
+
 	Class is starting now.
 	Tufail is showing us how to get the updated balances from a debit and credit transfer in dbeaver.
 	transferAmountAndGetBalance(?,?,?,?,?)
@@ -1344,7 +1375,7 @@
 	_____ account successfully opened
 	N
 	______ account not approved.
-	
+
 	Tufail wants a status column
 	default is N
 	change to Y when approved by employee
@@ -1373,115 +1404,115 @@
 	</p>
 	<p>
 	5) REFUSE withdrawing or depositing a negative amount.
-	
+
 	I'm going to go with Tufail's idea and drop the extra table.
-	
+
 	So I've changed create user and login to reflect the updated customers table.
 	Now to update the approval process.
-	
+
 	So now the approve and reject functions are working on a basic level.
 	Have to fix so that the employee doesn't accidentally delete a different user than one he intends to.
 	but that can come later.
-	
+
 	So now I am done with 1) shown above.
 	AND 2)
 	and 3)
 	and 4)
-	
+
 	think it's just # 5 from the above options.. I need to re evaluate with these new changes and see
 	what I broke in the update process.
-	
+
 	Looks like everything is working so far. I'll write a few JUnit tests to be sure.
 	Then I'll see what this Log4j is all about. Feel like its going to be super simple read and write to file
 	on local system.
-	
+
 	maybe i need to add functionality to customer account to ACCEPT a transaction from another account
 	but based on tufails go over of the details I don't think this is required.
-	
+
 	I took a look at log4j, think I can get it up and running with a tutorial or two and 3-4 hours.
-	
+
 	Let's hold off on log4j for a bit. It's to be done when everything else is locked.
 	What is next?
-	
+
 	refuse the negative amount withdraw or deposit.
-	
+
 	Okay that is fixed now too.... I'm just moving through this faster than I thought I would.
-	
-	
-	
-	
+
+
+
+
 	</p>
 	<p>
-	
+
 	</p>
 
 	<h2>27/02/22</h2>
 	<h3>Evening:</h3>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Afternoon:</h3>
 	<p>
 	 1:11p
 	 Back after putting O to nap.
 	 Let's setup real boundaries for sending a transfer.
-	 
+
 	 Cleaned up the DAOs. Getting better idea of how each actually works.
 	 A lot of grabbing from the product app actually creates more confusion when you are trying to debug.
 	 But it definitely helped to guide me along. Okay back to fixing those transfer to account issues.
 	 Fixed!
-	 
+
 	 Okay what next??
-	 
+
 	 I might switch things around a bit. From reading this again I'm thinking that once a user signs
 	 into the customer menu they should have an option for applying for an account.
 	 Which means that they would apply and then have to wait for an employee to approve.
-	 
+
 	 This means that I must remove the unique constraint to the username in customers table.
-	 
+
 	 It also means the apply for account will send values to a Staging area until APPROVED by employee.
 	 Which will then move it to the official customers table.
-	 
+
 	 So with creating multiple accounts for users we need to differentiate the rows by userid for same username
 	 then we can populate for employee by username.
 	 And when making transfer or withdraw or deposit we have to use the userid.
 	 Think this makes sense.
-	 
+
 	 Okay so the apply table worked for sending an account application in.
 	 Now I need to go through an an employee and have the system tell me if there are any pending applications.
 	 If yes then I can accept or delete them.
-	 
+
 	 Finished the view balance requirement real quick.
 	 To make it work for other accounts under same username I will have to show other userid's that match username.
 	 I'm a bit worried now that other people can register with the same username... but I don't think its possible.
 	 As long as I make the create account process protect from this then I don't have to worry about
 	 protecting at the database level.
 	 Just checked... looks safe unless someone really wanted to attack this.
-	 
+
 	 Now to do the employee side of accepting an account application.
-	 
+
 	 So I AM READY FOR A BREAK.
-	 
+
 	 Basically got the approve or reject function working just have to add the final detail to the employeeDAOImpl
 	 so that I write out for it to approve or deny... which sounds like I did nothing . but not true.
-	 
+
 	 Things are moving fast!
-	 
-	 
-	 
-	 
+
+
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<h3>Morning:</h3>
 	<p>
 	5:31a and ready. Let's put some work in.
 	And now its 6:01a and havent done anything... why!
-	
+
 	I've changed the loginDAO functions over to customer dao. lets see if they work.
 	Works! Create acconnt, login to customer or employeee, Withdraw, deposit, and transfer work great.
 	Next:
@@ -1490,66 +1521,66 @@
 	I need to remmeber how much time and energy it takes to do small things that pop up.
 	They can kill me when I have a deadline. Which I do.
 	Let's prioritize.
-	
+
 	Let's do the transaction table real quick. 7:32am - 20 minutes estimate
-	
+
 	Okay transaction table is working. I was pretty spot on with guessing time it would take. Maybe
 	a little ambitious. Will add 5 minutes on estimate from here on. 7:57a
-	
+
 	I need to create function for employee to view all transactions.. Should basically be a copy
-	of the print all products from the product alstrom app we worked on. Going to say good morning to the 
+	of the print all products from the product alstrom app we worked on. Going to say good morning to the
 	family first.
-	
+
 	Back at the computer. 9:14a.
-	Family is good. They are going to the beach. Feel like I could join, but want to be sure I have this 
+	Family is good. They are going to the beach. Feel like I could join, but want to be sure I have this
 	project ready to go. Don't want to guess on it. The priority is my family and through successfully
 	getting a software engineering job I will fulfill the security aspect of providing how I can.
-	
+
 	So I have the transacations posting from withdraw, deposit, and transfer to the transaction table.
 	Now I need to have the ability for employee to see all transactions. Basically the whole table.
-	
+
 	I have the see all transactions in the employee side working. That was easier than I thought it would be.
 	Although it does something funky where in nulls the sender instead of the receiver which I thought
 	would be the opposite... but still works!
-	
+
 	Now on my list what I have left:
-	
+
 	CUSTOMER-
 	view the balance of a specific account
 	accept a money transfer from another account
-	
+
 	EMPLOYEE-
 	Approve or reject an account
 	View a customer bank accounts
-	
+
 	1 JUnit test
-	
+
 	So the program is a mess right now.
 	I was tring to figure out the delete user function.
 	Which led me to attempting to print all users.
 	Going to work backwards from there to see whats wrong.
-	
+
 	I have no idea. Im restarting eclipse.
-	
+
 	So restarting it and deleting the test class fixed it. Maybe it overloaded with requests to SQL
 	and needed to clear itself out.. who knows.
-	
+
 	So I needed to add the con = DBConnection.getConnection(); to each transaction method because I had
 	left the connection open previously but must have run out of whatever the limit was.
-	
+
 	something to add to list. The transaction goes through no matter what even if recipient doesnt exist.
-	
+
 	Okay taking a break. Got a lot done so far.
-	
-	
-	
-	
+
+
+
+
 	</p>
 	<p>
-	
+
 	</p>
 	<p>
-	
+
 	</p>
 
 <h2>26/02/22</h2>
@@ -1564,7 +1595,7 @@ What needs to be fixed? Going to push to git now. Just because.
 Okay Im running in circles here but learning at the same time.
 I realized I need to return the object from the method to have the database values stored in object.
 But now Im wondering if the boolean was more important... feels stupid to ask because I can handle
-easily to determine in the BankApp.java if the object was returned with nulls... but that's not the 
+easily to determine in the BankApp.java if the object was returned with nulls... but that's not the
 point of a validate method. So how to have a validate method ONLY validate and run a get values from
 database method that runs after its confirmed as valid... not sure if this is best but I'm going with it.
 
@@ -1573,7 +1604,7 @@ Now I'm really moving. Just moved the getting values from database into object f
 method from the customerDAO rather than the LoginDAO. More of preference than anything but Im
 understanding this more and more as I go along.
 So it works!
-I am now able to login, register, transfer funds, deposit to another specific account, withdraw, 
+I am now able to login, register, transfer funds, deposit to another specific account, withdraw,
 adding deposit to account now.
 
 I'm feeling 10,000% better than when I started an hour ago. The app is really working.
@@ -1623,7 +1654,7 @@ on 2/16 3:26 mark / 11:56 tufails time is how to import tables into postgres.
 Jumping into project now. Hope to resolve where I left off.
 
 I'm going to stop down on coding to think this through logically.
-I'm worried that I can barrel through and create a working app despite 
+I'm worried that I can barrel through and create a working app despite
 choosing bad practices. How do I know what is better?
 I am learning what I don't know by just continuing on.
 Is the point to learn as I hit these moments and keep reevaluating rather than
@@ -1647,9 +1678,9 @@ What specifically am I trying to solve now?
 So a user can "login" which means the username and password they enter is validated as matching
 the username and password combo stored in the database. As long as that username
 variable stays as it is then we can identify someone as logged in.
-We can then use that username to: view the balance of a specific account, 
-make transactions only from that account that is logged in to specific accounts, 
-withdraw from only that account, 
+We can then use that username to: view the balance of a specific account,
+make transactions only from that account that is logged in to specific accounts,
+withdraw from only that account,
 deposit to only that account,
 and accept a money transfer from another account.
 This will define a customer account.
@@ -1662,7 +1693,7 @@ view a log of all transactions.
 Add a JUnit test
 
 If I finish all of the above I will be happy.
-Optional: 
+Optional:
 Log4j is implemented to log events to a file.
 
 Okay enough thinking. I'll do the workshop and come back to this asap.
