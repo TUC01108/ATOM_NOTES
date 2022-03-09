@@ -106,6 +106,47 @@
 
 	5 minutes of reflection break.
 
+	RDS- bring database to the cloud
+	AWS>Services>Databases>RDS>Create Database
+	PostgreSQL version 10.17-R1
+	FREE TIER**** option
+
+	username- postgres
+	password- rootroot
+
+	uncheck-> enable storage autoscaling
+
+	Public access -> check Yes
+
+	Create Database
+
+	add URL once database is created
+	URL- database-1.cz8hbl9trixy.us-east-1.rds.amazonaws.com
+
+	then
+	Services>EC2>EC2 Dashboard>Security Groups
+	click on default one
+	inbound rules> edit inbound rules> Add rule > PostgreSQL
+	change Source to Anywhere IPv4 > Save rules
+
+	DBEAVER
+	connect to a database>PostgreSQL
+	enter Host as URL
+	enter username and password from AWS
+
+	we want ERS in the cloud-
+	just have to change the db.properties file to update where database connecting from
+
+	changed the password in the file and the url= to
+	url=jdbc:postgresql://database-1.cz8hbl9trixy.us-east-1.rds.amazonaws.com:5432/postgres
+
+	checking if it works now
+	WORKS!
+	So dope. so we are running postgres connection through RDS - AWS
+	Trying to wrap my head around all of this.
+
+	Going to lunch now
+
  	</p>
  	<p>
 
