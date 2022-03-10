@@ -90,6 +90,42 @@
 
 	*******QC
 	How can you create a singleton project?
+	Get great definition + example and input here.
+
+	What is an aggregate function in SQL
+	Aggregate functions compute a single result from a set of input values.
+	An example is using COUNT(*) in a person table to find all the countries
+	HAVING COUNT(*) > 40, which means more than 40 people in our table.
+
+	What is scalar functions in SQL?
+	Scalar functions are the built-in functions in SQL such as:
+	UCASE(), LCASE(), MID(), LENGTH(), ROUND(). Can use on columns
+	to have an effect on values returned from query.
+	***************************************************
+	just used this in my postgreSQL tutorial and could be useful for later
+	SELECT ROUND(AVG(price::money::numeric)) from car;
+
+	SELECT make, SUM(price::money::numeric) FROM car GROUP BY make;
+
+	I'm going to skip ahead from 2:03:18 of this video to find the foreign
+	key section, which is main thing I'd like help with.
+	Jumped ahead to 3:16:42
+
+	I want to get through this section later today and structure my tables.
+	Once tables complete I'll create models. Then DAO design and off to the
+	races. Remember to take notes for presenting ideas to QC person.
+	Figure I can make an interesting automation test for the presentation
+	as well. Things needed for that are a wait function to slow it down so
+	I can present while it walks itself through... rather than run.
+	Main goal is creating a 100% working app. Once I finish that I clearly
+	mark it as such in the github repo so I can rollback to working version
+	if needed. Then I will begin updating and refining to add features or
+	clean up as needed. A non-working cleaner app is 1000% worse than a working
+	ugly app. They really dont see the code while I'm presenting. Whether they
+	go through after who knows.
+
+	Done for day for training will work on this after we do park with O.
+	
 
  	</p>
  	<p>
