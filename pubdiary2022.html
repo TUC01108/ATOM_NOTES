@@ -1,31 +1,34 @@
 <!--
- Copy and paste this for each new day and update date/activities (update month)
-	<h2>00/03/22</h2>
-	<h3>Evening:</h3>
-	<p>
+ 		Copy and paste this for each new day and update date/activities (update month)
+		###########################################
+		<h2>00/03/22</h2>
+		<h3>Evening:</h3>
+		<p>
 
-	</p>
-	<p>
+		</p>
+		<p>
 
-	</p>
-	<h3>Afternoon:</h3>
-	<p>
+		</p>
+		<h3>Afternoon:</h3>
+		<p>
 
-	</p>
-	<p>
+		</p>
+		<p>
 
-	</p>
-	<h3>Morning:</h3>
-	<p>
+		</p>
+		<h3>Morning:</h3>
+		<p>
 
-	</p>
-	<p>
+		</p>
+		<p>
 
-	</p>
-	<p>
+		</p>
+		<p>
 
-	</p>
-	 ########################################### -->
+		</p>
+	 	###########################################
+-->
+
 	 <h2>10/03/22</h2>
  	<h3>Evening:</h3>
  	<p>
@@ -36,6 +39,57 @@
  	</p>
  	<h3>Afternoon:</h3>
  	<p>
+	Back from lunch-
+
+	Design patterns arent new.
+	Singleton
+		only one object should be created for a class.
+	create new project>
+	maven quickstart
+	com.training
+	design-patterns
+
+	new class
+	public class Payment
+	with constructor
+		"Payment object created"
+	public void pay(int amount, String creditor) {
+		"USD "+amount +" paid successfully to "+creditor
+	}
+
+	go to App.java
+	public class App
+	in main
+	Payment tony = new Payment();
+	tony.pay(98000, "Tony");
+	Payment amad = new Payment();
+	amad.pay(99000, "Amad");
+	Payment kami = new Payment();
+	kami.pay(99000, "Kami");
+
+	Singleton says only one object should be created.
+
+	create copy of package
+	rename to
+	com.training.singleton
+
+	go to Payment class-
+	Private static Payment payment = null;
+	constructor must be private
+	create static
+	public static Payment getPayment() {
+
+		if(payment == null) {
+			payment = new Payment();
+		}
+		return payment;
+	}
+
+	change app.java
+	Payment tony = Payment.getPaymentObject();
+
+	*******QC
+	How can you create a singleton project?
 
  	</p>
  	<p>
@@ -134,11 +188,14 @@ QC
 		part of my presentation.
 
 		Going on lunch now.
+		</p>
+		<p>
+		Back!
 
- 	</p>
- 	<p>
+ 	  </p>
+ 		<p>
 
- 	</p>
+ 		</p>
  	 ###########################################
 	 <h2>09/03/22</h2>
  	<h3>Evening:</h3>
