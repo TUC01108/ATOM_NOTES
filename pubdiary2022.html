@@ -84,6 +84,56 @@ QC
 
  	</p>
  	<p>
+	LOGGING-
+	Tufail says when the ship collides with iceberg they noted in logbook.
+
+	logging levels and methods
+		severe, warning, info, config, fine, finer, finest
+		read overview of loggin on curriculum page
+		ALL, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+
+		creating a new project before implementing in our ERS project
+
+		new>other> file> log4j.properties
+
+		# Root logger option
+		log4j.rootLogger=info, stdout
+
+
+		# Direct log messages to stdout
+		log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+		log4j.appender.stdout.Target=System.out
+		log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
+		go to App.java
+		in main
+		Logger logger = Logger.getLogger(App.class);
+		"##hello and welcome"
+		logger.trace("Calling the trace");
+		logger.debug("Calling the debug");
+		logger.info("Calling the info");
+		logger.warn("Calling the warn");
+		logger.error("Calling the error");
+		logger.fatal("Calling the fatal");
+		"##thanks for using my program"
+	</p>
+	<p>
+		Back from break-
+
+		continuing with logger.
+		log messages to a log file by adding appenders to log4j.properties
+
+		Very cool how we can log events within our project.
+		So basically anytime something happens we can log who did what at
+		what time and where specifically.
+		We can have username, or any variable shared within the log.
+		Kind of scary if you think about if some system is just sharing
+		your password in a file on a server somewhere. Do we really trust
+		the people that are doing mundane tasks day after day?
+		Anyways it's dope. Im going to log everything and can make it a
+		part of my presentation.
+
+		Going on lunch now.
 
  	</p>
  	<p>
