@@ -38,6 +38,63 @@
 	headaches down the line. Another way of doing this is to just keep creating
 	tables and dropping them until I have a working model. That's what I did
 	last time so I want to test out this other approach to compare.
+	</p>
+	<p>
+	So we have a Users table, a Reimbursement table, and a Login table.
+	I wonder if the Users table with an option for Employee and Manager will
+	work as good or better than having a seperate table for each. Also, I'm
+	still not 100% if a login table is necessary, but I think it's good practice.
+	Just not sure about that.
+	</p>
+	<p>
+	For my tables:
+	user, login, reimbursement
+	a user can have one login and a login can only belong to one user.
+	A user can have many reimbursements, but a reimbursement can only belong to
+	one user.
+
+	3:25:12 is when he starts to assign things by foreign key. I'll need this
+	for JDBC code.
+
+	\i C://Users//Winterfam//Downloads//car-person.sql
+
+	Thats the url I use to download sql file into my database.
+
+	UPDATE person SET car_id = 2 WHERE id = 1;
+
+	So I think I got everything I need from the video for now. stopped at 3:29:33.
+	Amazing resource. Here it is if anyone wnats to see.
+	<a href="https://www.youtube.com/watch?v=qw--VYLpxG4&t=3s">PostgreSQL Tutorial</a>
+
+	Login to system.
+		Show list of Expense Reimbursements
+			REIMBURSEMENT ID		TYPE		STATUS		TOTAL AMOUNT		CREATED DATE		SUBMITTED DATE
+		+ Create New Expense button
+				Create Expense Reimbursement
+					Select Type:
+						3 column FORM
+						Radio			Type																Usage
+											Ambassador Program									explanation of each type
+											Associate Travel Expense
+											Certification
+											Relocation to Training
+											Software Engineer - Travel Expenses
+
+					When you choose an option javascript says New Expense Reimbursement Created
+					Takes to new JSP page titled Expense Reimbursement Detail
+					Button to go Back To Expense Reimbursements
+					Show Expense Reimbursement ID - "EXP-0046605"
+					Created Date "3/10/2022"
+					Type - "Associate Travel Expense"
+					Status - "Created"
+					Requestor Comments - Text Box
+
+					3 column FORM with x to the right to delete and + to add more
+					Date - 					Purpose -				Amount -
+					Text Box		 		Text Box			 	Text Box
+					Attach Files button
+					Submit button
+					Save button
  	</p>
  	<p>
 
