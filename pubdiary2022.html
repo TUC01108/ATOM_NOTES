@@ -70,6 +70,14 @@ which is cool.
 
 Had to go put O to nap but back now. 12:15p.
 
+Let's keep moving along.
+
+All good on Functional interfaces. Working my way down the list.
+
+Went upstairs to say hi to Yordana before she left at 2pm
+It's now 3:37p. I decided to clean the kitchen/stove, and sweep
+the floors as well.
+
 
 
 
@@ -77,6 +85,19 @@ Had to go put O to nap but back now. 12:15p.
 
 
 BREAK UP INTO SECTIONS-
+
+SDLC
+	DevOps and Agile
+		Agile is a mentality or philosophy utilized when approaching the
+		creation of information systems, and is a flexible approach of
+		addressing the steps of the SDLC
+	Continuous deployment
+	Continous delivery
+	Scrum
+	User Stories
+	DevOps Overview
+	SonarCloud and Sonarlint
+	Continuous Integration (CI)
 
 DESIGN PATTERN
 	Creational: Singleton Pattern
@@ -105,35 +126,85 @@ JAVA
 
 INTERFACES
 	Functional Interface
+		interface which has only one abstract method
+		Lambda provides implementation of functional interface
+			https://www.youtube.com/watch?v=91sd5c23Eoo
+		Helps us avoid using anonymous class implementation
 	Comparable Interface
+		java.lang
+		has one method- compareTo(T o)
+		Collections.sort(List)
+		logic must be in same class whose objects being sorted
+		Natural ordering
 	Comparator Interface
+		java.util
+		has one method- compare(O o1, O o2)
+		Collections.sort(List , Comparator)
+		in an order other than their natural ordering
+			https://www.youtube.com/watch?v=jWnHfGadvaA
 EXPRESSIONS
 	Lambdas
-
+------------------------------------------------
 TESTING
 	Intro to Integration testing
+		testing of various modules of the software under development together as
+		a group to determine whether or not they function together
+		seamlessly as part of the system or whole.
+			https://www.codecademy.com/resources/blog/what-is-integration-testing/
 	E2E Testing
+		 method that involves testing an application’s workflow from
+		 beginning to end.
+		 	https://www.browserstack.com/guide/end-to-end-testing#:~:text=End%20to%20end%20testing%20%28E2E%20testing%29%20refers%20to,can%20be%20validated%20for%20integration%20and%20data%20integrity.
 	Cucumber and Selenium Automation
+				Selenium is an automation tool for web apps, while Cucumber is an
+				automation tool for behavior-driven development. Selenium executes
+				UI tests while Cucumber does acceptance testing.
+			https://www.perfecto.io/blog/cucumber-vs-selenium
 		Gherkin
+			 business readable language which helps you to describe business
+			 behavior without going into details of implementation.
+				Given − Establish context
+				When − Perform action
+				Then − Check outcome
 		Introduction to Behavior Driven Development
+			formalizes the Test-Driven Development best practices, in
+			particular, the perspective of working from the outside-in.
+				represent the behaviors of the system
+				Written with collaboration of all involved in the
+					development, including business and stakeholders.
+				designed to get the customers and developers working together.
+				When an acceptance test passes, it means that the specification
+				of the behavior of the system that it represents has been
+				implemented correctly.
+
 		Step implementations
+			When Cucumber executes a step in a scenario, it will look for a
+			matching step definition to execute. A Step Definition is a small
+			piece of code with a pattern attached to it. The pattern is used
+			to link the Step Definition to all the matching steps, and the
+			code is what Cucumber will execute when it sees a Gherkin step.
 		Feature File
+			The feature file is the essential segment of cucumber tool, which
+			is used to write acceptance steps for automation testing.
 	Github Actions
 	Defect Reports
 	Test Lifecycle
+		STLC
+			Requirements Analysis
+			Test Planning
+			Test case development
+			Test Environment setup
+			Test Execution
+			Test Cycle Closure
+					https://www.educba.com/software-testing-life-cycle/
 	Features vs Defects
+		A product defect is when the product behaves differently than designed.
 	Defect Lifecycle
+			https://www.tutorialspoint.com/software_testing_dictionary/defect_life_cycle.htm
+		New, Assigned, Active, Test, Verified, Closed, Reopened, Deferred, Rejected
 	Testing Mindsest
 	Types of Testing
-SDLC
-	DevOps and Agile
-	Continuous deployment
-	Continous delivery
-	Scrum
-	User Stories
-	DevOps Overview
-	SonarCloud and Sonarlint
-	Continuous Integration (CI)
+
 
 JAVASCRIPT
 	DOM
