@@ -32,7 +32,8 @@
 <h2>15/03/22</h2>
 <h3>Evening:</h3>
 <p>
-
+Back again.
+Need to make serious moves on this project.
 </p>
 <p>
 
@@ -67,11 +68,45 @@ use interface to require implementation
 implements OnInit
 
 20 minute break
-
-
 </p>
 <p>
+Back
 
+Finish the quiz when you have the time.
+
+hands on time-
+create 5 buttons.
+Please select one number :
+
+[1][2][3][4][5]
+</p>
+<p>
+Want to see how Tufail implemented this.
+he created the component.
+.ts to get the selector he adds to app.components.ts
+create the buttons
+he adds bootstrap to index.html (not essential)
+hardcode- h1 please select a number
+he uses buttonClicked() in .ts
+then in html (click)="buttonClicked(1)"
+(click)="buttonClicked(2)"
+(click)="buttonClicked(3)"
+(click)="buttonClicked(4)"
+(click)="buttonClicked(5)"
+then in .ts
+clickedCounter:number=0;
+temp:number;
+before constructor
+then in constructor initialize both counter and temp
+
+buttonClicked(value:number){
+	console.log(value)
+	this.temp = value;
+	if(this.temp == value)
+		this.clickedCounter++
+		else
+			this.clickedCounter = 0
+}
 </p>
 <h3>Morning:</h3>
 <p>
