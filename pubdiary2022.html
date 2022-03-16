@@ -59,8 +59,92 @@ REimbursements.jsp and changing whats necessary.
 Starting class now
 </p>
 <p>
-	
+Today we will cover:
+	Directives, binding, decorator, Angular Routing
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript
+	for app scale JavaSCript Development
+	from ppt TypeScript_Session01 slide 5
 
+</p>
+<p>
+type tsc first.ts
+and replace first with name of typescript file to compile to js.
+then node first
+and replace first with name of file.
+</p>
+<p>
+Directives
+	Component
+	Structural
+			*ngFor
+			*ngIf
+	Attribute
+Gives direction to any DOM element
+
+create a new component-
+ng g c components/employee
+create a class=
+ng g class models/employee
+creates a .ts and .spec.ts
+
+export class Employee
+	employeeId:number=0;
+	employeeName:strings=''
+	salary:number=0
+	designation:string=''
+
+2)
+declare object in employee.component.ts
+	employee = new Employee();
+
+
+	constructor() {
+		this.employee.employeeId=100;
+		this.employee.employeeName="Isha"
+		this.employee.salary=67000
+		this.employee.designation="HR"
+	}
+
+3)
+go to employee.component.html
+
+we are creating new project because other one got to clustered
+UI - > Spring - > DB
+
+Angular + Spring are a team.
+
+? is forced initialization
+
+He is going super fast. going to take notes here
+
+in html
+structured list
+
+*ngFor="let p of products" inside li tag
+{{ p.productId }} - {{ p.productName }} - {{ p.quantityOnHand }} - {{ p.price }}
+
+We are hardcoding now but this would normally come from DB.
+
+paste bootstrap in index.html
+
+*********Structural Directives (CHECK THE NAME IS CORRECTs)
+=====================
+*ngFor="let product of products">
+inside the tr tag for create loop until through all products
+
+the covers *ngFor now for *ngIf
+
+tried to implement *ngElse and failed, but hopefully we learn.
+
+[ngSwitch]
+in .ts
+public color="green";
+div [ngSwitch]="color"
+	p *ngSwitchCase="'red'">You have selected red
+	p *ngSwitchCase="'greed'">You have selected green
+
+My brain is ready for a break.
+And now we are. 20 minutes and I'll be back.
 </p>
 <p>
 
