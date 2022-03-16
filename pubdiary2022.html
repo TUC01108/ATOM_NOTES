@@ -78,6 +78,41 @@ to add the ! point when getting that possible null error.
 Back from a 20 min break.
 Looking at routing and Spring
 
+-----------------------------
+
+create a productInfo component
+
+ng g c components/productInfo
+for product name and price
+
+paste app-product-info selector in app.component.html
+
+IT IS NOT THE BEST WAY.
+let's try creating a class that holds only the data and we pull from.
+create in app
+create ProductData.ts
+	getProducts(){
+		return [
+			paste array data here
+		]
+	}
+in product-info.component.ts
+productData = new ProductData();
+this.products = this.productData.getProducts();
+
+in product-list.component.ts
+productData = new ProductData();
+construtor() {
+	this.products = this.productData.getProducts();
+}
+
+This is sweet!
+Basically same power of Java with more natural flow between html, css, and js.
+Feels like having superpowers.
+
+He will update our submission date for P1.
+
+Done training for the day. Will get done lots for the project.
 
 </p>
 <p>
