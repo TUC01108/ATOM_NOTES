@@ -39,6 +39,48 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Back let's see how to implement HttpClient in angular.
+copied from before lunch-
+How to use data from json server and posted in localhost:4200
+connect to angular
+----------------------------
+enable httpmodule in app.module.ts
+	imports: HttpClientModule
+	add import at top.
+	import { HttpClientModule } from '@angular/common/http'
+go to product.service.ts
+add above injectable-
+const productURL = "http://localhost:3000/product"
+inside constructor paren-
+public httpClient:HttpClient
+delete harcoded produts
+add-
+return this.httpClient.get(productURL);
+
+Obeservables (read in revature curriculum)=
+can use promises or observables for handling asynchronous data flow
+
+getProducts() : Observable Product [] {
+	return this.httpClient.get Product [] (productURL);
+}
+change in product-info-
+this.productService.getProducts().subscribe((data:any) => {
+	this.products = data;
+
+});
+</p>
+<p>
+This sets up a connection from json-server/postman to angular UI
+We are talking with JSON.
+
+Exercise:
+1) create patientsdb.json and hardcode 2 patients information
+2) start json-server patientsdb.json
+	json-server --watch patientsdb.json --id patientId --port 5678
+3) Test all the http methods - GET, PUT, POST, DELETE in postman
+	localhost:5678/patient
+
+Computer has zoom frozen and Im going to restart to get it up and running.
 
 </p>
 <p>
