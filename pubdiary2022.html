@@ -81,6 +81,27 @@ Exercise:
 	localhost:5678/patient
 
 Computer has zoom frozen and Im going to restart to get it up and running.
+</p>
+<p>
+I'm back. Computer working fine and with different resolution. Not sure I like more.
+Anyways here are the steps for connecting  postman to angular from scratch.
+
+1) create db.json file with hard coded data
+2) start json-server on port that's not in use
+3) go to postman and make sure it's connected properly and get, put, post, delete working
+4) go to angular and enable httpmodule in app.module.ts
+5) go to ______.service.ts
+6) add const _____URL = "http://localhost:___/___"
+7) inside constructor paren add (public httpClient:HttpClient) {}
+8) in existing method add get_____() : Observable<____ []> {
+	return this .httpClient.get<______ []> (_____URL);
+}
+9) inside component.ts add this.______Service.get_____().subscribe((data:any) => {
+	this.______ = data;
+
+and I think that's it!.
+
+20 min break now.
 
 </p>
 <p>
