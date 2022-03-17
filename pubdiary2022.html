@@ -102,10 +102,61 @@ Anyways here are the steps for connecting  postman to angular from scratch.
 and I think that's it!.
 
 20 min break now.
+</p>
+<p>
+Now we are getting a single product
+
+this.httpClient.get<_____> (`${______URL}/${_____Id}`);
+
+Now we are deleting a product
+this.httpClient.delete<_____> (`${_____URL}/${_____Id}`);
+
+Now we are adding a product
+this.httpClient.post<_____> (_____URL,_____,this.httpOptions);
+
+We need to do the update method on our own.
+
+--------
+</p>
+<p>
+We want a textbox by which user can search for someone by Id.
+
+create a hyperlink for each component so they dont all appear at once.
+Can be achieved through routing.
+ROUTING
+go to app.component.html
+delete all the rendering selectors
+a href="" ProductList
+a href="" ProductDetails
+a href="" PatientList
+
+change above to-
+routerLink instead of a href
+
+a routerLink="productList" ProductList
+a routerLink="productInfo" ProductInfo
+
+Routing is for navigating from one page to another
+
+app-routing.module.ts
+
+declare the routes in const routes: Routes = [
+{ path:'productList', component : ProductListComponent},
+{ path:'abc', component : ProductInfoComponent}
+];
+
+in app.component.html-
+write router-outlet /router-outlet
+</p>
+<p>
+	adding a aboutus and contactus components
+
+	adding to routing
 
 </p>
 <p>
-
+Done with training.
+--------------------------------------------------------------
 </p>
 <h3>Morning:</h3>
 <p>
