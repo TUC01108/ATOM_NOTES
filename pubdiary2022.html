@@ -104,6 +104,91 @@ Postman
 Going on 20 minute break.
 </p>
 <p>
+GET			- retrieve record
+PUT			- update
+POST		- create/insert
+DELETE	- remove
+
+http://localhost:3000/product			-GET		all products
+http://localhost:3000/product/7		-GET		single product
+http://localhost:3000/product/7		-DELETE	deletes a single product
+http://localhost:3000/product/		-POST		add a product
+{
+	"productId": 299,
+	"productName": "Lakme",
+	"quantityOnHand": 12,
+	"price":
+}
+
+200 is okay response
+404 is not found
+
+This is really cool. Using HTTP requests to alter json file.
+Know this will also work with databases. Feels like superpower too.
+
+test out ADD
+POST		raw			JSON
+{
+	"productId": 299,
+	"productName": "Lakme",
+	"quantityOnHand": 12,
+	"price": 99
+}
+{
+	"productId": 399,
+	"productName": "Aroma",
+	"quantityOnHand": 199,
+	"price": 9600
+}
+
+update
+localhost:3000/product/71
+PUT			raw			JSON
+{
+	enter updated data
+}
+
+using notepad++ we get a notification when changes in file occur.
+which is nice.
+
+next week we will create our own URI.
+
+what is rest
+	Representational State Transfer
+	It is a set of rules that developers follow when they create their API.
+	architecture, used in web service. 2 types of web services. SOAP and REST API
+	you should be able to get  a resource when you link to a specific URL.
+	Each URL is called a request while the data sent back is called a response.
+
+Showing us another example on amazon.
+
+this link is useful- https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
+
+
+use case-
+we want to display product data from external server
+
+How to use data from json server and posted in localhost:4200
+connect to angular
+----------------------------
+enable httpmodule in app.module.ts
+	imports: HttpClientModule
+	add import at top.
+	import { HttpClientModule } from '@angular/common/http'
+go to product.service.ts
+add above injectable-
+const productURL = "http://localhost:3000/product"
+inside constructor paren-
+public httpClient:HttpClient
+delete harcoded produts
+add-
+return this.httpClient.get(productURL);
+
+
+
+HttpClient is a service
+
+LUNCH cliff hanger.
 
 </p>
 <p>
