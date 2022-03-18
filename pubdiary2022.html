@@ -201,6 +201,76 @@ Works like a charm.
 </p>
 <p>
 Back from 20 min break.
+go to product-create.component.html
+after .required
+.minLength(5)
+.min(0)
+.min(1)
+
+go to product-create.component.ts
+copy and paste for multiple errors
+-------------------------------------------
+</p>
+<p>
+MDF w/ FormBuilder
+
+copy and paste
+
+go to product-add.component.ts
+productForm!: FormGroup;
+
+inside constructor paren
+public formBuilder:FormBuilder
+{
+	this.productForm = this.formBuilder.group({
+		productId:['',Validators.required],
+		productName: ['',[Validators.required,Validators.minLength(5)]],
+		quantityOnHand: ['',[Validators.required,Validators.min(1)]],
+		price: ['',[Validators.required,Validators.min(0)]]
+	})
+}
+move it to ngOnInit()
+
+and displayProtuctInfo()
+{
+	console.log(this.productForm.value)
+}
+
+copy and paste HTML as is.
+
+fixing submit button to be disabled until valid
+[disabled]="!productForm.valid"
+--------------------------------------
+</p>
+<p>
+Checking if we can save the values into our server.
+
+go to product-add.component.ts
+successMessage!: string;
+add in constructor parent
+,public productService:ProductService
+
+inside displayProductIno()
+this.productService.saveProduct(this.productForm.value).subscribe((data:any)=> {
+	this.successMessage = 'Product with productid '+this.productForm.value.productId+ ' save successfully'
+})
+
+test it out
+
+go to product-add.component.html
+font color=green h2{{successMessage}}
+
+WORKS!!! so cool. We are using the methods we created yesterday to
+communicate with JSON fake server, which will one day be our real
+database. This is power.
+-------------------------------
+</p>
+<p>
+Routing
+Declarative
+
+Programmatic routing
+after lunch
 
 
 </p>
