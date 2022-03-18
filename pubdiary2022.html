@@ -39,6 +39,58 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Back from lunch.
+
+Make a procedure guide for different tasks and different ways to do.
+Based on situations.
+
+Routing
+	Default Routing
+
+go to app-routing.module.ts
+add path
+{ path: '', component : ProductInfoComponent} -> makes this the default
+or
+{ path : '', redirectTo : 'productInfo', pathMatch : 'full'}
+
+
+go to product-add.components.ts
+
+add in constructor paren
+,public router:Router
+
+go to displayProductInfo()
+this.router.navigate(['productList']);
+
+// go to app-routing.modules.ts
+-------------------------------------
+</p>
+<p>
+Now for a hands on (40min):
+
+Create links
+Add Patients | View Patients
+
+PatientId -
+PatientName-
+symptom-
+billAmount-
+doctorAttended-
+
+*required
+*billAmount should be between 10000 and 50000
+
+Save patients button
+saves into file/json-server
+
+*After saving it should redirect to view all patients
+------
+DONE
+</p>
+<p>
+back from 20 minute break.
+
+How to delete.
 
 </p>
 <p>
