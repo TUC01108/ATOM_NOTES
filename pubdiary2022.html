@@ -91,6 +91,46 @@ DONE
 back from 20 minute break.
 
 How to delete.
+go to product-list.component.html
+th Delete
+	td button class="btn btn-danger" (click)="removeProduct(product.productId)" Delete
+
+go to product-list.component.ts
+successMessage!: string;
+
+under ngOnInit()
+removeProduct(productId:number) {
+	this.productService.deleteProduct(productId).subscribe((data: any)=> {
+		this.successMessage = 'Product with product id '+productId+' deleted successfully';
+
+	}, err => this.errorMessage = err)
+}
+
+in html render with
+font color="green" h2 {{successMessage}}
+
+------------------------
+adding the refresh after delete feature
+
+got to product-list.comp.ts
+copy and paste the this.product and paste into new
+
+refreshProducts() {
+	this.productService.getProducts().subscribe((data: any) => {
+		this.products = data;
+
+	}, err => this.errorMessage = err)
+}
+
+add to removeProduct method
+this.refreshProducts();
+
+npm install
+npm start
+json-server --watch productdb.json --id productId
+
+
+done for the day and all Angular'd up!
 
 </p>
 <p>
