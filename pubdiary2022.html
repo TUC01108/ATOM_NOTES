@@ -29,7 +29,7 @@
 	 	###########################################
 -->
 ###########################################
-<h2>00/03/22</h2>
+<h2>18/03/22</h2>
 <h3>Evening:</h3>
 <p>
 
@@ -59,12 +59,149 @@ To do:
 	view all resolved
 	view for a specific employee
 	view all employees
+	-------------------
 Training is starting
 </p>
 <p>
-
+Observable
+Promise
+Routing
+Forms
+	Template Driven Forms (TDF)
+	Model Driven Forms (MDF)
+	Model Driven Forms with Form Builder
+Pipes
+	Custom Pipes
+Javalin
 </p>
 <p>
+Let's add error not being connected to server for user.
+go to product.service.ts
+	add .pipe(retry(1),catchError(this.errorHandler)) to method getProducts
+	add errorHandler method
+
+go to product list
+public errorMessage!:string;
+	add to constructor, err => this.errorMessage = err)
+
+go to html
+font color="red" h1 {{ errorMessage }}
+
+do the same in product info
+Got it working on list and info.
+Now starting server to check if it goes away.
+
+json-server --watch productdb.json --id productId --port 3000
+
+WORKS
+--------------------
+</p>
+<p>
+Now Forms-
+Template Driven Forms
+create new component
+ng g c components/user
+create new hyperlink on app.component.html
+routerLink user
+go to app-routing.module.ts
+add path for user UserComponent
+
+create a new component
+ng g c components/productAdd
+
+create new component
+ng g c components/productCreate
+
+create a hyperlink for each and add routing
+Add Product Create Product
+--------------------------
+</p>
+<p>
+go to app.modules.ts
+import FormsModule if not there
+
+got to user.component.html
+h1 Template Driven Forms
+form #userForm="ngForm" (ngSubmit)="displayUserDetails(userForm.value)"
+div class="form-group"
+label
+User Id
+input type="text" class="form-control" name="userId" [(ngModel)]="userId"
+label
+User Id
+input type="text" class="form-control" name="userName" [(ngModel)]="userName"
+
+input type="submit"
+
+go to user.component.ts
+userId!:string
+userName!:string
+
+under ngOnInit()
+displayUserDetails(values:any){
+	console.log(values);
+}
+
+Problem with this is you have to take all the values
+html to ts
+-----------------------------
+</p>
+<p>
+Model Driven Forms aka Reactive Forms
+	(most used)
+goes directly to
+
+go to product-create.component.ts
+productForm!: FormGroup;
+in constructor
+this.productForm = new FormGroup({
+	productId : new FormControl('',Validators.required),
+	productName : new FormControl('',Validators.required),
+	quanitytOnHand : new FormControl('',Validators.required),
+	price : new FormControl('',Validators.required),
+})
+
+below ngOnInit()
+displayProductInfo(){
+	console.log(this.productForm.value)
+}
+
+product-create.component.html
+form novalidate [formGroup]="productForm" (ngSubmit)="displayProductInfo()"
+fieldset
+div class="form-group"
+label Product Id
+input type="text" class="form-control" formControlName="productId"
+/div
+input type="submit"
+
+go to app-modules.ts
+imports :
+ReactiveFormsModule
+--------------------------
+</p>
+<p>
+CSS Validation keywords
+	valid
+					invalid
+					pristine
+						not yet interacted with
+	dirty
+	touched
+		cursor inside
+					untouched
+we can give messages based on the validation status
+go to product-create.component.html
+div class="alert alert-danger" *ngIf="productForm.get('productId').hasError('required')
+&& productForm.get('productId').dirty" Please enter Product id
+
+go to tsconfig make strict false
+
+Works like a charm.
+</p>
+<p>
+Back from 20 min break.
+
 
 </p>
 <p>
@@ -120,6 +257,8 @@ this.productService.getProducts().subscribe((data:any) => {
 	this.products = data;
 
 });
+
+
 </p>
 <p>
 This sets up a connection from json-server/postman to angular UI
@@ -138,8 +277,12 @@ Computer has zoom frozen and Im going to restart to get it up and running.
 I'm back. Computer working fine and with different resolution. Not sure I like more.
 Anyways here are the steps for connecting  postman to angular from scratch.
 
+
+0) npm install -g json-server
 1) create db.json file with hard coded data
+			notepad productdb.json
 2) start json-server on port that's not in use
+			json-server --watch productdb.json --id productId --port 5678
 3) go to postman and make sure it's connected properly and get, put, post, delete working
 4) go to angular and enable httpmodule in app.module.ts
 5) go to ______.service.ts
