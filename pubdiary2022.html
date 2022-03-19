@@ -39,7 +39,61 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Found 4 flashcard decks that could help:
+this one has 10 terms-
+https://quizlet.com/319208636/revature-panels-angular-flash-cards/
+This one has 30 terms-
+https://quizlet.com/287224706/revature-angular-flash-cards/
+This one has 36 terms-
+https://quizlet.com/506989476/revature-week-4-more-servlets-typescript-and-angular-flash-cards/
+This one has 52 terms-
+https://quizlet.com/271264547/angular-flash-cards/
+</p>
+<p>
+----------------------------
+Feel like pipes will be important-
+This video was great-
+		https://www.simplilearn.com/tutorials/angular-tutorial/angular-pipes
+Built-in pipes
+	{{ dateToday | date | uppercase }}
+	{{ dateToday | date: 'short'| lowercase }}	(colon sign allows for argument)
+	using {{ name| uppercase }}
+	using {{ name | slice:6 }}
+Custom pipes
+	@pipe
+	create a typescript class
+	decorate with the @pipe decorator
+	implement the pipe transform
+	return the transformed data
+	add pipe class to the declarations array
+	OR
+	ng g pipe nameofthepipe
+Pure and Impure Pipes
+	All are pure by default
+	An impure pipe is called for every change
+	detection cycle no matter whether the value or parameter (s) changes
+-------------------------------
+</p>
+<p>
+Next-
+Services and Dependency Injection
+Services
+	An Angular service is a singleton instance that can be injected into multiple
+	components, where the component utilizes the functions defined in a service class.
+	This allows us to reuse the code.
+	_____.service.ts
+	We use a Dependency Injection framework to inject the service into components in our app.
+Dependency Injection (DI)
+	is a design pattern
 
+Think I understand this better. In my own words-
+Services are for storing data thats to be used across multiple components.
+The benefit is that if data changes then you only have to change in one place.
+And allows the component to just handle the view and not the creation of object as well.
+Dependency Injection is the framework / design pattern that allows you to connect a
+service to a component.
+--------------------------------------
+taking a break as we just entered the evening.
 </p>
 <p>
 
