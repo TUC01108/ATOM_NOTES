@@ -49,6 +49,129 @@
 Back and ready to study full on for tomorrow's QC. Allergies kicked my butt yesterday
 into this morning and I didnt even get off the couch to go to garage.
 
+Going to copy and paste from yesterday so I have the study notes continuing-
+Built-in pipes
+	{{ dateToday | date | uppercase }}
+	{{ dateToday | date: 'short'| lowercase }}	(colon sign allows for argument)
+	using {{ name| uppercase }}
+	using {{ name | slice:6 }}
+Custom pipes
+	@pipe
+	create a typescript class
+	decorate with the @pipe decorator
+	implement the pipe transform
+	return the transformed data
+	add pipe class to the declarations array
+	OR
+	ng g pipe nameofthepipe
+Pure and Impure Pipes
+	All are pure by default
+	An impure pipe is called for every change
+	detection cycle no matter whether the value or parameter (s) changes
+-------------------------------
+</p>
+<p>
+Next-
+Services and Dependency Injection
+Services
+	An Angular service is a singleton instance that can be injected into multiple
+	components, where the component utilizes the functions defined in a service class.
+	This allows us to reuse the code.
+	_____.service.ts
+	We use a Dependency Injection framework to inject the service into components in our app.
+Dependency Injection (DI)
+	is a design pattern
+
+Think I understand this better. In my own words-
+Services are for storing data thats to be used across multiple components.
+The benefit is that if data changes then you only have to change in one place.
+And allows the component to just handle the view and not the creation of object as well.
+Dependency Injection is the framework / design pattern that allows you to connect a
+service to a component.
+--------------------------------------
+</p>
+<p>
+Topics to cover today-
+1-way data binding & 2-way data binding
+Data Binding
+	provides the communication between a component and the DOM
+	technique used to bind the data from an HTML template to a Component class or vice versa
+
+1-Way Data Binding
+	allows us to manipulate the views through the models. Changes in the class are
+	reflected in the template.
+	-Interpolation or String Interpolation
+		{{ data }}
+	Property Binding
+		img [src]="image" same as String Interpolation- img src = {{ image }}
+		From TS to HTML
+	Event Binding
+		input type="submit" (click)="onSubmit()"
+		From HTML to TS
+
+2-Way Data Binding
+	achieved by combining property binding and event binding together.
+		[()]
+	[(ngModel)]
+		import FormsModule into Angular module
+		for data entry forms specifically
+			To use the ngModel directive, we need to import the FormsModule package into our
+			Angular module.
+
+
+Angular Directives
+	is a marker on a DOM element that tells Angular to change the appearance,
+	behavior, and layout of the DOM element and its children. In Angular, most directives
+	begin with ng, where ng stands for Angular, and extend the HTML.
+
+Component Directives
+	alter the details of how the component should be processed, instantiated, and used at
+	runtime.
+Structural Directives
+	used to manipulate and change the structure of the DOM elements.
+	There are three built-in structural directives -
+	ngIf,
+	ngFor
+	ngSwitch
+
+Attribute Directives
+	 used to change the look and behavior of the DOM elements.
+	 There are two built-in attribute directives -
+	 ngClass
+	 ngStyle
+Custom Directives
+	ng generate directive text
+Decorators
+
+Component Lifecycle methods
+
+Access Modifiers and variable Types
+
+Single Page Application (SPA)
+
+Angular CLI
+
+Node as JS runtime; npm as a package manager
+
+package.json file
+
+Routing
+
+RxJS (Reactive Extensions for JavaScript)
+	-framework for reactive programming using observable for writing asynchronous code.
+	RxJS subject is special type of observable that allows values to be multicasted to many Observers.
+
+
+
+Typescript
+
+Postman
+
+HTTP
+
+JSON
+
+Going up to put O to nap.
 
 </p>
 <p>
