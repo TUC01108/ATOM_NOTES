@@ -48,8 +48,99 @@
 <p>
 Today is P1 day. Get it done and make it great.
 
+Learning SPRING
+---------------------------------
+	The Spring Framework is an inversion of control container that provides flexible
+	infrastructural support to create loosely coupled Java applications by utilizing
+	dependency injection.
+
+	DI/IOC
+
+					first admire the features of what you are learning
+	The object is pushed to the project in Spring framework.
+	Application becomes loosely coupled.
+	Spring container
+
+Spring Core
+==================================
+create mave project in eclipse
+quickstart>next>
+group id: com.training.spring
+artifact id: spring-basics
+
+new class in com.training.spring
+Employee
+	private String employeeName;
+	default constructor
+	getters and setters
+
+go to app.jaava
+	Employee employee = ew Employee();
+	employee.setEmployeeName("Alex");
+----------------------------------------------
+go to pom.xml
+	add spring dependency
+	spring core maven- 5.3.17
+
+create a beans.xml in com.training.spring
+	bean id="emp" class="com.training.spring.Employee"
+	add spring beans dependency
+
+create new class SpringApp.java
+	with main
+	Resource resource = new ClassPathResource("beans.xml");
+	BeanFactory factory = new XmlBeanFactory(resource);
+
+	Employee emp1 = (Employee) factory.getBean("emp");
+
+	emp1.setEmployeeName("Mark");
+	Syso(emp1.getEmployeeName());
+
+Two types of injection
+	constructor
+	setter
+
+create class in com.training.spring
+Customer.java
+	private int customerId;
+	private String customerName;
+	private String customerAddress;
+	private int billAmount;
+
+	default onstructor
+
+	param constructor with fields
+	setters and getters
+	toString
+
+go to beans.xml
+	create bean
+	bean id="cust" class="com.training.spring.Customer"
+		property name="customerId" value="1999"
+		property name="customerName" value="Joseph"
+		property name="customerAddress" value="NewYork"
+		property name="billAmount" value="189900"
+
+go to SpringApp.java
+	Customer cust = (Customer)factory.getBean
+	Syso(cust)
+
+create class
+Address
+	addressId
+	city
+	state
+	zipcode
+
+	create 2 beans- address1 & address2
+		1) by setter
+		2) by constructor
+	print both
+
 </p>
 <p>
+Back from break.
+
 
 </p>
 <p>
