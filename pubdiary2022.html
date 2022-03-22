@@ -39,10 +39,65 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Back from lunch-
+
+Spring is not for small applications
+
+==============================================
+Autowiring
+	don't have to write in the ref/property values one by one.
+	--
+	This is an automagical
+ process in which bean references don't need to be coded explicitly in the XML
+ bean definition file, but rather the Spring container works out dependencies.
+	--
+can autowire byName or byType
+
+Annotations-
+	can be written via XML or annotations
+
+create a copy of the spring-basics project
+spring-basics-annotations
+	delete beans.xml file
+create new class
+AppConfig inside config package
+
+add the spring annotations maven dependency 5.3.17
+@Configuration
+public
+	@Bean
+	public Address getAddress() {
+		return new Address();
+	}
+
+	@Bean
+	public Customer getCustomer() {
+		return new Customer();
+	}
+change SpringApp to
+	ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+	Address address = context.getBean(Address.class);
+	Customer customer = context.getBean(Customer.class);
+
+	address.setAddressId(1222);
+	address.setCity("London");
+	address.setState("UK");
+	address.setZipcode(918171);
+
+	customer.setCustomerId(1);
+	customer.setCustomerName("Tony");
+	customer.setCustomerAddress("US");
+	customer.setBillAmount(94000);
+
+	customer.setAddress(address)
+
+	syso(customer);
+
 
 </p>
 <p>
-
+Went on 20 minute break.
 </p>
 <h3>Morning:</h3>
 <p>
@@ -182,6 +237,8 @@ Strength in Spring.
 
 Half my brain is on reserve so I can get this project done when training ends
 today.
+
+
 
 </p>
 <p>
