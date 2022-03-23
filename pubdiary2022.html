@@ -39,6 +39,8 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Back from lunch-
+
 
 </p>
 <p>
@@ -139,6 +141,73 @@ Live reload
 	Going on break 20 min now.
 </p>
 <p>
+spring-boot-practice
+	7070
+	Welcome to practice app
+
+-----------------------------------
+REST
+
+	method is expressed in the _____
+	Scoping information should go in the URI
+
+create new spring
+productapp-jwa-alstrom
+
+package: com.training.pms
+
+select Spring Web, Spring Boot Devtools
+Create
+
+port 5050
+
+create ProductController.java
+	@RestController
+	@RequestMappng("product")
+	public class ProductController {
+
+		@RequestMapping("getProducts") //localhost:5050/product/getProducts
+		public String getProduct() {
+			return "Getting all the products";
+		}
+
+		@GetMapping
+		public String getProducts() {			//localhost:5050/product		-GET
+			return "Getting all the products";
+		}
+
+		@GetMapping("single")
+		public String getProduct() {			//localhost:5050/product/single		-GET
+			return "Getting a single products";
+		}
+
+		@PostMapping
+		public String saveProduct() {			//localhost:5050/product			-POST
+			return "saving a single product";
+		}
+
+		@PutMapping
+		public String updateProduct() {		//localhost:5050/product		-PUT
+			return "Updating a single product";
+		}
+
+		@DeleteMapping
+		public String deleteProduct() {		//localhost:5050/product		-DELETE
+			return "Deleting a single product";
+		}
+
+		@DeleteMapping("/allProducts")
+		public String deleteProducts() {		//localhost:5050/product/allProducts		-DELETE
+			return "Deleting all products";
+		}
+	}
+
+startup postman
+
+
+</p>
+<p>
+
 
 </p>
 ###########################################
