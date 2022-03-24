@@ -39,6 +39,58 @@
 </p>
 <h3>Afternoon:</h3>
 <p>
+Back from lunch-
+
+new>interface
+com.training.pms.repository
+name: ProductRepository or ProductDAO
+extends CrudRepository Product, Integer
+{
+
+}
+
+go to ProductController
+	@Autowired
+	ProductRepository productRepository;
+
+		productRepository.save(product)
+
+Controller and a service layer
+
+create new interface
+create new package
+	com.training.pms.service
+	ProductService
+
+		public String addProduct(Product product);
+		public String updateProduct(int productId, Product product);
+		public String deleteProduct(int productId);
+		public List Product getProducts();
+		public Product getProduct(int ProductId);
+		public boolean isProductExists(int productId);
+
+		// delete all products
+		public String deleteProduct();
+
+		// return stock of product
+		public int checkProductStock(int productid)
+
+
+		public List Product getProductByName(String productName);
+		public List Product get ProductByPriceRange(int min, int max);
+
+
+@service
+	asking spring to make a bean of this
+
+@service
+@controller
+@repository
+@restcontroller
+</p>
+<p>
+Back from 20 min break.
+
 
 </p>
 <p>
