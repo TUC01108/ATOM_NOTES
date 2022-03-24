@@ -53,10 +53,73 @@ Now for a lift.
 -------------------------------------
 Starting training-
 
+**********************QC*************
+What does @SpringBootApplication do-
+	enableautoconfiguration
+	componentscan
+	starting embedded tomcat
+*******************************
 
+Angular App
+
+UI -> REACT or ANGULAR (client side) make a rest call to
+SPRING connects to
+Database
+
+fake server-
+	json-server --watch productdb.json --id productId
+	localhost
+	4200 -angular running
+	3000 -json server running)
+	5050 -springboot app running
+
+all 3 servers are running
+
+@PathVariable
+@RequestBody
+
+got to ProductController.java in eclipse productapp-jwa-alstrom
+		@GetMapping("{productId}")
+		public String getProduct(@PathVariable("productId")int productId)
+			return "Getting a single productby productId"
+
+*******QC
+What is path variable
+	REST endpoints can be bound to particular REST resources.
+	Used to bound parameters in the URL
+	********************
+
+create 2 methods. you can delete by id and you can delete by name
+----
+save product
+
+@RequestBody
+localhost:5050/product				-POST
+body
+{
+
+}
+@PostMapping
+public String saveProduct(@RequestBody Product)
+
+=============
+Lombok
+	library by which you can reduce your boiler plate code
+
+right click>Spring>add starters>lombok>click pom.xml
+
+java -jar lombok.jar
+
+Back from 20 min break.
+
+--------------------------------------
 
 </p>
 <p>
+did for patients what we had for products.
+
+
+
 
 </p>
 <p>
