@@ -48,7 +48,88 @@
 <p>
 Training starting-
 
+Full stack application:
+UI in angular -> makes a REST call to SPRING accesses -> Databases
 
+connection to postgres (or whatever DB) in application.properties
+
+*************************************************
+**********************************QC*************
+
+What is spring?
+	The Spring Framework is an inversion of control container that provides flexible
+	infrastructural support to create loosely coupled Java applications by utilizing
+	dependency injection.
+
+
+What is auto wiring?
+	Autowiring feature of spring framework enables you to inject the object dependency
+	implicitly.
+
+
+What is a bean in spring?
+	the objects that form the backbone of your application and that are managed by the
+	Spring IoC container
+
+What are stereotype annotation in Spring Boot?
+	Spring Framework provides us with some special annotations. These annotations are
+	used to create Spring beans automatically in the application context. @Component
+	annotation is the main Stereotype Annotation. There are some Stereotype
+	meta-annotations which is derived from @Component those are:
+	@Component, @Service, @Repository, and @Controller
+
+What is @Service?
+	We specify a class with @Service to indicate that they’re holding the business logic.
+	Besides being used in the service layer, there isn’t any other special use for this
+	annotation. The utility classes can be marked as Service classes.
+
+What is @Repository?
+	We specify a class with @Repository to indicate that they’re dealing with CRUD
+	operations, usually, it’s used with DAO (Data Access Object) or Repository
+	implementations that deal with database tables.
+
+What is @Controller?
+	We specify a class with @Controller to indicate that they’re front controllers and
+	responsible to handle user requests and return the appropriate response. It is mostly
+	used with REST Web
+
+
+What is IOC?
+
+What is DI?
+
+
+*************************************************
+**********************************^^*************
+</p>
+<p>
+Http Status Codes
+100 - Info
+200 - OK
+		201 - Created
+300 -
+400 -
+		404 -
+500 -
+
+localhost:5050/product			-spring					-postres
+localhost:3000/product			-json-server
+
+
+add to @PostMapping in ProductController
+public ResponseEntity String saveProduct()
+	ResponseEntity String responseEntity = null;
+	if(productService.isProductExists(product.getProductId())) {
+			result = "Product with product id : "+product.getProductId() +" already exists";
+			responseEntity = new ResponseEntity String(result,HttpStatus.OK) // 200
+	} else {
+			result = productService.addProduct(product);
+			responseEntity = new ResponseEntity String(result,HttpStatus.CREATED); //201
+	}
+	return responseEntity;
+
+Now our application is completely ready for client operations
+But we go on a break for 20 min now.
 </p>
 <p>
 
