@@ -53,7 +53,90 @@ https://www.youtube.com/watch?v=QwQuro7ekvc
 https://github.com/amigoscode/login-registration-backend/tree/master/src/main
 
 Training starting now-
+	jpa keywords
+		List Product findByProductName(String productName)
+		List Product findByPriceBetween(int lowerPrice, int upperPrice)
+		List Product findByQuantityOnHandBetween(int lowerBound,int upperBound)
 
+go to ProductServiceImpl
+	getProductByName
+		return productRepository.findByProductName(productName)
+
+	getProductByPriceRange
+
+go to ProductController
+
+	getProductByProductName
+
+	filterProductByPrice
+
+can use @Query in dao to write Query SQL
+	("SELECT COUNT(*) FROM Product p")
+	public int countProducts();
+
+@Query("FROM Product p WHERE p.productName LIKE :pname")
+	Optional List Product findByMyProductName(@Param("pname") String productName)
+
+	@Query("From Product p WHERE p.price = :price and p.quantityOnHand > :lowerBoundQOH")
+	public Optional List Product findByMyPriceAndQuantityOnHand(@Param("price") int price ,@Param("lowerBoundQOH") int lowerBoundQOH);
+-------------------------
+@Transactional
+
+-----------------------------
+AOP
+Advice
+Aspect
+
+AOP
+	Aspect Oriented Programming
+
+	public void withdraw(int amount)
+	{
+		// do security
+		// logging
+		// transaction
+		balance = balance - amount
+	}
+
+	public void deposit(int amount)
+	{
+		// do security
+		// logging
+		// transaction
+		balance = balance + amount
+	}
+
+	Aspect
+	Point Cut
+	Joinpoint
+
+go to ProductServiceImpl
+
+create a new class
+com.training.pms.aspects
+@Component
+@Aspect
+
+LoggingAspect
+
+	@Before(value = "execution(* com.training.pms.service.ProductService.*(..))")
+	public void doLogging(Joinpoint joinpoint) {
+		Signature signature = joinpoint.getSignature();
+		syso("I am doing logging for : "+signature.getName());
+	}
+
+create
+SecurityAspects
+	@Before
+	Security check started
+	@After
+	Secutiry check passed
+
+	Add products called
+
+	@Around
+	Security check deletes all the stored data
+	Job over for security check
 
 </p>
 <p>
