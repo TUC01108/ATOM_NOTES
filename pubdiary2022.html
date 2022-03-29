@@ -52,8 +52,133 @@
 ================================================================================================
 <h3>Morning:</h3>
 <p>
-Training startng now.
+Training starting now.
+AOP
+	aspects modularizes particular transactional concerns which can present across multiples classes, known
+	as cross-cutting concerns
+----------------
+Spring Testing
+	Angular/UI makes REST call to Spring Boot
 
+	localhost:5050/reviews		-CRUD
+		reviewId
+		reviewComments
+		reviewStar
+create a new project
+new>other>Spring starter project
+name: reviews-app-jwa-alstrom
+com.training.pms
+
+lombok, devtools, postgresql, web, sb actuator, data jpa
+
+change application.properties
+server.port=7070
+
+create model class
+com.training.pms.model
+Reviews
+
+	private int reviewId;
+	private String reviewComments;
+	private int reviewStar;
+
+	add setters and getters
+
+create interface
+com.training.pms.repository
+ReviewsRepository extends CrudRepository Reviews, Integer
+
+create controller
+com.training.pms.controller
+ReviewsController
+@RestController
+@RequestMapping("reviews")
+
+	@Autowired
+	ReviewsRepository reviewsRepository;
+
+	@GetMapping
+	public ResponseEntity List Reviews getReviews(){
+		List Reviews allReviews = (List Reviews) reviewsRepository.findAll();
+
+		return new ResponseEntity List Reviews (allReviews,HttpStatus.OK);
+	}
+
+	// getting a single review by id
+	@GetMapping("/{reviewId}")
+	public ResponseEntity Reviews getReview(@PathVariable("reviewId")int reviewId){
+		Optional Reviews reviews = reviewsRepository.findById(reviewId);
+		return new ResponseEntity Reviews (reviews.get(),HttpStatus.OK);
+	}
+
+	// saving review
+	@PostMapping
+	public ResponseEntity String saveReview(@RequestBody Reviews reviews){
+		reviewsRepository.save(reviews);
+		return new ResponseEntity String ("Reviews saved successfully",HttpStatus.CREATED);
+	}
+
+	// saving review
+	@PutMapping
+	public ResponseEntity String updateReview(@RequestBody Reviews reviews){
+		reviewsRepository.save(reviews);
+		return new ResponseEntity String ("Reviews updated successfully",HttpStatus.OK);
+	}
+
+	// delete a single review by id
+	@DeleteMapping("/{reviewId}")
+	public ResponseEntity String deleteReview(@PathVariable("reviewId")int reviewId){
+		reviewsRepository.deleteById(reviewId);
+		return new ResponseEntity String ("reviews deleted successfully",HttpStatus.OK);
+	}
+
+Create Controller
+HomeController
+@RestController
+@RequestMapping("reviews")
+
+	@GetMapping("/welcome")
+	public ResponseEntity String getWelcome()
+		return new ResponseEntity String ("----- Hello and welcome to Revature REVIEWS App -----",HttpStatus.OK)
+
+go to src/test/java
+(webEnvironment= WebEnvironment.RANDOM_PORT)
+
+	@LocalServerPort
+	private String port;
+	private String baseURL = "http://localhost";
+
+	@Autowired
+	RestTemplate restTemplate;
+
+go to Main class and create bean
+	@Bean
+	public RestTemplate getRestTemplate(){
+		return new RestTemplate();
+	}
+
+go to test
+
+	URL url;
+	@BeforeEach
+	public void setUp() throws MalformedURLException {
+		url = new URL(baseURL +":"+port+"/reviews/welcome");
+	}
+
+	@Test
+	void testingHome() {
+		ResponseEntity String response = restTemplate.getForEntity(url.toString(), String.class);
+		assertEquals("----- Hello and welcome to Revature REVIEWS App -----",response.getBody());
+		assertEquals(200,response.getStatusCode());
+	}
+
+right click>run junit test
+
+1) create a bean in main
+2) create a controller
+3) open tests
+--------------------------------------
+back from 20 min break
 
 </p>
 <p>
