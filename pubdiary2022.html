@@ -44,6 +44,8 @@
 ================================================================================================
 <h3>Afternoon:</h3>
 <p>
+Been back from lunch-
+
 
 </p>
 <p>
@@ -182,6 +184,42 @@ back from 20 min break
 
 </p>
 <p>
+
+	@GetMapping("/home")
+	public ResponseEntity<String> getHome() {
+		return new ResponseEntity<String>("Home Page",HttpStatus.CREATED);
+	}
+
+create new class
+ReviewsControllerTest extends AbstractTest {
+	private String uri = "/reviews";
+
+	@BeforeEach
+	protected void setUp() {
+		super.setUp();
+	}
+
+	// test save functionality
+	@Test
+	void testSave(){
+		// Creating an object for saving
+		Reviews reviews = new Reviews(12323, "You are selling awesome product",5);
+		// Transforming java object into json
+		String reviewsJSON = super.mapToJson(reviews);
+
+		// calling the rest API
+		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
+			.contentType(MediaType.APPLICATION_JSON_VALUE)
+			.conten(reviewsJSON)).andReturn();
+			int statusCode = mvcResult.getResponse().getStatus();
+			String message = mvcResult.getResponse().getContentAsString();
+
+			assertEquals(201,statusCode);
+			assertEquals("Reviews Saved successfully", message)
+	}
+
+
+}
 
 </p>
 <p>
