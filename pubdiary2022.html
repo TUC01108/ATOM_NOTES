@@ -54,6 +54,153 @@
 <p>
 Time to crunch an hour of productive studying to prepare for QC.
 
+useful link- https://www.youtube.com/watch?v=aS9SQITRocc
+
+Most people use spring initializr to setup their projects.
+
+Dependencies we've used: Spring Web, DevTools, Lombok, PostgresQL, Spring Security.
+
+Application.properties file for configuration
+pom.xml for dependencies
+Tomcat server is what Spring is built on by default
+
+Spring framework allows you to cut out a lot of boilerplate code and focus on creating enterprise
+applications with Java.
+Offers IoC and enables transactions.
+
+Projects: Spring Boot, Spring Framework, Spring Data, Spring Cloud, Spring Security
+
+Spring Boot is built on top of Spring framework. Auto configured.
+Custom configurations with @Annotation. No XML configuration necessary.
+Great for stand alone APIs.
+
+IoC- instead of the programmer deciding flow of application or what objects are created, its
+all handed over to the Spring Container.
+Dependency Injection- inject an instance inside another class instead of using the new keyword.
+instead of inner code when we need to instantiate an object, spring instantiates it for us.
+
+Spring Beans- an instance of a class managed by the Spring Container. Spring decides when to
+create and when to destroy.
+
+Spring Container- part of the core Spring Framework, responsible for managing all beans, performs
+dependency injection.
+
+stereotype @- service, controller, repository, restcontroller
+
+@SpringBootApplication (collection of spring annotations)
+		@componentscan scans application for components
+		@EnableAutoConfiguration
+		@SpringBootConfiguration
+		@Inherited
+		@Documented
+--------------------------------------------------------------------------
+Spring Framework provides patterns and structure for application
+Application context- Spring manages object instances
+DI- makes sure that every object has references to all the other instances they require
+Database connectivity with JDBC- data access apis and mechanisms for connectivity, querying,
+and transaction management
+Spring MVC- web framework lets you easily create web applications and REST API
+
+REST API- Hypermedia as the Engine of Application State.
+
+@restcontroller is a combination of the @controller and @ResponseBody
+annotation.
+
+RestController: RestController is used for making restful web services
+with the help of the @RestController annotation
+@RestController is for app to app
+returns a json
+
+@Controller provides a view so that user
+returns a view
+
+------------------------------------------------------------------------------------
+Projects- Spring data, spring security, spring boot, spring integration
+Modules- AOP, JDBC, ORM
+
+2.  What is IOC and what does the IOC Container do?
+
+    Inversion of Control is a design principle in which control over certain parts of object-oriented design is inverted to achieve loose coupling.
+    IoC Container (a.k.a. DI Container) is a framework for implementing automatic dependency injection. It manages object creation and it's life-time, and also injects
+    dependencies to the class.
+
+3.  What is dependency injection and what are some of the benefits of using dependency injection?
+
+Dependency Injection is a design patters that removes dependencies of a program by providing the
+configuration in an external source, such as an ML file.
+    This loosely coupled design then makes code easier to test, and implement in a wider variety
+
+4.  What types of Dependency injection does spring support?
+	setter
+	constructor
+
+5.  What are some differences between BeanFactory and ApplicationContext? Which one eagerly instantiates your beans?
+
+    The ApplicationContext comes with advanced features, including several that are geared towards enterprise applications,
+    while the BeanFactory comes with only basic features. Therefore, it's generally recommended to use the ApplicationContext, and we should use BeanFactory only
+    when memory consumption is critical.0
+
+    BeanFactory will create a bean object when the getBean() method is called thus making it Lazy initialization.
+    ApplicationContext loads all the beans and creates objects at the time of startup only thus making it Eager initialization.
+
+6.  What is the Spring Bean lifecycle?
+
+		-1. Bean Instantiated
+		-2. Dependencies Injected
+		-3. Custom init() method
+		-4. Custom utility method
+		-5. Custom destroy() method
+
+7.  What is bean wiring? What about autowiring?
+
+		Autowiring- automatically inject the bean.
+
+8.  What are the different ways that Spring can wire beans?
+
+		    We wire beans in the beans.xml OR using annotations.
+				ByName, ByType, constructor
+
+9.  What are the scopes of Spring beans? Which is default?
+
+    -1) Singleton Scope (default) - Each bean definition is scoped to a single object instance per Spring IoC Container.
+    -2) Prototype Scope - A single bean definition is scoped to a number of object instances.
+    -3) Request Scope [Only valid with a web-aware ApplicationContext] - A single bean definition is scoped to the lifecycle of a single HTTP request. This means the HTTP request has its own instance of a bean created from a single bean definition.
+    -4) Session Scope [Only valid with a web-aware ApplicationContext] - A single bean definition is scoped to the lifecycle of an HTTP Session.
+    -5) Gloabl Session Scope [Only valid with a web-aware ApplicationContext] - A single bean definition is scoped to the lifecycle of a global HTTP session. Generally only valid when used in a portlet context.
+    -6) Application Scope
+
+10.  What is the concept of component scanning and how would you set it up?
+		In order to autowire or inject primitives, the @ComponentScan annotation specifies where to
+		search for defined beans.
+		Additionally all of these beans must be imported from the org.springframework.context.annotation
+		package.
+
+11.  What are the benefits and limitations of Java configuration?
+
+    -1. Separation of concerns
+    -2. Technology agnostic
+    -3. Ability to integrate Spring with external libraries
+
+12.  What does the @Configuration and @Bean annotations do?
+
+		@Configuration- Spring annotation indicates a class file used to manage bean configurations
+		using Java configuration similar to the Application Context file for an XML
+		or annotation based configuration.
+
+		you can use @Bean-annotated methods with any class which is @Component-annotated;
+    however, they are most commonly used with @Configuration beans since the primary
+		purpose for a class which is @Configuration-annotated is the definition of beans.
+
+13.  What is @Value used for?
+
+
+
+14.  What is Spring Expression Language? What can you reference using SpEL? What is the difference
+between $ and # in @value expressions?
+-------------------------------------------------
+
+About to start our QC for the week.
+
 </p>
 <p>
 
@@ -243,7 +390,7 @@ Training starting now!
 Kick start P3
 
 		the main difference between the @restcontroller and the @controller is
-		that the @restcontroller combination of the @controller and @ResponseBody
+		that the @restcontroller is a combination of the @controller and @ResponseBody
 		annotation.
 
 		RestController: RestController is used for making restful web services
