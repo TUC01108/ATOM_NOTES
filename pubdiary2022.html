@@ -32,6 +32,69 @@
 	 	###########################################
 -->
 ###########################################
+<h2>16/04/22</h2>
+================================================================================================
+<h3>Evening:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Afternoon:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Morning:</h3>
+<p>
+Focusing on setting up Selenium and cucumber inside DoctorFinder project to prepare for infosys interview.
+I'm actually really excited to get this job, but lots of hard work in next few days before we are closer.
+
+I'm going back to ERS project to see how JUnit and Selenium was setup so I can implement in DoctorFinder
+as well and be able to talk about in my interview.
+JUnit with selenium is nice and straight forward-
+	setup the test by specifying the browser in a string and WebDriver driver;
+	Do @BeforeAll if needed and @AfterAll
+	@BeforeEach is where we check what browser the person has on system for test.
+		WebDriverManager.edgedriver().setup;
+		driver = new EdgeDriver();
+
+	Then the test has @Test above can do @DisplayName("NAME OF TEST") as well
+		driver.get("url");
+		driver.manage().window().maximize();
+		// then you add the locators
+		drover.findElement(By.xpath("xpath")).click();
+		use .sendkeys("what to send");
+
+		check if window gets to next page 	assertTrue(driver.findElement(By.id("somethingonnextpage")).isDisplayed());
+
+	@AfterEach
+	public void tearDown() {
+		driver.close();
+		driver.quit();
+	}
+
+I didn't realize the above was JUnit with Selenium until I started running tests.
+Anything testing the web page is selenium from what we've learned.
+
+I just created an all JUnit test case for EmployeeDAOImpl that test all the Employee DAO implementations.
+It went easier than I thought it would. Definitely should write tests before code going forward.
+
+Next will be cucumber so I feel great about everything they will interview us for.
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+###########################################
+###########################################
 <h2>15/04/22</h2>
 ================================================================================================
 <h3>Evening:</h3>
