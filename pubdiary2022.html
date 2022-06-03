@@ -32,6 +32,61 @@
 	 	###########################################
 -->
 ###########################################
+		<h2>03/06/22</h2>
+		================================================================================================
+		<h3>Evening:</h3>
+		<p>
+		</p>
+		<p>
+		</p>
+		================================================================================================
+		<h3>Afternoon:</h3>
+		<p>
+		</p>
+		<p>
+		</p>
+		================================================================================================
+		<h3>Morning:</h3>
+		<p>
+			Going through an aws wallthrough and want to type step by step instructions for when I do things for the 
+			first time so I can refer back. Otherwise it might just be a waste.
+			
+			[EC2 Service Demonstration]
+			Purpose:
+			Launch Linux EC2 Instance - Connect to instance using SSH - Configure instance as web server
+			System Architecture:
+			Launching instance in AWS Default VPC - connect using SSH - accessable on internet via modifying security group
+			--------------------------
+			1. Login to AWS Management Console
+			2. Select the region based on requirement
+			3. Navigate to EC2 resource page
+			4. Click on launch instance
+			5. Select AMI to be used for instance
+			6. Choose free tier eligible - Linux t2.micro
+			7. Keep settings as default and click "Next: Add Storage"
+			8. Keep default and click "Next: Add Tags" | make sure Delete on Termination is selected
+			9. Type in key = Name and Value = Web-Server click "Next: Configure Security Group
+			10. Create a new security group "web-server-sg" 1 rule is ssh tcp port 22 add another rule for HTTP tcp port 80 
+			accessible anywhere = 0.0.0.0/0, ::/0 then click on review and launch
+			11. create a new key pair name "web-server-key-pair" click launch instance
+			12. view the instance and details copy the public ip address IPv4 
+			13. open command terminal on local system and navigate to location with .pem
+			14. type in -i web-server-key-pair.pem ec2-user@34.228.41.249 click enter and type yes when prompted and click enter
+			15. type sudo yum update and click enter
+			16. to install apache web server on the instance type sudo yum install httpd -y
+			17. to start apache web service type sudo service httpd start then type cd /var/www/html then enter
+			18. create index.html by typing sudo nano index.html save it and exit
+			19. optionally you can update the hosthame in h3 of html by typing sudo sed -i "s/hostname/$(hostname)/g" index.html
+			20. copy the IPv4 address and paste into your web browser. you should see the html file we just saved in instance
+			21. terminate the instance once you are done looking at it to ensure you do not incur charges from aws
+			22. FINISH
+		</p>
+		<p>
+		</p>
+		<p>
+		</p>
+	 	###########################################
+###########################################
 		<h2>02/06/22</h2>
 		================================================================================================
 		<h3>Evening:</h3>
