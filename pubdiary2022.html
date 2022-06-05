@@ -32,6 +32,55 @@
 	 	###########################################
 -->
 ###########################################
+		<h2>05/06/22</h2>
+		================================================================================================
+		<h3>Evening:</h3>
+		<p>
+
+		</p>
+		<p>
+
+		</p>
+		================================================================================================
+		<h3>Afternoon:</h3>
+		<p>
+
+		</p>
+		<p>
+
+		</p>
+		================================================================================================
+		<h3>Morning:</h3>
+		<p>
+		Now we are learning about Elastic Load Balancer or ELB.
+		[Elastic Load Balancer Service Demonstration]
+		Purpose:
+			Create Elastic Load Balancer - Register EC2 as Target
+		System Architecture:
+			Load Balancer handles all requests - EC2 instances within auto scaling group using security group in aws default vpc
+		---------
+		1. Login to AWS Management Console
+		2. Select the region based on requirement
+		3. Navigate to EC2 resource page
+		4. We will use instances from auto scaling group demonstration
+		5. Click on Load Balancers and "create load balancer"
+		6. Click on create application load balancer
+		7. type in name- web-load-balancer
+		8. for network mapping add 3 availability zone mappings 1a, 1b, 1c
+		9. create security group with tcp on port 80 0.0.0.0/0, ::/0
+		10. configure the routing (its parsed out differently than tutorial) create new target group "web-server-target-group"
+		11. register targets by selecting all and clicking include as pending below and click create target group
+		12. click create load balancer
+		
+		</p>
+		<p>
+
+		</p>
+		<p>
+
+		</p>
+	 	###########################################
+###########################################
 		<h2>04/06/22</h2>
 		================================================================================================
 		<h3>Evening:</h3>
