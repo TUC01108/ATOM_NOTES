@@ -74,6 +74,41 @@
 		</p>
 		<p>
 		Next section is on Serverless compute using AWS Lambda.
+		Quickly going over other services:
+		Aws Batch - Aws Lightsail - Aws Wavelength - Aws Outposts
+		--------------------
+		Next section is securing resources on AWS cloud using VPC (Virtual Private Cloud)
+		Lot's of info about VPC here. All aws services provide a default VPC but you can create custom if you
+		know what you're doing. Worth coming back to this section after I get more experience.
+		Route table, internet gateways, subnets (public/private),
+		By default for security groups all inbound traffic is blocked and all outbound traffic is allowed.
+		Network Access Control Lists (NACLs) applied at subnet level whereas SG are appliced at instance level
+		NAT Gateways
+		[VPC Service Demonstration]
+		Purpose:
+			Create custom VPC
+		System Architecture:
+			
+		---------
+		1. Login to AWS Management Console
+		2. Select the region based on requirement
+		3. Navigate to VPC and click on "Your VPCs"
+		4. Click create VPC to create a custom VPC type "custom-vpc" for name, type 192.168.0.0/16 for ipv4 cidr. click create vpc
+		5. On left hand side click Subnets. click create subnet
+		6. select custom-vpc. type "subnet-in-az1-custom-vpc". type 192.168.0.0/20 for ipv4 cidr
+		7. click add new subnet type "subnet-in-az2-custom-vpc". type 192.168.16.0/20 for ipv4 cidr
+		8. click create subnet
+		9. modify settings on subnet az1 and change to enable auto-assign public ipv4 address. and save
+		10. click on internet gateways on the left side. click create internet gateway
+		11. type custom-igw and click create internet gateway
+		12. click actions and select attach to vpc. select custom vpc and click attach internet gateway
+		13. click route tables from left side. click create route table
+		14. type custom-rtb. choose custom vpc. and click create
+		15. click on actions and edit subnet associations. choose 2nd option and click save.
+		16. select main route table for the vpc and select routes tab. click edit routes
+		17. click add route. add destination - 0.0.0.0/0 and target as internet gateway. click save
+		18. create 2 ec2 instances to check network connectivity. (i tried this) 
+		19. delete ec2 instances. delete vpcs.
 		
 		</p>
 		<p>
