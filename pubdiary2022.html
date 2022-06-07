@@ -78,7 +78,14 @@ System Architecture:
 ---------
 1. Login to AWS Management Console
 2. Select the region based on requirement
-3. Navigate to s3 and click on "Create Bucket" type in a unique name and choose a region
+3. Navigate to ec2 and click on "launch instance" go through free tier setup as before for 2 instances
+4. click on security groups, click on create security group, type efs-demo
+5. inbound rules choose nfs, anywhere ipv4 and click create security group
+6. go to efs, create efs, type efsdemo, 7 days since last access, next
+7. remove default sg and add the efs security group to each. click next and next.
+8. click create, click on efs and click attach
+9. connect to the instances via putty and mount the efs to each.
+10. follow steps to add a txt file to one and read it on the other.
 
 	
 
