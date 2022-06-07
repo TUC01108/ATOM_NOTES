@@ -1,7 +1,38 @@
 <!--
- 		Copy and paste this for each new day and update date/activities (update month)
-		###########################################
-		<h2>00/06/22</h2>
+ Copy and paste this for each new day and update date/activities (update month)
+###########################################
+<h2>00/06/22</h2>
+================================================================================================
+<h3>Evening:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Afternoon:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Morning:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+###########################################
+-->
+###########################################
+		<h2>07/06/22</h2>
 		================================================================================================
 		<h3>Evening:</h3>
 		<p>
@@ -19,18 +50,46 @@
 
 		</p>
 		================================================================================================
-		<h3>Morning:</h3>
-		<p>
+<h3>Morning:</h3>
+<p>
+Back into storage services. Right now is hosting in s3
+[Hosting a static website in s3 Demonstration]
+Purpose:
+	Create hosted website on s3
+System Architecture:
+			
+---------
+1. Login to AWS Management Console
+2. Select the region based on requirement
+3. Navigate to s3 and click on "Create Bucket" type in a unique name and choose a region
+4. uncheck block all public access, acknowledge, enable versioning, click create bucket
+5. click on bucket created, click on upload,  add files, click upload
+6. click on management tab, click on create lifecycle rule, type rule-1, apply to all objects, acknowledge
+7. click move current objects between storage classes and choose after 30 days, then click create
+8. click properties tab, click enable state website hosting, type in html file names for index and error. click save changes
+9. click on permissions tab, edit sample policy to include the ARN of your bucket, click save changes.
+10. click on properties tab, go to static web hosting and click on the URL to load website
 
-		</p>
-		<p>
+[Amazon Elastic File System Demonstration]
+Purpose:
+	Create hosted website on s3
+System Architecture:
+			
+---------
+1. Login to AWS Management Console
+2. Select the region based on requirement
+3. Navigate to s3 and click on "Create Bucket" type in a unique name and choose a region
 
-		</p>
-		<p>
+	
 
-		</p>
-	 	###########################################
--->
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+###########################################
 ###########################################
 		<h2>06/06/22</h2>
 		================================================================================================
