@@ -32,6 +32,204 @@
 ###########################################
 -->
 ###########################################
+<h2>09/06/22</h2>
+================================================================================================
+<h3>Evening:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Afternoon:</h3>
+<p>
+
+</p>
+<p>
+
+</p>
+================================================================================================
+<h3>Morning:</h3>
+<p>
+Continuing with this aws cert prep course day 2 of 3.
+
+	Sreedhu is leading us on the technology portion.
+	AWS Core Services-
+	Compute, storage, network, database.
+	scalability is 
+	elasticity is
+	
+	compute-
+	instances, containers, serverless, edge and hybrid
+	ec2, auto scaling, batch
+	ecs, eks, ecs, fargate
+	lambda, fargate, sns
+	outpost, snow family
+	
+	what is ec2- 
+	customized os-ami, data storage-ebs volumes, autoscaling, elastic load balancer
+	
+	types-
+	general purpose, memory optimized, compute optimized, storage optimized, 
+	
+	demo for ec2-
+	https://aws.amazon.com/free/
+	imagine building a laptop on your own
+		choose ami
+	choose type based on needs
+	configure instance details
+		request spot instances for bidding at lower cost and type max price
+		default vpc
+		default subnet
+		attach IAM role
+		shutdown behavior
+		add file system or create new
+	add storage
+		default has root value for linux
+		can add EBS as external 2nd volume
+		can set as delete on termination
+	add tags
+		key value pairs
+	configure security group
+		ssh for linux
+		custom tcp or http depending on needs
+	review and launch
+	choose a key or create new.
+		.pem file
+	connect
+		through browser using ssh
+		sudo su -
+			root user
+		yum update -y
+		yum install httpd -y
+		yum httpd start
+	creates html
+		he shares the public ip- http://3.7.66.23/
+	
+	follows quick start up, graceful shutdown
+	
+	if you want same ip then use elastic IP, otherwise it will change on every stop and start
+		https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+	
+	autoscaling-
+		EC2 launch template
+	connect to instance
+		sudo su -
+		cd /var/www/html
+		ls
+		cat index.html
+		chkconfig
+	actions image and templates
+		created custom ami
+			can launch an instance off of ami
+	create a launch configuration (once ami is available)
+		use custom ami we created
+		choose instance type
+		select an existing security group policy
+		same key pair
+		create launch configuration
+	actions -> create auto scaling group
+	launch instance from current ami
+		remove additional volum
+		add tag- name, Webserver-VM2
+		same sg
+		review and launch
+		use same key pair
+		launch
+	now we have 2 instances
+		http://13.233.62.229/
+	
+	Elastic Load Balancer-
+		types- application load balancer, network load balancer, classic load balancer(deprecating), gateway load balancer
+		we are going to create load balancer for 2 instances
+		all 3 zones for mapping
+		add the sg
+		for listeners and routing
+			create target group
+			instances
+			target group name- mytg1
+			register targets select both
+			create target group
+		add tg to instances
+		copy and paste dns provided
+	
+	back to auto scaling groups add the elb and sg
+		tag = Name - ASG-VM
+		create
+	
+	demo complete
+		https://lex.infosysapps.com/en/app/toc/lex_auth_01282533322109747268345/overview
+	
+	Storage-
+	S3/S3 Glacier, Amazon Elastic Block Store, FSx Family, Snow Family, EFS, AWS Storage Gateway
+	types- Block Storage, File Storage, Object Storage
+	
+	how does s3 work
+		create bucket
+		upload data
+		set permissions
+	storage classes-
+		standard, standard-ia, one zone-ia, intelligent tiering, glacier, glacier deep archive, outposts
+	
+	S3
+		create bucket
+		acls enabled
+		unblock public access
+		create bucket
+		upload file
+		grant public access
+			https://june9appdemo.s3.ap-south-1.amazonaws.com/Data.txt
+	static website hosting on s3
+		upload index.html
+		grant public access
+			https://june9appdemo.s3.ap-south-1.amazonaws.com/index.html
+	https://lex.infosysapps.com/en/app/toc/lex_auth_0131327099412480002701/overview
+	EBS
+		types- SSD-backed volumes, HDD-backed volumes
+		use cases- enterprise applications, relational db, business continuity, big data analytics, etc.
+		lifecycle- create, attach, attach and in use, detach, delete
+	S3 Glacier-
+	Amazon Snow Family-
+	EFS-
+	Amazon Storage Gateway-
+	
+	AWS Networking Services-
+		AWS Virtual Private Cloud- VPC
+		key components- nacl, sg, vpn, direct connect
+		amazon route 53
+			register domain
+			create hosted zone
+	AWS Relational Database Service
+		run on ec2 or run on RDS
+		oracle, ms sql server, postgresql, mysql, mariadb, amazon aurora
+		amazon dynamoDB
+		amazon redshift
+	
+		create database
+		
+	Sreedhu completes his covering of domain 2
+	Now resuming for domain 3
+	
+	AWS EC2 Abuse
+	AWS Support Plans- Basic, developer, business, enterprise on-ramp, enterprise
+	premium support
+	technical account manager
+	AWS Partner Network
+	AWS Trusted Advisor
+		scans your infrastructure and provides recommendations
+	
+	This concludes day 2. https://partnercentral.awspartner.com/APNSelfRegister
+
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+###########################################
+###########################################
 <h2>08/06/22</h2>
 ================================================================================================
 <h3>Evening:</h3>
